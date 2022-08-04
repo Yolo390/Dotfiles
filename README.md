@@ -525,7 +525,7 @@ echo 'eval "$(starship init zsh)"' >> .zshrc
 <br />
 
 Create `starship.toml`<br />
-Copy-paste this file: https://github.com/Flo-Slv/Development-Environment/blob/main/starship/starship.toml
+Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
 ```sh
 cd ~/.config && nvim starship.toml
 ```
@@ -572,14 +572,14 @@ cd rofi && touch config.rasi flo-theme.rasi
 <br />
 
 Open `config.rasi`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/i3/rofi/config.rasi
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/config.rasi
 ```sh
 nvim config.rasi
 ```
 <br />
 
 Open `flo-theme.rasi`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/i3/rofi/flo-theme.rasi
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/flo-theme.rasi
 ```sh
 nvim flo-theme.rasi
 ```
@@ -619,14 +619,14 @@ cd ~/.config && mkdir polybar && cd polybar && touch polybar.sh config.ini && ch
 <br />
 
 Open `polybar.sh`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/i3/polybar/polybar.sh
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/polybar.sh
 ```sh
 nvim polybar.sh
 ```
 <br />
 
 Open `config.ini`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/i3/polybar/config.ini
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/config.ini
 ```sh
 nvim config.ini
 ```
@@ -639,7 +639,7 @@ cd ~/.config && mkdir i3 && cd i3 && touch config
 <br />
 
 Open `config`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/i3/i3wm/config
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/i3/config
 ```sh
 nvim config
 ```

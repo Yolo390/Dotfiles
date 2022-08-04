@@ -1,0 +1,6 @@
+configuration {
+        font: "Hack Regular Nerd Font Complete 14";
+        show-icons: true;
+        matching: "fuzzy";
+}
+@theme "~/.config/rofi/flo-theme.rasi"

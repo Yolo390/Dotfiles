@@ -208,7 +208,7 @@ If some modules are not Sync correctly, save/close, re open and re do :PackerSyn
 Change Neovim colorscheme.<br />
 Go to plugin folder.<br />
 Create `colorscheme.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Development-Environment/blob/main/neovim/plugin/colorscheme.lua
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/plugin/colorscheme.lua
 
 ```sh
 cd ../../plugin && nvim colorscheme.lua
@@ -276,19 +276,19 @@ git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/plugins/tmux-power
 
 3. Fetch `.tmux.conf` and `.tmux-powerlinerc` files from my GitHub repo
 
-https://raw.githubusercontent.com/Flo-Slv/PDE/main/tmux/.tmux.conf
+https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf
 ```sh
-wget https://raw.githubusercontent.com/Flo-Slv/PDE/main/tmux/.tmux.conf
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf
 ```
 
-https://raw.githubusercontent.com/Flo-Slv/PDE/main/tmux/.tmux.powerlinerc
+https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc
 ```sh
-wget https://raw.githubusercontent.com/Flo-Slv/PDE/main/tmux/.tmux.powerlinerc
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc
 ```
 
-https://raw.githubusercontent.com/Flo-Slv/PDE/main/tmux/flo-theme.sh
+https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
 ```sh
-wget -P ~/.tmux/tmux-powerline-custom-themes https://raw.githubusercontent.com/Flo-Slv/PDE/main/tmux/flo-theme.sh
+wget -P ~/.tmux/tmux-powerline-custom-themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
 ```
 <br />
 

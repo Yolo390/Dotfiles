@@ -414,7 +414,7 @@ cd ~ && npm install -g git-cz
 <br />
 
 Create `changelog.config.js`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/git/changelog.config.js
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/git/changelog.config.js
 ```sh
 cd ~ && nvim changelog.config.js
 ```
@@ -446,14 +446,14 @@ cd ~/.config && mkdir gitui && cd gitui && touch theme.ron key_bindings.ron
 <br />
 
 Open `theme.ron`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/gitui/theme.ron
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/theme.ron
 ```sh
 nvim theme.ron
 ```
 <br />
 
 Open `key_bindings.ron`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/gitui/key_bindings.ron
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/key_bindings.ron
 ```sh
 nvim key_bindings.ron
 ```
@@ -467,7 +467,7 @@ cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 <br />
 
 Create `kitty.conf`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Development-Environment/blob/main/terminal/kitty.conf
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
 ```sh
 cd ~/.config/kitty && nvim kitty.conf
 ```

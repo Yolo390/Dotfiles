@@ -336,7 +336,7 @@ sudo make install
 
 ## ZSH - config
 Create `ys-flo.zsh-theme`<br />
-Copy-paste this file: https://github.com/Flo-Slv/PDE/blob/main/zsh/ys-flo.zsh-theme
+Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 ```sh
 cd ~/.oh-my-zsh/custom/themes && nvim ys-flo.zsh-theme
 ```
@@ -357,7 +357,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 <br />
 
 Open `.zshrc`<br />
-Copy/paste this file: https://github.com/Flo-Slv/PDE/blob/main/zsh/.zshrc
+Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
 ```sh
 cd ~ && rm .zshrc && nvim .zshrc
 ```

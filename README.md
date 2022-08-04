@@ -749,3 +749,6 @@ stow -t ~/ tmux
 ```sh
 cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t ~/ zsh
 ```
+```sh
+cd ~/Flo/Dotfiles && mkdir git && mv ~/.changelog.config.js ~/.gitconfig git && stow -t ~/ git
+```

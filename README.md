@@ -753,6 +753,9 @@ cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t
 ```sh
 cd ~/Flo/Dotfiles && mkdir git && mv ~/.changelog.config.js ~/.gitconfig git && stow -t ~/ git
 ```
+```sh
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
+```
 <br /><br />
 
 ### Some cool commands that can help !

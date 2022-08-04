@@ -752,3 +752,26 @@ cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t
 ```sh
 cd ~/Flo/Dotfiles && mkdir git && mv ~/.changelog.config.js ~/.gitconfig git && stow -t ~/ git
 ```
+<br /><br />
+
+### Some cool commands that can help !
+```sh
+# To know shell we use (2 options)
+# First option
+echo $SHELL
+
+# Second option
+ls -l /proc/$$/exe
+
+# To know terminal we use
+echo $TERM
+
+# To check if terminal is truecolor
+echo $COLORTERM
+
+# To have more info on Terminal
+ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)
+
+# To see all env variables
+printenv
+```

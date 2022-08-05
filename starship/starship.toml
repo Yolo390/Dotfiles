@@ -3,7 +3,7 @@ add_newline = true
 format = """
 [ ](bold blue)
 [╭───────────────────────────────╮](bold blue)
-[│ [$username](brown)$hostname $time│](bold blue)
+[│ [$username](brown)$hostname $time │](bold blue)
 [│                               ╯](bold blue)
 [│](bold blue) $directory$git_status$rust$package$python
 [│](bold blue)

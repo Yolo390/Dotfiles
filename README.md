@@ -21,7 +21,7 @@ Inside it, there is my `Dotfiles` directory and folders I use every day. Everyth
 
 To deal with that and keep my dotfiles in the same folder, I use `stow`, which is a symlink manager.<br><br>
 
-Here is the process if you want the same environment !<br><br>
+Here is the process if you want the same environment !<br><br><br />
 
 # Development Environment
 
@@ -758,11 +758,11 @@ cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && sto
 ```
 <br /><br />
 
-## Known issues
+# Known issues
 My custom starship prompt only work on VM Ubuntu.<br />
 For unknown reasons, it does not display correctly with Tmux on normal Ubuntu
 version.
-<br /><br />
+<br /><br /><br />
 
 ## Some cool commands that can help !
 ```sh

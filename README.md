@@ -65,7 +65,7 @@ The complete installation take around ~60 min depending power of the computer an
 ## Install dependencies
 ```sh
 sudo apt install git zsh zsh-syntax-highlighting curl i3 rofi compton \
-tree ripgrep fzf fd-find silversearcher-ag unzip bat fonts-font-awesome \
+tree ripgrep fzf fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip
 ```
 <br /><br />

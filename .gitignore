@@ -3,4 +3,4 @@ neovim/plugin/packer_compiled.lua
 
 oh-my-zsh/.oh-my-zsh
 
-tmux/.tmux/plugins
+tmux/.tmux/plugins/

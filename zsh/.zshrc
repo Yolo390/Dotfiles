@@ -161,4 +161,4 @@ tmux has-session -t Flo || \
 eval "$(zoxide init zsh)"
 
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"

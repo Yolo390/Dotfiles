@@ -1,0 +1,72 @@
+add_newline = true
+
+format = """
+[ ](bold blue)
+[╭───────────────────────────────╮](bold blue)
+[│ [$username](brown)$hostname $time│](bold blue)
+[│                               ╯](bold blue)
+[│](bold blue) $directory$git_status$rust$package$python
+[│](bold blue)
+[╰─$character](bold blue)"""
+
+[character]
+success_symbol = "[](bold green)[](bold green)[](bold green)"
+error_symbol = "[](bold red)[](bold red)[](bold red)"
+vicmd_symbol = "[](bold green)"
+
+[aws]
+disabled = true
+
+[time]
+disabled = false
+
+[cmd_duration]
+disabled = false
+
+[directory]
+truncation_length = 5
+truncate_to_repo = true
+format = "[$path]($style) [$read_only]($read_only_style) "
+read_only_style = "197"
+read_only = "  "
+repo_root_style = "fg:cyan bold"
+repo_root_format = " repo: [$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ► "
+
+[hostname]
+disabled = false
+ssh_only = false
+format = "on [$hostname](bold purple)"
+
+[nodejs]
+symbol = "🤢"
+
+[battery]
+full_symbol = "🔋 "
+charging_symbol = "⚡️ "
+discharging_symbol = "💀 "
+disabled = false
+
+[git_status]
+conflicted = "🚩"
+ahead = "💨"
+behind = "😰"
+diverged = "😵"
+untracked = '$count  '
+stashed = "📦"
+modified = "$count 📝"
+staged = '[+$count](green) '
+renamed = "👅"
+deleted = "💥"
+
+[shell]
+fish_indicator = "🦈"
+bash_indicator = "🌞"
+powershell_indicator = "💻"
+disabled = false
+
+[username]
+disabled = false
+show_always =true
+style_root = "red bold"
+style_user = "red bold"
+format = "[$user]($style) "

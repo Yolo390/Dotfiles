@@ -758,7 +758,13 @@ cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && sto
 ```
 <br /><br />
 
-### Some cool commands that can help !
+## Known issues
+My custom starship prompt only work on VM Ubuntu.<br />
+For unknown reasons, it does not display correctly with Tmux on normal Ubuntu
+version.
+<br /><br />
+
+## Some cool commands that can help !
 ```sh
 # To know shell we use (2 options)
 # First option

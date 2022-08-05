@@ -758,7 +758,23 @@ echo 'eval "$(starship init zsh)"' >> .zshrc
 ```
 <br /><br />
 
-## Some cool commands that can help !
+### Special aliases for my laptop - in sudo mod
+```sh
+alias ffull='echo 255 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1'
+alias fmedium='echo 150 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1'
+alias fsmall='echo 100 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1'
+alias fstop='echo 0 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias l='ls -CF'
+alias la='ls -A'
+alias ll='ls -alF'
+alias ls='ls --color=auto'
+```
+<br /><br />
+
+### Some cool commands that can help !
 ```sh
 # To know shell we use (2 options)
 # First option

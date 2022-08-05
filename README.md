@@ -515,16 +515,6 @@ kitty +list-fonts
 ```
 <br /><br />
 
-## Starship - install
-https://github.com/starship/starship
-```sh
-cd ~/ && curl -sS https://starship.rs/install.sh | sh
-```
-```sh
-echo 'eval "$(starship init zsh)"' >> .zshrc
-```
-<br />
-
 Create `starship.toml`<br />
 Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
 ```sh
@@ -758,11 +748,15 @@ cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && sto
 ```
 <br /><br />
 
-# Known issues
-My custom starship prompt only work on VM Ubuntu.<br />
-For unknown reasons, it does not display correctly with Tmux on normal Ubuntu
-version.
-<br /><br /><br />
+## Starship - install
+https://github.com/starship/starship
+```sh
+cd ~/ && curl -sS https://starship.rs/install.sh | sh
+```
+```sh
+echo 'eval "$(starship init zsh)"' >> .zshrc
+```
+<br /><br />
 
 ## Some cool commands that can help !
 ```sh

@@ -133,6 +133,7 @@ export PATH="/home/flo/.local/bin:$PATH"
 
 # fzf configuration.
 export FZF_DEFAULT_OPTS='--height 40%'
+export FZF_DEFAULT_COMMAND="find -L"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 

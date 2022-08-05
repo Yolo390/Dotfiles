@@ -10,6 +10,20 @@
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+
+# It should be before oh-my-zsh sourcing !
+export FZF_BASE=/usr/bin/fzf
+
+export FZF_DEFAULT_OPTS='--height 30% --border'
+export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
+ --color=fg:#CCCCCC,bg:#24283b,hl:#eb6f92
+ --color=fg+:#908caa,bg+:#2C3043,hl+:#908caa
+ --color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
+ --color=marker:#ebbcba,spinner:#eb6f92,header:#ebbcba"
+
+export FZF_DEFAULT_COMMAND="fdfind --hidden" # --no-ignore to search .gitignore files
+
+
 ZSH_THEME="ys-flo"
 
 plugins=(
@@ -18,6 +32,7 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	rust
+	fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -66,15 +81,20 @@ alias gc='git commit -m'
 alias gpo='git pull origin'
 
 
-# Rust aliases
-alias cdoc="cargo doc --open"
-
-
 # fzf aliases
 alias ff="fzf"
-alias ffc"=fzf --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
+alias ffp"=fzf --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
 alias ft="fzf-tmux"
 alias ftt="fzf-tmux -p"
+alias fft"=fzf-tmux -p --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
+
+
+# fdfind alias
+alias fd="fdfind"
+
+
+# Rust aliases
+alias cdoc="cargo doc --open"
 
 
 # BATCAT alias
@@ -109,6 +129,14 @@ alias settings="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 alias ui="gitui"
 
 
+# Set VIM as default editor
+export VISUAL=nvim
+export EDITOR="$VISUAL"
+
+alias n="nvim"
+alias vim="nvim"
+
+
 # Colored man
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
@@ -119,22 +147,8 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 
-# Set VIM as default editor
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
-alias n="nvim"
-alias vim="nvim"
-
-
-# Add directory to the PATH
+# Add ~/.local/bin directory to the PATH
 export PATH="/home/flo/.local/bin:$PATH"
-
-
-# fzf configuration.
-export FZF_DEFAULT_OPTS='--height 40%'
-export FZF_DEFAULT_COMMAND="find -L"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # nvm

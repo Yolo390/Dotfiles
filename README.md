@@ -515,7 +515,7 @@ kitty +list-fonts
 ```
 <br />
 
-To have Hack Nerd Font available in Polybar.
+Optional: to have Hack Nerd Font available in Polybar.
 ```sh
 sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
 sudo cp ~/.local/share/fonts/Hack\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/

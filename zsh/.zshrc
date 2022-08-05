@@ -46,6 +46,7 @@ alias dot="cd ~/Flo/Dotfiles"
 
 # List aliases
 alias la="ls -lAh"
+alias ll="ls -l"
 alias ls="ls --color=tty"
 
 

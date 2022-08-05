@@ -515,13 +515,6 @@ kitty +list-fonts
 ```
 <br /><br />
 
-Create `starship.toml`<br />
-Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
-```sh
-cd ~/.config && nvim starship.toml
-```
-<br /><br />
-
 ## NOTION - install
 https://notion-enhancer.github.io/getting-started/installation/
 ```sh
@@ -743,9 +736,6 @@ cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t
 ```sh
 cd ~/Flo/Dotfiles && mkdir git && mv ~/.changelog.config.js ~/.gitconfig git && stow -t ~/ git
 ```
-```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
-```
 <br /><br />
 
 ## Starship - install
@@ -755,6 +745,16 @@ cd ~/ && curl -sS https://starship.rs/install.sh | sh
 ```
 ```sh
 echo 'eval "$(starship init zsh)"' >> .zshrc
+```
+<br />
+
+Create `starship.toml`<br />
+Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
+```sh
+cd ~/.config && nvim starship.toml
+```
+```sh
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
 ```
 <br /><br />
 

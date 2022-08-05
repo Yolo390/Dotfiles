@@ -17,6 +17,7 @@ return require'packer'.startup({
 
 		-- Colorscheme
 		use 'folke/tokyonight.nvim'
+		use { "catppuccin/nvim", as = "catppuccin" }
 
 		-- Display
 		use 'nvim-lualine/lualine.nvim'

@@ -5,3 +5,9 @@ vim.g.tokyonight_style = 'storm'
 vim.g.tokyonight_transparent_sidebar = true
 
 vim.cmd [[ colorscheme tokyonight ]]
+
+-- CATPPUCIN THEME
+-- latte, frappe, macchiato, mocha
+-- vim.g.catppuccin_flavour = 'macchiato' 
+-- require'catppuccin'.setup()
+-- vim.cmd [[ colorscheme catppuccin ]]

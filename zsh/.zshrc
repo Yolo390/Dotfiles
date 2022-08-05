@@ -122,16 +122,18 @@ alias ft="fzf-tmux"
 alias ftt="fzf-tmux -p"
 alias fft"=fzf-tmux -p --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
 
-
 # fzf config
-export FZF_DEFAULT_OPTS='--height 30% --border'
+export FZF_DEFAULT_OPTS='--height=30% --border'
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 --color=fg:#CCCCCC,bg:#24283b,hl:#eb6f92
 --color=fg+:#908caa,bg+:#2C3043,hl+:#908caa
 --color=info:#9ccfd8,prompt:#f6c177,pointer:#c4a7e7
 --color=marker:#ebbcba,spinner:#eb6f92,header:#ebbcba"
 
+bindkey '^j' fzf-cd-widget
+export FZF_ALT_C_COMMAND="fdfind --hidden"
 export FZF_DEFAULT_COMMAND="fdfind --hidden" # --no-ignore to search .gitignore files
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
 # Colored man

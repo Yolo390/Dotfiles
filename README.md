@@ -65,7 +65,7 @@ The complete installation take around ~60 min depending power of the computer an
 ## Install dependencies
 ```sh
 sudo apt install git zsh zsh-syntax-highlighting curl i3 rofi compton \
-tree ripgrep fzf fd-find silversearcher-ag unzip bat \
+tree ripgrep fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip
 ```
 <br /><br />
@@ -362,9 +362,22 @@ Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
 ```sh
 cd ~ && rm .zshrc && nvim .zshrc
 ```
-Close terminal and re launch it.<br />
+Close terminal and re open it.<br />
 
 PS: do not copy/paste if you don't understand. You need to adapt with your own aliases, tmux panes sizes etc...
+<br /><br /><br />
+
+## fzf - install
+https://github.com/junegunn/fzf
+```sh
+cd ~/ && git clone https://github.com/junegunn/fzf .fzf
+```
+```sh
+cd .fzf && ./install
+```
+<br />
+
+Close terminal and re open it.
 <br /><br /><br />
 
 ## NVM - install
@@ -373,7 +386,7 @@ https://github.com/nvm-sh/nvm#installing-and-updating
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
-Then close terminal and re open it.
+Close terminal and re open it.
 
 ```sh
 nvm install 18

@@ -513,6 +513,10 @@ Check if Hack Nerd Font have been installed correctly.
 ```sh
 kitty +list-fonts
 ```
+```sh
+sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
+sudo cp ~/.local/share/fonts/Hack\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
+```
 <br /><br />
 
 ## NOTION - install

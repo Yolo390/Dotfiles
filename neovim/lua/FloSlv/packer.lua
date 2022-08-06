@@ -20,7 +20,8 @@ return require'packer'.startup({
 		use { "catppuccin/nvim", as = "catppuccin" }
 
 		-- Display
-		use 'nvim-lualine/lualine.nvim'
+		-- use 'nvim-lualine/lualine.nvim'
+		use 'feline-nvim/feline.nvim'
 		use 'glepnir/dashboard-nvim'
 		use 'kyazdani42/nvim-web-devicons'
 		use {
@@ -48,6 +49,13 @@ return require'packer'.startup({
 		use 'nvim-telescope/telescope-symbols.nvim'
 		use 'sudormrfbin/cheatsheet.nvim'
 		use 'nvim-telescope/telescope-packer.nvim'
+		use {
+			'dhruvmanila/telescope-bookmarks.nvim',
+			-- Uncomment if the selected browser is Firefox or buku
+			requires = {
+				'tami5/sqlite.lua'
+			}
+		}
 
 		-- Harpoon
 		use 'ThePrimeagen/harpoon'

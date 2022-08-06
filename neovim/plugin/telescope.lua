@@ -11,6 +11,7 @@ require'telescope'.load_extension'notify'
 require'telescope'.load_extension'zoxide'
 require'telescope'.load_extension'repo'
 require'telescope'.load_extension'packer'
+require'telescope'.load_extension'bookmarks'
 require'telescope'.load_extension'neoclip'
 require('neoclip').setup()
 

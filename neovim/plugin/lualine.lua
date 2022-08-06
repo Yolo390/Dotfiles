@@ -1,8 +1,11 @@
-require'lualine'.setup({
+--[[ require'lualine'.setup({
 	options = {
 		theme = 'nord', -- nightfly, nord, grubbox_dark, material, tokyionight
 	},
-	disabled_filetypes = { 'dashboard', 'NvimTree' },
+	disabled_filetypes = {
+		statusline = { 'dashboard', 'NvimTree' },
+		winbar = { 'dashboard', 'NvimTree' }
+	},
 	sections = {
 		lualine_a =  { 'mode' },
 		lualine_b = { 'branch' },
@@ -20,4 +23,4 @@ require'lualine'.setup({
 		lualine_z = {}
 	},
 	extensions = { 'nvim-tree', 'fugitive', 'fzf', 'quickfix' }
-})
+}) ]]

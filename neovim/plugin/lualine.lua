@@ -1,4 +1,4 @@
---[[ require'lualine'.setup({
+require'lualine'.setup({
 	options = {
 		theme = 'nord', -- nightfly, nord, grubbox_dark, material, tokyionight
 	},
@@ -23,4 +23,4 @@
 		lualine_z = {}
 	},
 	extensions = { 'nvim-tree', 'fugitive', 'fzf', 'quickfix' }
-}) ]]
+})

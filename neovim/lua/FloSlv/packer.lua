@@ -20,8 +20,7 @@ return require'packer'.startup({
 		use { "catppuccin/nvim", as = "catppuccin" }
 
 		-- Display
-		-- use 'nvim-lualine/lualine.nvim'
-		use 'feline-nvim/feline.nvim'
+		use 'nvim-lualine/lualine.nvim'
 		use 'glepnir/dashboard-nvim'
 		use 'kyazdani42/nvim-web-devicons'
 		use {

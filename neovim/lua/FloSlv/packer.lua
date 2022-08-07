@@ -52,7 +52,7 @@ return require'packer'.startup({
 			'dhruvmanila/telescope-bookmarks.nvim',
 			-- Uncomment if the selected browser is Firefox or buku
 			requires = {
-				'tami5/sqlite.lua'
+				'kkharji/sqlite.lua'
 			}
 		}
 
@@ -85,7 +85,6 @@ return require'packer'.startup({
 		use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 		-- Databases
-		use 'kkharji/sqlite.lua'
 		use 'tpope/vim-dadbod'
 		use 'kristijanhusak/vim-dadbod-ui'
 

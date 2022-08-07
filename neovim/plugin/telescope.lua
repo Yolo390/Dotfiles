@@ -22,7 +22,7 @@ require'telescope'.setup {
 			firefox_profile_name = nil,
 
 			-- Provide debug messages
-			debug = true
+			debug = false
 		}
 	}
 }

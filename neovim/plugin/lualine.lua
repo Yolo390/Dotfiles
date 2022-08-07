@@ -3,8 +3,8 @@ require'lualine'.setup({
 		theme = 'nord', -- nightfly, nord, grubbox_dark, material, tokyionight
 	},
 	disabled_filetypes = {
-		statusline = { 'dashboard', 'NvimTree' },
-		winbar = { 'dashboard', 'NvimTree' }
+		statusline = { 'dashboard' },
+		winbar = { 'dashboard' }
 	},
 	sections = {
 		lualine_a =  { 'mode' },

@@ -85,6 +85,7 @@ return require'packer'.startup({
 		use 'L3MON4D3/LuaSnip' -- Snippets plugin
 
 		-- Databases
+		use 'kkharji/sqlite.lua'
 		use 'tpope/vim-dadbod'
 		use 'kristijanhusak/vim-dadbod-ui'
 

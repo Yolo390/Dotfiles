@@ -12,11 +12,12 @@ db.custom_header = {
 
 local builtin = require'telescope.builtin'
 local themes = require'telescope.themes'
+local extensions = require'telescope'.extensions
 
 db.custom_center = {
 	{
-		icon = '🔍',
-		desc = '   Find file',
+		icon = '🔍   ',
+		desc = 'Find file        ',
 		action = function()
 			builtin.find_files({
 				cwd = vim.fn.substitute(vim.fn.getcwd(), '/home/floslv', '~', ''),
@@ -26,8 +27,8 @@ db.custom_center = {
 		end
 	},
 	{
-		icon = '💻',
-		desc = '      Dev   ',
+		icon = '💻   ',
+		desc = 'Dev             ',
 		action = function()
 			builtin.find_files({
 				cwd = '~/Flo/Dev',
@@ -37,77 +38,101 @@ db.custom_center = {
 		end
 	},
 	{
-		icon = '🔅',
-		desc = '    Dotfiles',
+		icon = '🔅   ',
+		desc = 'Dotfiles         ',
 		action = function()
 			if pcall(function()
-				builtin.git_files(themes.get_dropdown {
-					cwd = '~/Flo/Dotfiles',
-					prompt_title = ' Dotfiles',
-					hidden = true,
-					previewer = false
-				}) end) then
+				builtin.git_files(
+					themes.get_dropdown {
+						cwd = '~/Flo/Dotfiles',
+						prompt_title = ' Dotfiles',
+						hidden = true,
+						previewer = false
+					}
+				)
+			end) then
 			else
-				builtin.find_files(themes.get_dropdown {
-					prompt_title = ' Dotfiles',
-					cwd = '~/Flo/Dotfiles',
-					hidden = true,
-					previewer = false
-				})
+				builtin.find_files(
+					themes.get_dropdown {
+						prompt_title = ' Dotfiles',
+						cwd = '~/Flo/Dotfiles',
+						hidden = true,
+						previewer = false
+					}
+				)
 			end
 		end
 	},
 		{
-		icon = '🌵',
-		desc = '   Git repos',
+		icon = '🌵   ',
+		desc = 'Git repos        ',
 		action = function ()
-			require'telescope'.extensions.repo.list(themes.get_dropdown({
-				prompt_title = '🌵 Git repos',
-				previewer = false
-			}))
+			require'telescope'.extensions.repo.list(
+					themes.get_dropdown({
+						prompt_title = '🌵 Git repos',
+						previewer = false
+				})
+			)
 		end
 	},
 	{
-		icon = '🌸',
-		desc = '    Zoxide  ',
+		icon = '🌸   ',
+		desc = 'Zoxide          ',
 		action = function ()
-			require'telescope'.extensions.zoxide.list(themes.get_dropdown({
-				prompt_title = '🌸 Zoxide'
-			}))
+			require'telescope'.extensions.zoxide.list(
+				themes.get_dropdown({
+					prompt_title = '🌸 Zoxide'
+				})
+			)
 		end
 	},
 	{
-		icon = '📝',
-		desc = '    New file',
-		action = 'DashboardNewFile'
-	},
-	{
-		icon = '👀',
-		desc = '    Key maps',
+		icon = '🔌   ',
+		desc = 'Plugins         ',
 		action = function()
-			builtin.keymaps(themes.get_ivy({
-				prompt_title = '👀 Key maps'
-			}))
-		end
-	},
-	{
-		icon = '❓',
-		desc = '     Help   ',
-		action = function()
-			builtin.help_tags(themes.get_dropdown({
-				prompt_title = '❓ Help',
-				previewer = false
-			}))
-		end
-	},
-	{
-		icon = '🔌',
-		desc = '    Plugins ',
-		action = function()
-			require'telescope'.extensions.packer.packer({
+			extensions.packer.packer({
 				prompt_title = '  Plugins',
 				previewer = false
 			})
+		end
+	},
+	{
+		icon = '🦊   ',
+		desc = 'Firefox bookmarks',
+		action = function ()
+			extensions.bookmarks.bookmarks(
+				themes.get_ivy {
+					prompt_title = '  Firefox bookmarks '
+				}
+			)
+		end
+	},
+	{
+		icon = '📝   ',
+		desc = 'New file        ',
+		action = 'DashboardNewFile'
+	},
+	{
+		icon = '🔑   ',
+		desc = 'Key maps        ',
+		action = function()
+			builtin.keymaps(
+				themes.get_ivy({
+					prompt_title = '👀 Key maps'
+				})
+			)
+		end
+	},
+	{
+		icon = '❓   ',
+		desc = 'Help             ',
+		action = function()
+			builtin.help_tags(
+				themes.get_dropdown({
+					prompt_title = '❓ Help',
+					previewer = false
+				})
+			)
 		end
 	}
 }

@@ -15,6 +15,7 @@ require'lspconfig'.cssls.setup {}
 require'lspconfig'.html.setup {}
 require'lspconfig'.jsonls.setup {}
 require'lspconfig'.rust_analyzer.setup {}
+require'lspconfig'.taplo.setup {}
 require'lspconfig'.sumneko_lua.setup {
 	settings = {
 		Lua = {

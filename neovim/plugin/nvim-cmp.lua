@@ -72,7 +72,7 @@ cmp.setup({
 local lspconfig = require'lspconfig'
 local capabilities = require'cmp_nvim_lsp'.update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-local servers = { 'tsserver', 'graphql', 'cssls', 'html', 'sumneko_lua', 'jsonls', 'rust_analyzer' }
+local servers = { 'tsserver', 'graphql', 'cssls', 'html', 'sumneko_lua', 'jsonls', 'rust_analyzer', 'taplo'}
 
 for _, server in ipairs(servers) do
 	lspconfig[server].setup {

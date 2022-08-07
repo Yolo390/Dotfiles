@@ -108,6 +108,8 @@ key('n', '<leader>re', ':lua Repo()<CR>', full_options)
 key('n', '<leader>zo', ':lua Zoxide()<CR>', full_options)
 key('n', '<leader>emo', ':lua Symbols()<CR>', full_options)
 key('n', '<leader>p', ':lua Plugins()<CR>', full_options)
+key('n', '<leader>boo', ':lua Bookmarks()<CR>', full_options)
+
 key('n', '<leader>fb', ':Telescope buffers<CR>', full_options)
 key('n', '<leader>fgf', ':Telescope git_files<CR>', full_options)
 key('n', '<leader>fgc', ':Telescope git_commits<CR>', full_options)
@@ -144,19 +146,24 @@ end
 
 function Dotfiles ()
 	if pcall(function()
-		builtin.git_files(themes.get_dropdown {
-			cwd = '~/Flo/Dotfiles',
-			prompt_title = ' Dotfiles',
-			hidden = true,
-			previewer = false
-	}) end) then
+		builtin.git_files(
+			themes.get_dropdown {
+				cwd = '~/Flo/Dotfiles',
+				prompt_title = ' Dotfiles',
+				hidden = true,
+				previewer = false
+			}
+		)
+	end) then
 	else
-		builtin.find_files(themes.get_dropdown {
-			prompt_title = ' Dotfiles',
-			cwd = '~/Flo/Dotfiles',
-			hidden = true,
-			previewer = false
-		})
+		builtin.find_files(
+			themes.get_dropdown {
+				prompt_title = ' Dotfiles',
+				cwd = '~/Flo/Dotfiles',
+				hidden = true,
+				previewer = false
+			}
+		)
 	end
 end
 
@@ -167,28 +174,36 @@ function Help ()
 end
 
 function Keymaps ()
-	builtin.keymaps(themes.get_ivy {
-		prompt_title = '👀 Key maps'
-	})
+	builtin.keymaps(
+		themes.get_ivy {
+			prompt_title = '👀 Key maps'
+		}
+	)
 end
 
 function Repo ()
-	require'telescope'.extensions.repo.list(themes.get_dropdown({
-		prompt_title = '🌵 Repo',
-		previewer = false
-	}))
+	require'telescope'.extensions.repo.list(
+		themes.get_dropdown({
+			prompt_title = '🌵 Repo',
+			previewer = false
+		})
+	)
 end
 
 function Zoxide ()
-	require'telescope'.extensions.zoxide.list(themes.get_dropdown({
-		prompt_title = '🌸 Zoxide'
-	}))
+	require'telescope'.extensions.zoxide.list(
+		themes.get_dropdown({
+			prompt_title = '🌸 Zoxide'
+		})
+	)
 end
 
 function Symbols ()
-	builtin.symbols(themes.get_dropdown({
-		prompt_title = '💢 Emoji'
-	}))
+	builtin.symbols(
+		themes.get_dropdown({
+			prompt_title = '💢 Emoji'
+		})
+	)
 end
 
 function Plugins ()
@@ -197,6 +212,15 @@ function Plugins ()
 		previewer = false
 	}
 end
+
+function Bookmarks ()
+	require('telescope').extensions.bookmarks.bookmarks(
+		themes.get_ivy {
+			prompt_title = '  Firefox bookmarks '
+		}
+	)
+end
+
 
 -- ##################
 -- # NVIM-LSPCONFIG #

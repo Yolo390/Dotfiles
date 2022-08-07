@@ -22,4 +22,3 @@ vim.api.nvim_create_user_command('AutoRunTerm', function ()
 
 	global_run(pattern, command)
 end, {})
-

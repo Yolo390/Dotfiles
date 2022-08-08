@@ -66,7 +66,8 @@ The complete installation take around ~60 min depending power of the computer an
 ```sh
 sudo apt install git zsh zsh-syntax-highlighting curl i3 rofi compton \
 tree ripgrep fd-find silversearcher-ag unzip bat \
-neofetch stow mlocate zoxide python3-pip libsqlite3-dev
+neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
+libssl-dev
 ```
 <br /><br />
 

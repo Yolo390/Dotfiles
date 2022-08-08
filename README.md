@@ -557,7 +557,7 @@ sudo apt update && sudo apt install insomnia
 <br />
 
 You can install plugins in Insomnia: tokyonight theme, gist integration and os infos.
-<br /><br />
+<br /><br /><br />
 
 ## GLOW - install
 https://github.com/charmbracelet/glow

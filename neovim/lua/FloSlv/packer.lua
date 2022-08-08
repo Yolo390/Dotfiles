@@ -104,8 +104,11 @@ return require'packer'.startup({
 		use 'nanotee/luv-vimdocs'
 		use 'milisims/nvim-luaref'
 
-		-- RUST
+		-- Rust
 		use 'simrat39/rust-tools.nvim'
+
+		-- Graphql
+		use 'jparise/vim-graphql'
 
 		-- Debug
 		use 'mfussenegger/nvim-dap'

@@ -1,10 +1,10 @@
 require'lualine'.setup({
 	options = {
 		theme = 'nord', -- nightfly, nord, grubbox_dark, material, tokyionight
-	},
-	disabled_filetypes = {
-		statusline = { 'dashboard' },
-		winbar = { 'dashboard' }
+		disabled_filetypes = {
+			statusline = { 'dashboard', 'NvimTree' },
+			winbar = { 'dashboard', 'NvimTree' }
+		}
 	},
 	sections = {
 		lualine_a =  { 'mode' },
@@ -22,5 +22,5 @@ require'lualine'.setup({
 		lualine_y = {},
 		lualine_z = {}
 	},
-	extensions = { 'nvim-tree', 'fugitive', 'fzf', 'quickfix' }
+	extensions = { 'fugitive', 'fzf', 'quickfix' }
 })

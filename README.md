@@ -554,6 +554,9 @@ echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ 
 ```sh
 sudo apt update && sudo apt install insomnia
 ```
+<br />
+
+You can install plugins in Insomnia: tokyonight theme, gist integration and os infos.
 <br /><br />
 
 ## GLOW - install

@@ -120,7 +120,7 @@ pip3 install pynvim
 <br /><br />
 
 ## NEOVIM - basic config
-*Note Bene: Advanced config later.*
+*Nota Bene: Advanced config later.*
 
 Change ```{your-name}``` by your name. In my case ```FloSlv```.<br /><br />
 

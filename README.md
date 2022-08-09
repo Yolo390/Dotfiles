@@ -6,8 +6,6 @@ In this way, I can easily manage it with git / github to install it in a new com
 
 Moreover, I don't really like how Linux organize all dotfiles and apps installation. If you look into your `$HOME` folder, some of them are in `~/.config` directory, others in their own folder, and others like `.vimrc` in the `$HOME` directly.<br><br>
 
-When I open my terminal, I just want a clean space with folders like `Downloads`, `Dotfiles`, `Wallpapers`, `Dev` and so on !<br><br>
-
 I use **Ubuntu 22.04 LTS** as an operating system.<br>
 I use **i3** as a window manager.<br>
 I use **TMUX** as a terminal multiplexer.<br>

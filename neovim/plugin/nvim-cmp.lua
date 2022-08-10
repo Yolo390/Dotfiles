@@ -48,9 +48,9 @@ cmp.setup({
 			with_text = true,
 			menu = {
 				buffer = '[BUF]',
+				path = '[PATH]',
 				nvim_lsp = '[LSP]',
 				nvim_lua = '[LUA]',
-				path = '[PATH]',
 				luasnip = '[SNIP]'
 			}
 		}

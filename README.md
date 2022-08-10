@@ -47,6 +47,7 @@ It's for my own usage but you can follow my instructions and take inspiration fr
 - Insomnia
 - Btop
 - Stow
+- Discord
 
 ---
 

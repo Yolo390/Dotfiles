@@ -36,9 +36,9 @@ cmp.setup({
 		documentation = cmp.config.window.bordered()
 	},
 	sources = cmp.config.sources({
+		{ name = 'path' },
 		{ name = 'nvim_lsp', keyword_length = 3 },
 		{ name = 'nvim_lua' },
-		{ name = 'path' },
 		{ name = 'luasnip' }
 	}, {
 		{ name = 'buffer', keyword_length = 3 }
@@ -48,9 +48,9 @@ cmp.setup({
 			with_text = true,
 			menu = {
 				buffer = '[BUF]',
-				path = '[PATH]',
 				nvim_lsp = '[LSP]',
 				nvim_lua = '[LUA]',
+				path = '[PATH]',
 				luasnip = '[SNIP]'
 			}
 		}

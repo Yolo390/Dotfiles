@@ -586,6 +586,36 @@ Icon=/opt/Discord/discord.png
 ```
 <br /><br /><br />
 
+## BETTER DISCORD - install
+https://github.com/BetterDiscord/BetterDiscord<br />
+Download Linux AppImage into `~/Flo/Downloads`
+```sh
+cd ~/Flo/Downloads && chmod +x BetterDiscord-Linux.AppImage
+```
+<br />
+
+Install FUSE dependencies<br />
+https://github.com/AppImage/AppImageKit/wiki/FUSE
+```sh
+sudo add-apt-repository universe
+```
+```sh
+sudo apt install libfuse2
+```
+<br />
+
+Install BetterDiscord on classic Ubuntu version
+```sh
+./BetterDiscord-Linux.AppImage
+```
+<br />
+
+Install BetterDiscord on Ubuntu VM version
+```sh
+./BetterDiscord-Linux.AppImage --disable-gpu-sandbox
+```
+<br /><br />
+
 ## GLOW - install
 https://github.com/charmbracelet/glow
 ```sh

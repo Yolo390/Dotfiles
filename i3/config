@@ -195,5 +195,5 @@ for_window [class="Org.gnome.Nautilus"] focus
 assign [class="discord"] $ws6
 for_window [class="discord"] focus
 
-assign [class="Filezilla-server-gui"] $ws7
-for_window [class="Filezilla-server-gui"] focus
+assign [class="Filezilla"] $ws7
+for_window [class="Filezilla"] focus

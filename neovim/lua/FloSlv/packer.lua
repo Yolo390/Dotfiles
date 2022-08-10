@@ -97,29 +97,35 @@ return require'packer'.startup({
 		-- GIT
 		use 'lewis6991/gitsigns.nvim'
 
-		-- Markdown
+		-- MARKDOWN
 		use 'ellisonleao/glow.nvim'
 
 		-- Documentation
 		use 'nanotee/luv-vimdocs'
 		use 'milisims/nvim-luaref'
 
-		-- Rust
+		-- RUST
 		use 'simrat39/rust-tools.nvim'
 
 		-- Debug
 		use 'mfussenegger/nvim-dap'
 
-		-- Others
+		-- HTML
+		-- use 'AndrewRadev/tagalong.vim' -- Change an HTML(ish) opening/closing tag 
 		use 'tpope/vim-surround'
-		use 'windwp/nvim-autopairs'
-		use 'AndrewRadev/tagalong.vim'
+		use 'windwp/nvim-ts-autotag'
 
+		-- Tabs
 		use 'gcmt/taboo.vim'
+
+		-- Marks
 		use 'kshenoy/vim-signature'
 
+		-- Tmux
 		use 'christoomey/vim-tmux-navigator'
 
+		-- Others
+		use 'windwp/nvim-autopairs'
 		use 'norcalli/nvim-colorizer.lua'
 	end,
 	config = {

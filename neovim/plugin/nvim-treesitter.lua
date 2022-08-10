@@ -1,4 +1,7 @@
 require'nvim-treesitter.configs'.setup {
+	autotag = {
+		enable = true -- use nvim-ts-autotag plugin
+	},
 	highlight = {
 		enable = true,
 		-- Setting this to true will run `:h syntax` and tree-sitter at the same time.

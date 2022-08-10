@@ -558,6 +558,27 @@ sudo apt update && sudo apt install insomnia
 You can install plugins in Insomnia: tokyonight theme, gist integration and os infos.
 <br /><br /><br />
 
+## DISCORD - install
+https://discord.com/<br />
+Download tar.gz archive into `Downloads` folder.
+```sh
+cd ~/Flo/Downloads && sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
+```
+```sh
+cd ~ && sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+```
+```sh
+cd ~ && sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
+```
+```sh
+cd /usr/share/applications && sudo nvim discord.desktop
+```
+```sh
+Exec=/usr/bin/Discord
+Icon=/opt/Discord/discord.png
+```
+<br /><br /><br />
+
 ## GLOW - install
 https://github.com/charmbracelet/glow
 ```sh

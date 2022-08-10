@@ -5,7 +5,7 @@ format = """
 [╭───────────────────────────────╮](bold blue)
 [│ [$username](brown)$hostname $time│](bold blue)
 [│                               ╯](bold blue)
-[│](bold blue) $directory$git_status$rust$package$python
+[│](bold blue) $directory$git_branch$git_status$rust$package$python
 [│](bold blue)
 [╰─$character](bold blue)"""
 
@@ -30,7 +30,7 @@ format = "[$path]($style) [$read_only]($read_only_style) "
 read_only_style = "197"
 read_only = "  "
 repo_root_style = "fg:cyan bold"
-repo_root_format = " repo: [$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) ► "
+repo_root_format = " repo: [$before_root_path]($style)[$repo_root]($repo_root_style)[$path]($style)[$read_only]($read_only_style) "
 
 [hostname]
 disabled = false
@@ -45,6 +45,12 @@ full_symbol = "🔋 "
 charging_symbol = "⚡️ "
 discharging_symbol = "💀 "
 disabled = false
+
+[git_branch]
+format = "on [$symbol$branch(:$remote_branch)]($style) ► "
+symbol = " "
+style = "bold purple"
+truncation_length = 4
 
 [git_status]
 conflicted = "🚩"

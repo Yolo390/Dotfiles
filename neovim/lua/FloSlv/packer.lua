@@ -69,8 +69,11 @@ return require'packer'.startup({
 		use 'p00f/nvim-ts-rainbow'
 
 		-- LSP
-		use 'neovim/nvim-lspconfig'
-		use 'williamboman/nvim-lsp-installer'
+		use {
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
+			"neovim/nvim-lspconfig"
+		}
 		use 'RRethy/vim-illuminate'
 
 		-- Nvim-cmp

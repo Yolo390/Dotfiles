@@ -1,13 +1,25 @@
-require'nvim-lsp-installer'.setup {
+-- require'nvim-lsp-installer'.setup {
+-- 	ui = {
+-- 		border = 'rounded',
+-- 		icons = {
+-- 			server_installed = "✓",
+-- 			server_pending = "➜",
+-- 			server_uninstalled = "✗"
+-- 		}
+-- 	}
+-- }
+
+require'mason'.setup({
 	ui = {
 		border = 'rounded',
 		icons = {
-			server_installed = "✓",
-			server_pending = "➜",
-			server_uninstalled = "✗"
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗"
 		}
 	}
-}
+})
+require'mason-lspconfig'.setup()
 
 require'lspconfig'.tsserver.setup {}
 require'lspconfig'.graphql.setup {}

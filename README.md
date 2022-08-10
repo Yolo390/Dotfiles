@@ -47,6 +47,7 @@ It's for my own usage but you can follow my instructions and take inspiration fr
 - Insomnia
 - Btop
 - Stow
+- Discord
 
 ---
 
@@ -79,6 +80,12 @@ Logout then login.<br />
 Open terminal.
 <br /><br /><br />
 
+## Create folder structure
+```sh
+cd ~ && mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles
+```
+<br /><br />
+
 ## NEOVIM - install from sources
 https://github.com/neovim/neovim/wiki/Building-Neovim
 
@@ -90,7 +97,7 @@ sudo apt install ninja-build gettext libtool libtool-bin autoconf automake cmake
 
 2. Clone Neovim repository
 ```sh
-cd ~ && git clone https://github.com/neovim/neovim Neovim
+cd ~/Flo/Apps && git clone https://github.com/neovim/neovim Neovim
 ```
 <br />
 
@@ -115,7 +122,7 @@ cd ~ && git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 https://github.com/neovim/pynvim<br />
 We need it for some Neovim's plugins.
 ```sh
-pip3 install pynvim
+cd ~ && pip3 install pynvim
 ```
 <br /><br />
 
@@ -237,7 +244,7 @@ sudo apt install libevent-dev ncurses-dev build-essential bison
 
 3. Fetch Tmux from Git repo
 ```sh
-cd ~ && git clone https://github.com/tmux/tmux.git Tmux
+cd ~/Flo/Apps && git clone https://github.com/tmux/tmux.git Tmux
 ```
 <br />
 
@@ -322,13 +329,13 @@ Close Tmux then close and re open terminal.
 ## BTOP - install
 https://github.com/aristocratos/btop#installation
 
-Download latest release (x86_64 linux version in my case) into `~/Downloads`<br />
+Download latest release (x86_64 linux version in my case) into `~/Flo/Downloads`<br />
 https://github.com/aristocratos/btop/releases
 ```sh
-cd ~ && mkdir Btop && mv ~/Downloads/btop-x86_64-linux-musl.tbz ~/Btop
+cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop
 ```
 ```sh
-cd ~/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz
+cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz
 ```
 ```sh
 sudo make install
@@ -412,10 +419,10 @@ Just copy/paste those lines into your terminal but change before your email and 
 ```sh
 cat << EOF >> .gitconfig
 [user]
-email = {your-email}
-name = {your-name}
+    email = {your-email}
+    name = {your-name}
 [core]
-editor = nvim
+    editor = nvim
 EOF
 ```
 <br /><br />
@@ -510,9 +517,9 @@ Close terminal and open Kitty terminal.
 
 ## HACK FONT - install
 Go to https://www.nerdfonts.com/font-downloads<br />
-Download Hack Nerd Font into `~/Downloads`.
+Download Hack Nerd Font into `~/Flo/Downloads`.
 ```sh
-cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Downloads/Hack.zip .
+cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip .
 ```
 ```sh
 unzip Hack.zip && rm -rf Hack.zip
@@ -560,7 +567,7 @@ You can install plugins in Insomnia: tokyonight theme, gist integration and os i
 
 ## DISCORD - install
 https://discord.com/<br />
-Download tar.gz archive into `Downloads` folder.
+Download tar.gz archive into `~/Flo/Downloads`.
 ```sh
 cd ~/Flo/Downloads && sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
 ```
@@ -578,6 +585,36 @@ Exec=/usr/bin/Discord
 Icon=/opt/Discord/discord.png
 ```
 <br /><br /><br />
+
+## BETTER DISCORD - install
+https://github.com/BetterDiscord/BetterDiscord<br />
+Download Linux AppImage into `~/Flo/Downloads`
+```sh
+cd ~/Flo/Downloads && chmod +x BetterDiscord-Linux.AppImage
+```
+<br />
+
+Install FUSE dependencies<br />
+https://github.com/AppImage/AppImageKit/wiki/FUSE
+```sh
+sudo add-apt-repository universe
+```
+```sh
+sudo apt install libfuse2
+```
+<br />
+
+Install BetterDiscord on classic Ubuntu version
+```sh
+./BetterDiscord-Linux.AppImage
+```
+<br />
+
+Install BetterDiscord on Ubuntu VM version
+```sh
+./BetterDiscord-Linux.AppImage --disable-gpu-sandbox
+```
+<br /><br />
 
 ## GLOW - install
 https://github.com/charmbracelet/glow
@@ -624,10 +661,10 @@ cd ~/ && sudo apt install build-essential git cmake cmake-data pkg-config python
 
 Download last release: https://github.com/polybar/polybar/releases
 ```sh
-cd ~/Downloads && tar xvzf polybar-<version>.tar
+cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar
 ```
 ```sh
-mv polybar-<version> ~/Polybar-<version> && cd ~/Polybar-<version> && mkdir build && cd build
+mv polybar-<version> ~/Flo/Apps/Polybar-<version> && cd ~/Flo/Apps/Polybar-<version> && mkdir build && cd build
 ```
 ```sh
 cmake ..
@@ -742,10 +779,7 @@ stow -t ~/.config -D i3
 If you need more info: `stow --help`
 <br /><br />
 
-Creation and configuration of my Dotfiles folder.
-```sh
-cd ~ && mkdir ~/Flo ~/Flo/Dotfiles ~/Flo/Dev
-```
+Configuration of my Dotfiles folder.
 ```sh
 cd ~/Flo/Dotfiles && mkdir i3 && mv ~/.config/i3/config ~/Flo/Dotfiles/i3 && stow -t ~/.config/i3 i3
 ```
@@ -793,6 +827,8 @@ echo 'eval "$(starship init zsh)"' >> .zshrc
 <br />
 
 Create `starship.toml`<br />
+*Nota Bene: there are 2 files, one for classic Ubuntu, one for Ubuntu VM version.*
+
 Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
 ```sh
 cd ~/.config && nvim starship.toml

@@ -6,8 +6,6 @@ In this way, I can easily manage it with git / github to install it in a new com
 
 Moreover, I don't really like how Linux organize all dotfiles and apps installation. If you look into your `$HOME` folder, some of them are in `~/.config` directory, others in their own folder, and others like `.vimrc` in the `$HOME` directly.<br><br>
 
-When I open my terminal, I just want a clean space with folders like `Downloads`, `Dotfiles`, `Wallpapers`, `Dev` and so on !<br><br>
-
 I use **Ubuntu 22.04 LTS** as an operating system.<br>
 I use **i3** as a window manager.<br>
 I use **TMUX** as a terminal multiplexer.<br>
@@ -122,7 +120,8 @@ pip3 install pynvim
 <br /><br />
 
 ## NEOVIM - basic config
-Advanced config later.<br /><br />
+*Nota Bene: Advanced config later.*
+
 Change ```{your-name}``` by your name. In my case ```FloSlv```.<br /><br />
 
 1. Create folders and files
@@ -554,7 +553,31 @@ echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ 
 ```sh
 sudo apt update && sudo apt install insomnia
 ```
-<br /><br />
+<br />
+
+You can install plugins in Insomnia: tokyonight theme, gist integration and os infos.
+<br /><br /><br />
+
+## DISCORD - install
+https://discord.com/<br />
+Download tar.gz archive into `Downloads` folder.
+```sh
+cd ~/Flo/Downloads && sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
+```
+```sh
+cd ~ && sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+```
+```sh
+cd ~ && sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
+```
+```sh
+cd /usr/share/applications && sudo nvim discord.desktop
+```
+```sh
+Exec=/usr/bin/Discord
+Icon=/opt/Discord/discord.png
+```
+<br /><br /><br />
 
 ## GLOW - install
 https://github.com/charmbracelet/glow

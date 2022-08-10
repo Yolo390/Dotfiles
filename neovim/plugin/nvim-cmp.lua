@@ -2,6 +2,8 @@ local cmp = require'cmp'
 local lspkind = require'lspkind'
 local luasnip = require 'luasnip'
 
+require'luasnip.loaders.from_vscode'.lazy_load()
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -22,14 +24,14 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "s" }),
+		end, { 'i', 's' }),
 		["<C-k"] = cmp.mapping(function(fallback)
 			if luasnip.jumpable(-1) then
 				luasnip.jump(-1)
 			else
 				fallback()
 			end
-		end, { "i", "s" })
+		end, { 'i', 's' })
 	}),
 	window = {
 		completion = cmp.config.window.bordered(),

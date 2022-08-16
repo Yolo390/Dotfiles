@@ -168,9 +168,12 @@ function Dotfiles ()
 end
 
 function Help ()
-	builtin.help_tags {
-		prompt_title = '❓ Help'
-	}
+	builtin.help_tags(
+		themes.get_dropdown({
+			prompt_title = '❓ Help',
+			previewer = false
+		})
+	)
 end
 
 function Keymaps ()

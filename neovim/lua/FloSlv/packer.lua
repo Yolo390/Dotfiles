@@ -1,13 +1,13 @@
-local vim = vim
+-- local vim = vim
 
 -- PackerSync every time we save packer.lua
 -- Using vimscript bc Lua script above doesn't work when opening w/ Telescope. 
-vim.cmd [[
-	augroup packer_reload
-		autocmd!
-		autocmd BufWritePost packer.lua source <afile> | PackerSync
-	augroup end
-]]
+-- vim.cmd [[
+-- 	augroup packer_reload
+-- 		autocmd!
+-- 		autocmd BufWritePost packer.lua source <afile> | PackerSync
+-- 	augroup end
+-- ]]
 
 -- Plugins
 return require'packer'.startup({
@@ -17,7 +17,7 @@ return require'packer'.startup({
 
 		-- Colorscheme
 		use 'folke/tokyonight.nvim'
-		use { "catppuccin/nvim", as = "catppuccin" }
+		-- use { "catppuccin/nvim", as = "catppuccin" }
 
 		-- Display
 		use 'nvim-lualine/lualine.nvim'
@@ -87,6 +87,9 @@ return require'packer'.startup({
 		use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 		use 'L3MON4D3/LuaSnip' -- Snippets plugin
 		use 'rafamadriz/friendly-snippets'
+
+		-- Prettier
+		use 'prettier/vim-prettier'
 
 		-- Databases
 		use 'tpope/vim-dadbod'

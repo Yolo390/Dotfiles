@@ -56,6 +56,16 @@ end
 -- Set '|' for each tab indentation
 vim.cmd [[ set list lcs=tab:\|\ ]]
 
+-- Set 2 spaces as tab for JavaScript files - only for Monopoly project
+vim.api.nvim_create_autocmd('FileType', {
+	pattern = 'javascript',
+	callback = function ()
+		vim.opt_local.shiftwidth = 2
+		vim.opt_local.tabstop = 2
+		vim.opt_local.softtabstop = 2
+	end
+})
+
 -- Set winbar only for some filetypes.
 vim.api.nvim_set_hl(0, 'WinSeparator', { guibg = None })
 

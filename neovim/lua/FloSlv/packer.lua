@@ -88,9 +88,6 @@ return require'packer'.startup({
 		use 'L3MON4D3/LuaSnip' -- Snippets plugin
 		use 'rafamadriz/friendly-snippets'
 
-		-- Prettier
-		use 'prettier/vim-prettier'
-
 		-- Databases
 		use 'tpope/vim-dadbod'
 		use 'kristijanhusak/vim-dadbod-ui'

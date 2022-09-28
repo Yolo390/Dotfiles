@@ -165,6 +165,7 @@ tmux has-session -t Flo || \
 	resize-pane -t 3 -y 20 \; \
 	new-window -c ~/ -n Neovim \; \
 	new-window -c ~/ -n Btop btop \; \
+	new-window -c ~/ -n VPN \; \
 	select-window -t 1 \; \
 	select-pane -t 1 \; \
 	resize-pane -t 1 -x 85 \; \

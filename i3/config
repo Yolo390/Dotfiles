@@ -93,8 +93,8 @@ set $ws5 "5: Files"
 set $ws6 "6: Discord"
 set $ws7 "7: Filezilla"
 set $ws8 "8: Tor"
-set $ws9 "9"
-set $ws10 "10"
+set $ws9 "9: Chrome"
+set $ws10 "10: Opera"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -200,3 +200,9 @@ for_window [class="Filezilla"] focus
 
 assign [class="Tor Browser"] $ws8
 for_window [class="Tor Browser"] focus
+
+assign [class="Google-chrome"] $ws9
+for_window [class="Google-chrome"] focus
+
+assign [class="Opera"] $ws10
+for_window [class="Opera"] focus

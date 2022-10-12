@@ -107,6 +107,11 @@ alias settings="env XDG_CURRENT_DESKTOP=GNOME gnome-control-center"
 alias ui="gitui"
 
 
+# NordVPN
+alias ndusa="nordvpn connect us8432"
+alias ndde="nordvpn connect de824"
+
+
 # Set VIM as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"

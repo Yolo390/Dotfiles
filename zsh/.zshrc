@@ -156,6 +156,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+# Created by `pipx` on 06-10-2022 21:26:03
+export PATH="$PATH:/home/floslv/.local/bin"
+
+
 # Every time I open a new terminal.
 tmux has-session -t Flo || \
 	tmux -f ~/.tmux.conf new -s Flo -n Terminal \; \

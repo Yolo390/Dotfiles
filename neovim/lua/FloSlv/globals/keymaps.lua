@@ -122,8 +122,8 @@ local themes = require'telescope.themes'
 
 function CurrentDir ()
 	builtin.find_files {
-		prompt_title = '🌞 ' .. vim.fn.substitute(vim.fn.getcwd(), '/home/flo', '~', ''),
-		cwd = vim.fn.substitute(vim.fn.getcwd(), '/home/flo', '~', ''),
+		prompt_title = '🌞 ' .. vim.fn.substitute(vim.fn.getcwd(), '/home/floslv', '~', ''),
+		cwd = vim.fn.substitute(vim.fn.getcwd(), '/home/floslv', '~', ''),
 		hidden = true
 	}
 end

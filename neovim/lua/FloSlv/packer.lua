@@ -131,7 +131,7 @@ return require'packer'.startup({
 		-- Others
 		use 'windwp/nvim-autopairs'
 		use 'norcalli/nvim-colorizer.lua'
-		use 'ggandor/leap.nvim'
+		-- use 'ggandor/leap.nvim'
 	end,
 	config = {
 		display = {

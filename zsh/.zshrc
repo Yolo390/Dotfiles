@@ -69,6 +69,7 @@ alias gpo='git pull origin'
 
 # fdfind alias
 alias fd="fdfind"
+alias sd='cd $(fdfind --type d | fzf)'
 
 
 # Rust aliases

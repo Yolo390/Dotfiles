@@ -43,7 +43,7 @@ local options = {
 	smartcase = true,
 	-- COMPLETION
 	wildignore = '*.o,*.r,*.so,*.sl',
-	completeopt = { 'menu', 'menuone', 'noselect' },
+	completeopt = { 'menu', 'menuone', 'noselect' }, -- need it for nvim_cmp
 	-- REMOVE BEEP
 	visualbell = true,
 	errorbells = false

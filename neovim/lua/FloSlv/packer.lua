@@ -1,14 +1,3 @@
--- local vim = vim
-
--- PackerSync every time we save packer.lua
--- Using vimscript bc Lua script above doesn't work when opening w/ Telescope. 
--- vim.cmd [[
--- 	augroup packer_reload
--- 		autocmd!
--- 		autocmd BufWritePost packer.lua source <afile> | PackerSync
--- 	augroup end
--- ]]
-
 -- Plugins
 return require'packer'.startup({
 	function(use)

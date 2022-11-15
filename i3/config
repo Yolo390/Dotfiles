@@ -88,10 +88,10 @@ bindsym $mod+a focus parent
 set $ws1 "1: Terminal"
 set $ws2 "2: Firefox"
 set $ws3 "3: Insomnia"
-set $ws4 "4: Notion"
+set $ws4 "4: Compass"
 set $ws5 "5: Files"
 set $ws6 "6: Telegram"
-set $ws7 "7: Filezilla"
+set $ws7 "7: Notion"
 set $ws8 "8: Tor"
 set $ws9 "9: Chrome"
 set $ws10 "10: Opera"
@@ -171,10 +171,11 @@ exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
 # At startup, launch apps.
 exec --no-startup-id kitty
-exec --no-startup-id firefox
+# exec --no-startup-id firefox
 # exec --no-startup-id notion-app-enhanced
 exec --no-startup-id nautilus
 exec --no-startup-id insomnia
+# exec --no-startup-id mongodb compass
 exec --no-startup-id telegram-desktop
 
 # When opening one of the following app, go directly to the workspace.
@@ -187,8 +188,8 @@ for_window [class="firefox"] focus
 assign [class="Insomnia"] $ws3
 for_window [class="Insomnia"] focus
 
-# assign [class="notion-app-enhanced"] $ws4
-# for_window [class="notion-app-enhanced"] focus
+assign [class="MongoDB Compass"] $ws4
+for_window [class="MongoDB Compass"] focus
 
 assign [class="Org.gnome.Nautilus"] $ws5
 for_window [class="Org.gnome.Nautilus"] focus
@@ -196,8 +197,8 @@ for_window [class="Org.gnome.Nautilus"] focus
 assign [class="TelegramDesktop"] $ws6
 for_window [class="TelegramDesktop"] focus
 
-assign [class="Filezilla"] $ws7
-for_window [class="Filezilla"] focus
+assign [class="notion-app-enhanced"] $ws7
+for_window [class="notion-app-enhanced"] focus
 
 assign [class="Tor Browser"] $ws8
 for_window [class="Tor Browser"] focus

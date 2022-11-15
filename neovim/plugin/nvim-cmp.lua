@@ -17,7 +17,8 @@ local languages = {
 	'jsonc',
 	'conf',
 	'rust',
-	'toml'
+	'toml',
+	'prisma'
 }
 
 for _, language in ipairs(languages) do
@@ -90,7 +91,8 @@ local servers = {
 	'jsonls',
 	'rust_analyzer',
 	'taplo',
-	'vimls'
+	'vimls',
+	'prismals'
 }
 
 for _, server in ipairs(servers) do

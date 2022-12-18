@@ -348,6 +348,16 @@ Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys
 ```sh
 cd ~/.oh-my-zsh/custom/themes && nvim ys-flo.zsh-theme
 ```
+
+or
+
+```sh
+cd ~ && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
+```
+
+```sh
+cd ~/.oh-my-zsh/custom/themes && cp ~/ys-flo.zsh-theme .
+```
 <br />
 
 Install plugin `zsh-autosuggestions`<br />

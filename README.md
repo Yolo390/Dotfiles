@@ -379,6 +379,12 @@ Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
 ```sh
 cd ~ && rm .zshrc && nvim .zshrc
 ```
+
+or
+
+```sh
+cd ~ && rm .zshrc && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
+```
 Close terminal and re open it.<br />
 
 PS: do not copy/paste if you don't understand. You need to adapt with your own aliases, tmux panes sizes etc...

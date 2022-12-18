@@ -356,7 +356,7 @@ cd ~ && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/y
 ```
 
 ```sh
-cd ~/.oh-my-zsh/custom/themes && cp ~/ys-flo.zsh-theme .
+cd ~/.oh-my-zsh/custom/themes && mv ~/ys-flo.zsh-theme .
 ```
 <br />
 

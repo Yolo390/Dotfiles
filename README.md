@@ -852,6 +852,15 @@ cd ~/.config && nvim starship.toml
 ```sh
 cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
 ```
+
+or
+
+```sh
+cd ~/.config && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
+```
+```sh
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
+```
 <br /><br />
 
 ### Special aliases for my laptop - in sudo mod

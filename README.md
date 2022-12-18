@@ -850,7 +850,7 @@ Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/sta
 cd ~/.config && nvim starship.toml
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship
 ```
 
 or
@@ -859,7 +859,7 @@ or
 cd ~/.config && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship
 ```
 <br /><br />
 

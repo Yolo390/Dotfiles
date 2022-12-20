@@ -383,20 +383,12 @@ cd btop && sudo make install
 
 ## ZSH - config
 Create `ys-flo.zsh-theme`<br />
-Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
-```sh
-cd ~/.oh-my-zsh/custom/themes && nvim ys-flo.zsh-theme
-```
-
-or
+Download this file as 'ys-flo.zsh-theme': https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 
 ```sh
-cd ~ && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
+cd ~/.oh-my-zsh/custom/themes && wget -O ys-flo.zsh-theme https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
 ```
 
-```sh
-cd ~/.oh-my-zsh/custom/themes && mv ~/ys-flo.zsh-theme .
-```
 <br />
 
 Install plugin `zsh-autosuggestions`<br />
@@ -413,13 +405,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 <br />
 
-Open `.zshrc`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
-```sh
-cd ~ && rm .zshrc && nvim .zshrc
-```
-
-or
+Create `.zshrc`<br />
+Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
 
 ```sh
 cd ~ && rm .zshrc && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
@@ -490,9 +477,9 @@ cd ~ && npm install -g git-cz
 <br />
 
 Create `changelog.config.js`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/git/changelog.config.js
+Download this file as 'changelog.config.js': https://github.com/Flo-Slv/Dotfiles/blob/main/git/changelog.config.js
 ```sh
-cd ~ && nvim changelog.config.js
+cd ~ && wget -O changelog.config.js https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js
 ```
 <br /><br />
 

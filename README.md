@@ -233,11 +233,11 @@ cd .. && wget -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/m
 ```
 <br />
 
-Open `init.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
+Create `init.lua`<br />
+Download this file as 'init.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
-cd ../.. && nvim init.lua
+cd ../.. && wget -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 ```
 <br />
 

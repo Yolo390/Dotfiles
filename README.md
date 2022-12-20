@@ -671,24 +671,22 @@ sudo apt update && sudo apt install glow
 ## I3WM - config
 1. ROFI - config
 ```sh
-cd ~/.config && mkdir rofi
+cd ~/.config && mkdir rofi && cd rofi
 ```
+
+<br />
+
+Create `config.rasi`<br />
+Download this file as 'config.rasi': https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/config.rasi
 ```sh
-cd rofi && touch config.rasi flo-theme.rasi
+wget -O config.rasi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi
 ```
 <br />
 
-Open `config.rasi`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/config.rasi
+Create `flo-theme.rasi`<br />
+Download this file as 'flo-theme.rasi': https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/flo-theme.rasi
 ```sh
-nvim config.rasi
-```
-<br />
-
-Open `flo-theme.rasi`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/flo-theme.rasi
-```sh
-nvim flo-theme.rasi
+wget -O flo-theme.rasi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi
 ```
 <br /><br />
 
@@ -697,13 +695,13 @@ nvim flo-theme.rasi
 https://github.com/polybar/polybar/wiki/Compiling<br />
 Install Polybar from sources and dependencies
 ```sh
-cd ~/ && sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+cd ~/ && sudo apt install -y build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
 ```
 <br />
 
 Download last release: https://github.com/polybar/polybar/releases
 ```sh
-cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar
+cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar.gz
 ```
 ```sh
 mv polybar-<version> ~/Flo/Apps/Polybar-<version> && cd ~/Flo/Apps/Polybar-<version> && mkdir build && cd build
@@ -721,34 +719,34 @@ sudo make install
 
 Create all necessaries folder and files.
 ```sh
-cd ~/.config && mkdir polybar && cd polybar && touch polybar.sh config.ini && chmod +x polybar.sh
+cd ~/.config && mkdir polybar && cd polybar
 ```
 <br />
 
-Open `polybar.sh`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/polybar.sh
+Create `polybar.sh` and make it executable.<br />
+Download this file as 'polybar.sh': https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/polybar.sh
 ```sh
-nvim polybar.sh
+wget -O polybar.sh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && chmod +x polybar.sh
 ```
 <br />
 
-Open `config.ini`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/config.ini
+Create `config.ini`<br />
+Download this file as 'config.ini': https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/config.ini
 ```sh
-nvim config.ini
+wget -O config.ini https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
 ```
 <br /><br />
 
 3. I3-WM - config
 ```sh
-cd ~/.config && mkdir i3 && cd i3 && touch config
+cd ~/.config && mkdir i3 && cd i3
 ```
 <br />
 
-Open `config`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/i3/config
+Create `config`<br />
+Download this file as 'config': https://github.com/Flo-Slv/Dotfiles/blob/main/i3/config
 ```sh
-nvim config
+wget -O config https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
 ```
 <br />
 

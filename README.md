@@ -23,7 +23,7 @@ Here is the process if you want the same environment !<br><br><br />
 
 # Development Environment
 
-:warning: *August 2022* :warning:<br />
+:warning: *December 2022* :warning:<br />
 ► only tested and approved on Ubuntu 22.04 LTS x86_64 + on Virtual Box VM - Ubuntu 22.04 LTS x86_64
 <br /><br />
 

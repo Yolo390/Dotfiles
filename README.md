@@ -131,7 +131,7 @@ cd ~ && sudo apt install -y ninja-build gettext libtool libtool-bin autoconf aut
 
 2. Clone Neovim repository
 ```sh
-cd ~/Flo/Apps && git clone https://github.com/neovim/neovim Neovim
+cd ~/Flo/Apps && git clone https://github.com/neovim/neovim/tree/release-0.8 Neovim
 ```
 <br />
 

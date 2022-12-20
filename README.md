@@ -864,17 +864,17 @@ cd ~/ && curl -sS https://starship.rs/install.sh | sh
 ```
 <br />
 
-Create `starship-vm.toml` or `starship.toml`<br />
-*Nota Bene: there are 2 files, one for classic Ubuntu, one for Ubuntu VM version.*
-
-Download this file as 'starship-vm.toml' or 'starship.toml': https://github.com/Flo-Slv/Dotfiles/blob/main/starship
+Create `starship.toml`<br />
+Download this file as 'starship.toml': https://github.com/Flo-Slv/Dotfiles/blob/main/starship
 
 ```sh
-cd ~/.config && wget -O starship-vm.toml https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship-vm.toml
+cd ~/.config && wget -O starship.toml https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship-vm.toml starship && stow -t ~/.config starship
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship
 ```
+
+Close terminal and re open it.
 <br /><br />
 
 ### Special aliases for my laptop - in sudo mod

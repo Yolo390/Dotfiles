@@ -265,10 +265,10 @@ cd ../../plugin && wget -O colorscheme.lua https://raw.githubusercontent.com/Flo
 ## TMUX - install from sources
 1. Remove existing Tmux package
 ```sh
-cd ~ && sudo apt update && sudo apt upgrade
+cd ~ && sudo apt update && sudo apt upgrade -y
 ```
 ```sh
-sudo apt remove tmux && sudo apt autoremove
+sudo apt remove tmux && sudo apt autoremove -y
 ```
 ```sh
 rm -rf .tmux

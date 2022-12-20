@@ -182,11 +182,11 @@ cd globals && touch options.lua keymaps.lua utils.lua autosave.lua autorun.lua
 
 2. Add basic config<br />
 
-Open `options.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/options.lua
+Create `options.lua`<br />
+Dowload this file as 'options.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/options.lua
 
 ```sh
-nvim options.lua
+wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/options.lua
 ```
 <br />
 

@@ -170,13 +170,7 @@ Change ```{your-name}``` by your name. In my case ```FloSlv```.<br /><br />
 cd ~/.config && mkdir nvim nvim/lua nvim/plugin nvim/lua/{your-name} nvim/lua/{your-name}/undodir nvim/lua/{your-name}/globals
 ```
 ```sh
-cd nvim && touch init.lua
-```
-```sh
-cd lua/{your-name} && touch packer.lua
-```
-```sh
-cd globals
+cd ~/.config/nvim/lua/FloSlv/globals
 ```
 <br />
 

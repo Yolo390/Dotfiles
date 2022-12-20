@@ -377,7 +377,7 @@ cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/F
 cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz
 ```
 ```sh
-sudo make install
+cd btop && sudo make install
 ```
 <br /><br />
 

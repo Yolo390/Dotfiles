@@ -840,7 +840,7 @@ cd ~/Flo/Dotfiles && mkdir gitui && mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/
 mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gitui gitui
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir neovim && mv ~/.config/nvim/* ~/Flo/Dotfiles/neovim && stow -t ~/.config/nvim neovim
+cd ~/Flo/Dotfiles && rm -rf neovim && mkdir neovim && mv ~/.config/nvim/* ~/Flo/Dotfiles/neovim && stow -t ~/.config/nvim neovim
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir oh-my-zsh && mv ~/.oh-my-zsh oh-my-zsh && stow -t ~/ oh-my-zsh

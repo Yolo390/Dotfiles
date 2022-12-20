@@ -735,6 +735,13 @@ Download this file as 'config.ini': https://github.com/Flo-Slv/Dotfiles/blob/mai
 ```sh
 wget -O config.ini https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
 ```
+
+<br />
+
+Install font-awesome
+```sh
+cd ~ && sudo apt install fonts-font-awesome
+```
 <br /><br />
 
 3. I3-WM - config

@@ -530,9 +530,9 @@ cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 <br />
 
 Create `kitty.conf`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
+Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
 ```sh
-cd ~/.config/kitty && nvim kitty.conf
+cd ~/.config/kitty && wget -O kitty.conf https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf
 ```
 <br />
 
@@ -580,7 +580,7 @@ kitty +list-fonts
 Optional: to have Hack Nerd Font available in Polybar.
 ```sh
 sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
-sudo cp ~/.local/share/fonts/Hack\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
+sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
 ```
 <br /><br />
 

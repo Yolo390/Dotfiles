@@ -864,24 +864,16 @@ cd ~/ && curl -sS https://starship.rs/install.sh | sh
 ```
 <br />
 
-Create `starship.toml`<br />
+Create `starship-vm.toml` or `starship.toml`<br />
 *Nota Bene: there are 2 files, one for classic Ubuntu, one for Ubuntu VM version.*
 
-Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
-```sh
-cd ~/.config && nvim starship.toml
-```
-```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship
-```
-
-or
+Download this file as 'starship-vm.toml' or 'starship.toml': https://github.com/Flo-Slv/Dotfiles/blob/main/starship
 
 ```sh
-cd ~/.config && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
+cd ~/.config && wget -O starship-vm.toml https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship-vm.toml
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship-vm.toml starship && stow -t ~/.config starship
 ```
 <br /><br />
 

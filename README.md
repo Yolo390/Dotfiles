@@ -753,6 +753,7 @@ wget -O config https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
 Close Kitty.<br />
 Close all others windows.<br />
 Logout.<br />
+Restart.<br />
 Choose i3 as windows manager.<br />
 Login.
 <br /><br /><br />

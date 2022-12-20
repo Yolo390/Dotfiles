@@ -125,7 +125,7 @@ https://github.com/neovim/neovim/wiki/Building-Neovim
 
 1. Install dependencies
 ```sh
-sudo apt install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config doxygen
+cd ~ && sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config doxygen
 ```
 <br />
 

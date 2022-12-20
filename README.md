@@ -862,9 +862,6 @@ https://github.com/starship/starship
 ```sh
 cd ~/ && curl -sS https://starship.rs/install.sh | sh
 ```
-```sh
-echo 'eval "$(starship init zsh)"' >> .zshrc
-```
 <br />
 
 Create `starship.toml`<br />

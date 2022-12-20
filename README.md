@@ -176,7 +176,7 @@ cd nvim && touch init.lua
 cd lua/{your-name} && touch packer.lua
 ```
 ```sh
-cd globals && touch options.lua keymaps.lua utils.lua autosave.lua autorun.lua
+cd globals
 ```
 <br />
 
@@ -190,43 +190,46 @@ wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neov
 ```
 <br />
 
-Open `keymaps.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/keymaps.lua
+Create `keymaps.lua`<br />
+Download this file as 'keymaps.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/keymaps.lua
 
 ```sh
-nvim keymaps.lua
+wget -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/keymaps.lua
 ```
 <br />
 
-Open `utils.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/utils.lua
+NB: You don't need this next three files: 'utils.lua', 'autosave.lua' and 'autorun.lua'.
+They are related to my personal projects and they are not stable and relevent for you.
+
+Create `utils.lua`<br />
+Download this file as 'utils.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/utils.lua
 
 ```sh
-nvim utils.lua
+wget -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/utils.lua
 ```
 <br />
 
-Open `autosave.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autosave.lua
+Create `autosave.lua`<br />
+Download this file as 'autosave.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autosave.lua
 
 ```sh
-nvim autosave.lua
+wget -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua
 ```
 <br />
 
-Open `autorun.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autorun.lua
+Create `autorun.lua`<br />
+Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autorun.lua
 
 ```sh
-nvim autorun.lua
+wget -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
 <br />
 
-Open `packer.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua
+Create `packer.lua`<br />
+Download this file as 'packer.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua
 
 ```sh
-cd .. && nvim packer.lua
+cd .. && wget -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
 ```
 <br />
 

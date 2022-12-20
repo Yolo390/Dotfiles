@@ -61,6 +61,34 @@ The complete installation take around ~60 min depending power of the computer an
 ---
 <br />
 
+## If you install Ubuntu with VirtualBox
+
+Here is few more steps if you start a fresh Ubuntu install with VirtualBox.
+
+Log in as root user.
+```sh
+su
+```
+
+Add your user to 'sudo' group. In my case, my user is called 'flo'.
+```sh
+sudo usermod -a -G sudo flo
+```
+
+If you still have an issue like 'you user is not in the sudoers file...', you need to add manually your user.
+
+```sh
+sudo visudo
+```
+
+```sh
+flo ALL=(ALL:ALL) ALL
+```
+
+Close your terminal and re open-it.
+
+<br /><br />
+
 ## Install dependencies
 ```sh
 sudo apt install git zsh zsh-syntax-highlighting curl i3 rofi compton \

@@ -504,21 +504,21 @@ cargo install gitui
 
 3. Configure GitUI
 ```sh
-cd ~/.config && mkdir gitui && cd gitui && touch theme.ron key_bindings.ron
+cd ~/.config && mkdir gitui && cd gitui
 ```
 <br />
 
-Open `theme.ron`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/theme.ron
+Create `theme.ron`<br />
+Download this file as 'theme.ron': https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/theme.ron
 ```sh
-nvim theme.ron
+wget -O theme.ron https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron
 ```
 <br />
 
 Open `key_bindings.ron`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/key_bindings.ron
+Download this file as 'key_bindings.ron': https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/key_bindings.ron
 ```sh
-nvim key_bindings.ron
+wget -O key_bindings.ron https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron
 ```
 <br /><br />
 

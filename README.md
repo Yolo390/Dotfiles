@@ -243,20 +243,22 @@ cd ../.. && wget -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/
 
 Go back open `packer.lua`<br />
 You will have an error about some modules not found. It's normal. Just push Enter.<br />
-Launch vim command: PackerSync
 ```sh
 cd lua/{your-name} && nvim packer.lua
 ```
+
+Launch vim command :so and :PackerSync
+
 If some modules are not Sync correctly, save/close, re open and re do :PackerSync
 <br /><br />
 
 Change Neovim colorscheme.<br />
 Go to plugin folder.<br />
 Create `colorscheme.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/plugin/colorscheme.lua
+Download this file as 'colorscheme.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/plugin/colorscheme.lua
 
 ```sh
-cd ../../plugin && nvim colorscheme.lua
+cd ../../plugin && wget -O colorscheme.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/colorscheme.lua
 ```
 <br /><br />
 

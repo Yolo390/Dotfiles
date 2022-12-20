@@ -91,7 +91,9 @@ Close your terminal and re open-it.
 
 ## Install dependencies
 ```sh
-sudo apt install git zsh zsh-syntax-highlighting curl i3 rofi compton \
+sudo apt update && \
+sudo apt upgrade -y && \
+sudo apt install -y git zsh zsh-syntax-highlighting curl i3 rofi compton \
 tree ripgrep fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
 libssl-dev wget
@@ -111,6 +113,10 @@ Open terminal.
 ## Create folder structure
 ```sh
 cd ~ && mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles
+```
+
+```sh
+cd ~ && rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
 ```
 <br /><br />
 

@@ -277,7 +277,7 @@ rm -rf .tmux
 
 2. Install prerequisite libraries
 ```sh
-sudo apt install libevent-dev ncurses-dev build-essential bison
+sudo apt install -y libevent-dev ncurses-dev build-essential bison
 ```
 <br />
 

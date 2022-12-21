@@ -1,13 +1,13 @@
 require("colorful-winsep").setup({
 	highlight = {
-		bg = "#16161E",
-		fg = "#1F3442"
+		-- bg = '#eb6f92',
+		fg = '#eb6f92'
 	},
 	-- timer refresh rate
-	interval = 30,
+	interval = 10,
 	-- This plugin will not be activated for filetype in the following table.
-	no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
-	symbols = { "━", "┃", "┏", "┓", "┗", "┛" },
+	no_exec_files = { 'packer', 'TelescopePrompt', 'mason', 'NvimTree' },
+	symbols = { "━", '┃', '┏', '┓', '┗', '┛' },
 	close_event = function()
 		-- Executed after closing the window separator
 	end,

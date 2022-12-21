@@ -10,6 +10,9 @@ require'mason'.setup({
 })
 require'mason-lspconfig'.setup()
 
+-- To display loader.
+require'fidget'.setup{}
+
 require'lspconfig'.tsserver.setup {}
 require'lspconfig'.graphql.setup {}
 require'lspconfig'.cssls.setup {}

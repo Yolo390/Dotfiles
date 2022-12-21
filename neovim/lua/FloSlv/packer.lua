@@ -67,10 +67,11 @@ return require'packer'.startup({
 
 		-- LSP
 		use {
-			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig"
+			'williamboman/mason.nvim',
+			'williamboman/mason-lspconfig.nvim',
+			'neovim/nvim-lspconfig'
 		}
+		use 'j-hui/fidget.nvim'
 		use 'RRethy/vim-illuminate'
 
 		-- Nvim-cmp

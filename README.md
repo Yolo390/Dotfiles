@@ -882,17 +882,19 @@ cd ~/Flo/Dotfiles/neovim/plugin
 ```
 
 ```sh
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/colorful-winsep.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/comment.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/dashboard.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/gitsigns.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/glow.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/indent-blankline.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/leap.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lsp.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lualine.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/luasnip.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-autopairs.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-cmp.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-colorizer.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lsp.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-notify.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-tree.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-treesitter.lua && \
@@ -902,7 +904,8 @@ wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/teles
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-dadbod-ui.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-illuminate.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vimade.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/wilder.lua
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/wilder.lua &&\
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/winbar.lua
 ```
 <br /><br />
 

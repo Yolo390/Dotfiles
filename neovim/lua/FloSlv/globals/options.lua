@@ -53,44 +53,5 @@ for key, value in pairs(options) do
 	vim.opt[key] = value
 end
 
--- Set winbar only for some filetypes.
-vim.api.nvim_set_hl(0, 'WinSeparator', { guibg = None })
-
-vim.api.nvim_create_autocmd({ 'FileType', 'BufWinEnter', 'BufFilePost' }, {
-	callback = function()
-		local winbar_filetype_exclude = {
-			'help',
-			'dashboard',
-			'NvimTree',
-			'harpoon',
-			'undotree',
-			'fugitive',
-			'dbui',
-			'packer',
-			'glowpreview',
-			'lsp-installer'
-		}
-
-		local excludes = function()
-			if vim.tbl_contains(winbar_filetype_exclude, vim.bo.filetype) then
-				vim.opt_local.winbar = nil
-				return true
-			end
-
-			return false
-		end
-
-		if excludes() then return end
-
-		local value = '%=%m' .. vim.fn.expand('%:~:.')
-
-		local status_ok, _ = pcall(
-			vim.api.nvim_set_option_value,
-			'winbar',
-			value,
-			{ scope = 'local' }
-		)
-
-		if not status_ok then return end
-	end
-})
+-- Window separator.
+-- vim.api.nvim_set_hl(0, 'WinSeparator', { guibg = None })

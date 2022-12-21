@@ -16,8 +16,6 @@ return require'packer'.startup({
 		use 'folke/tokyonight.nvim'
 		-- use { 'catppuccin/nvim', as = 'catppuccin' }
 
-		-- Lualine => status bar
-		use 'nvim-lualine/lualine.nvim'
 
 		-- Display
 		use 'glepnir/dashboard-nvim'
@@ -29,10 +27,15 @@ return require'packer'.startup({
 		}
 		use 'TaDaa/vimade'
 
+		-- Lualine => status bar (bottom)
+		use 'nvim-lualine/lualine.nvim'
+
+		-- Windows bar => top
 		use 'fgheng/winbar.nvim'
 		use 'nvim-zh/colorful-winsep.nvim'
 
 
+		-- Wilder => wildmenu
 		use 'gelguy/wilder.nvim'
 
 		-- Telescope => fuzzy finder
@@ -42,7 +45,7 @@ return require'packer'.startup({
 			requires = { 'nvim-lua/plenary.nvim' }
 		}
 
-		-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+		-- Telescope => Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 		use {
 			'nvim-telescope/telescope-fzf-native.nvim',
 			run = 'make',
@@ -50,6 +53,7 @@ return require'packer'.startup({
 			cond = vim.fn.executable 'make' == 1
 		}
 
+		-- Telescope => more Telescope plugins integration.
 		use 'benfowler/telescope-luasnip.nvim'
 		use 'jvgrootveld/telescope-zoxide'
 		use 'cljoly/telescope-repo.nvim'

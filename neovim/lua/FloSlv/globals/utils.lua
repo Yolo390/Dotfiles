@@ -1,3 +1,10 @@
+-- Thnaks TjDevries for all this stuff !
+local ok, plenary_reload = pcall(require, 'plenary.reload')
+local reloader = require
+if ok then
+	reloader = plenary_reload.reload_module
+end
+
 -- Print tables
 P = function (string)
 	print(vim.inspect(string))
@@ -19,7 +26,7 @@ end
 
 -- To reload a module
 RELOAD = function (...)
-	return require'plenary.reload'.reload_module(...)
+	return reloader(...)
 end
 
 R = function (name)

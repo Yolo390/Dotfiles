@@ -31,6 +31,7 @@ local options = {
 	clipboard = 'unnamedplus',
 	laststatus = 2, -- set to 3 for an unique lualine bar.
 	termguicolors = true,
+	updatetime = 1000,
 	-- SAVING
 	backup = false,
 	writebackup = false,
@@ -41,9 +42,10 @@ local options = {
 	-- SEARCH
 	ignorecase = true,
 	smartcase = true,
+	hlsearch = false,
 	-- COMPLETION
 	wildignore = '*.o,*.r,*.so,*.sl',
-	completeopt = { 'menu', 'menuone', 'noselect' }, -- need it for nvim_cmp
+	completeopt = { 'menu', 'menuone', 'noselect' }, -- need it for nvim-cmp
 	-- REMOVE BEEP
 	visualbell = true,
 	errorbells = false

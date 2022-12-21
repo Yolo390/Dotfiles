@@ -1,11 +1,11 @@
+
 require'telescope'.setup {
 	defaults = {
 		prompt_prefix = '🔍 ',
 		hidden = true,
 		mappings = {
-			n = {
-				['<C-d>'] = require'telescope.actions'.delete_buffer
-			}
+			-- Delete a buffer with ctrl+d when opening buffers list ('fb' command)
+			n = { ['<C-d>'] = require'telescope.actions'.delete_buffer }
 		}
 	},
 	extensions = {
@@ -20,15 +20,15 @@ require'telescope'.setup {
 	}
 }
 
-require'telescope'.load_extension'fzf'
-require'telescope'.load_extension'luasnip'
-require'telescope'.load_extension'notify'
-require'telescope'.load_extension'zoxide'
-require'telescope'.load_extension'repo'
-require'telescope'.load_extension'packer'
-require'telescope'.load_extension'bookmarks'
-require'telescope'.load_extension'neoclip'
-require('neoclip').setup()
+pcall(require'telescope'.load_extension, 'fzf')
+pcall(require'telescope'.load_extension, 'luasnip')
+pcall(require'telescope'.load_extension, 'notify')
+pcall(require'telescope'.load_extension, 'zoxide')
+pcall(require'telescope'.load_extension, 'repo')
+pcall(require'telescope'.load_extension, 'packer')
+pcall(require'telescope'.load_extension, 'bookmarks')
+pcall(require'telescope'.load_extension, 'neoclip')
+require'neoclip'.setup()
 
 -- UI
 vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg='#CCCCCC' })

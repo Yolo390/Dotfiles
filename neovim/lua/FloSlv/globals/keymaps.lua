@@ -98,6 +98,9 @@ key('n', '<C-Right>', ':vertical resize +2<CR>', full_options)
 -- # TELESCOPE #
 -- #############
 
+local builtin = require'telescope.builtin'
+local themes = require'telescope.themes'
+
 key('n', '<leader>ff', ':lua CurrentDir()<CR>', full_options)
 key('n', '<leader>flo', ':lua Flo()<CR>', full_options)
 key('n', '<leader>dev', ':lua Dev()<CR>', full_options)
@@ -116,9 +119,6 @@ key('n', '<leader>fgc', ':Telescope git_commits<CR>', full_options)
 key('n', '<leader>fs', ':Telescope live_grep<CR>', full_options)
 key('n', '<leader>fr', ':Telescope lsp_references<CR>', full_options)
 key('n', '<leader>neo', ':Telescope neoclip<CR>', full_options)
-
-local builtin = require'telescope.builtin'
-local themes = require'telescope.themes'
 
 function CurrentDir ()
 	builtin.find_files {
@@ -210,14 +210,14 @@ function Symbols ()
 end
 
 function Plugins ()
-	require('telescope').extensions.packer.packer {
+	require'telescope'.extensions.packer.packer {
 		prompt_title = '  Plugins',
 		previewer = false
 	}
 end
 
 function Bookmarks ()
-	require('telescope').extensions.bookmarks.bookmarks(
+	require'telescope'.extensions.bookmarks.bookmarks(
 		themes.get_ivy {
 			prompt_title = '  Firefox bookmarks '
 		}
@@ -225,9 +225,9 @@ function Bookmarks ()
 end
 
 
--- ##################
--- # NVIM-LSPCONFIG #
--- ##################
+-- #######
+-- # LSP #
+-- #######
 
 key('n', '<leader>df', ':lua vim.lsp.buf.definition()<CR>', full_options)
 key('n', 'K', ':lua vim.lsp.buf.hover()<CR>', full_options)

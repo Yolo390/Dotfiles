@@ -791,41 +791,6 @@ alias ss="ssh-add ~/.ssh/id_ed25519"
 
 <br /><br />
 
-## NEOVIM - advanced config
-Install Tree-Sitter
-```sh
-npm i -g tree-sitter-cli
-```
-
-Set-up all plugins
-```sh
-cd ~/Flo/Dotfiles/neovim/plugin
-```
-
-```sh
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/comment.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/dashboard.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/gitsigns.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/glow.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/leap.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lualine.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/luasnip.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-autopairs.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-cmp.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-colorizer.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-lspconfig.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-notify.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-tree.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-treesitter.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-web-devicons.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/rust-tools.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/telescope.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-dadbod-ui.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-illuminate.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vimade.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/wilder.lua
-```
-<br /><br />
 
 ## STOW
 https://linux.die.net/man/8/stow<br />
@@ -902,6 +867,43 @@ cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && st
 ```
 
 Close terminal and re open it.
+
+<br /><br />
+
+## NEOVIM - advanced config
+Install Tree-Sitter
+```sh
+npm i -g tree-sitter-cli
+```
+
+Set-up all plugins
+```sh
+cd ~/Flo/Dotfiles/neovim/plugin
+```
+
+```sh
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/comment.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/dashboard.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/gitsigns.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/glow.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/leap.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lualine.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/luasnip.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-autopairs.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-cmp.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-colorizer.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lsp.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-notify.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-tree.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-treesitter.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-web-devicons.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/rust-tools.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/telescope.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-dadbod-ui.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-illuminate.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vimade.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/wilder.lua
+```
 <br /><br />
 
 ### Special aliases for my laptop - in sudo mod

@@ -1,23 +1,25 @@
 -- Automatically source and re-sync packer whenever you save.
--- local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
--- vim.api.nvim_create_autocmd('BufWritePost', {
--- 	command = 'source <afile> | PackerSync',
--- 	group = packer_group,
--- 	pattern = vim.fn.expand '$MYVIMRC'
--- })
+local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+	command = 'source <afile> | PackerSync',
+	group = packer_group,
+	pattern = vim.fn.expand 'packer.lua'
+})
 
 -- Plugins
 return require'packer'.startup({
 	function(use)
-		-- Packer can manage itself
+		-- Packer manager
 		use 'wbthomason/packer.nvim'
 
 		-- Colorscheme
 		use 'folke/tokyonight.nvim'
-		-- use { "catppuccin/nvim", as = "catppuccin" }
+		-- use { 'catppuccin/nvim', as = 'catppuccin' }
+
+		-- Lualine => status bar
+		use 'nvim-lualine/lualine.nvim'
 
 		-- Display
-		use 'nvim-lualine/lualine.nvim'
 		use 'glepnir/dashboard-nvim'
 		use 'kyazdani42/nvim-web-devicons'
 		use {
@@ -28,14 +30,19 @@ return require'packer'.startup({
 		use 'TaDaa/vimade'
 		--use 'gelguy/wilder.nvim'
 
-		-- Telescope
+		-- Telescope => fuzzy finder
 		use {
-			'nvim-telescope/telescope.nvim', tag = '0.1.0',
-			requires = { { 'nvim-lua/plenary.nvim' } }
+			'nvim-telescope/telescope.nvim',
+			branch = '0.1.x', -- tag = '0.1.0',
+			requires = { 'nvim-lua/plenary.nvim' }
 		}
+
+		-- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 		use {
 			'nvim-telescope/telescope-fzf-native.nvim',
-			run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+			run = 'make',
+			-- run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+			cond = vim.fn.executable 'make' == 1
 		}
 
 		use 'benfowler/telescope-luasnip.nvim'
@@ -53,29 +60,37 @@ return require'packer'.startup({
 			}
 		}
 
-		-- Harpoon
+		-- Harpoon => navigation between files
 		use 'ThePrimeagen/harpoon'
 
-		-- Nvim-treesitter
+		-- Nvim-treesitter => highlighting and indenting code
 	    use {
 			'nvim-treesitter/nvim-treesitter',
-			run = function() require('nvim-treesitter.install').update({
-				with_sync = true
-			}) end
+			run = function()
+				pcall(require'nvim-treesitter.install'.update { with_sync = true })
+			end
 		}
 		use 'p00f/nvim-ts-rainbow'
 
-		-- LSP
+		-- Language Server Protocol => LSP
 		use {
-			'williamboman/mason.nvim',
-			'williamboman/mason-lspconfig.nvim',
-			'neovim/nvim-lspconfig'
-		}
-		use 'folke/neodev.nvim'
-		use 'j-hui/fidget.nvim'
-		use 'RRethy/vim-illuminate'
+			'neovim/nvim-lspconfig',
+			requires = {
+				-- Automatically install LSPs to stdpath for neovim
+				'williamboman/mason.nvim',
+				'williamboman/mason-lspconfig.nvim',
 
-		-- Nvim-cmp
+				-- Useful status updates for LSP
+				'j-hui/fidget.nvim',
+
+				-- Additional lua configuration, makes nvim stuff amazing
+				'folke/neodev.nvim',
+
+				'RRethy/vim-illuminate'
+			}
+		}
+
+		-- Nvim-cmp => autocompletion
 		use {
 			'hrsh7th/nvim-cmp',
 			requires = {
@@ -89,17 +104,6 @@ return require'packer'.startup({
 				'onsails/lspkind.nvim'
 			}
 		}
-
-		-- use 'hrsh7th/nvim-cmp'
-		-- use 'hrsh7th/cmp-buffer'
-		-- use 'hrsh7th/cmp-path'
-		-- use 'hrsh7th/cmp-cmdline'
-		-- use 'hrsh7th/cmp-nvim-lua'
-		-- use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-		-- use 'onsails/lspkind.nvim'
-		-- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-		-- use 'L3MON4D3/LuaSnip' -- Snippets plugin
-		-- use 'rafamadriz/friendly-snippets'
 
 		-- Databases
 		use 'tpope/vim-dadbod'
@@ -145,7 +149,6 @@ return require'packer'.startup({
 		use 'windwp/nvim-autopairs'
 		use 'norcalli/nvim-colorizer.lua'
 		use 'lukas-reineke/indent-blankline.nvim'
-		-- use 'ggandor/leap.nvim'
 	end,
 	config = {
 		display = {

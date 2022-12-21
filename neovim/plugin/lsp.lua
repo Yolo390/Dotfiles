@@ -1,3 +1,5 @@
+local vim = vim
+
 require'mason'.setup({
 	ui = {
 		border = 'rounded',

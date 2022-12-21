@@ -28,7 +28,9 @@ return require'packer'.startup({
 			tag = 'nightly'
 		}
 		use 'TaDaa/vimade'
-		--use 'gelguy/wilder.nvim'
+
+		use 'fgheng/winbar.nvim' -- needed to avoid error with wilder. See wilder config !
+		use 'gelguy/wilder.nvim'
 
 		-- Telescope => fuzzy finder
 		use {

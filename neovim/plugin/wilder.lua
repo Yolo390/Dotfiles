@@ -1,8 +1,15 @@
--- local wilder = require'wilder'
+-- Workaround to avoid error 'not enough room' with wilder.
+require'winbar'.setup({
+    enabled = true,
 
--- wilder.setup({ modes = { ':', '/', '?' } })
+    exclude_filetype = { '' }
+})
 
---[[ wilder.set_option('pipeline', {
+local wilder = require'wilder'
+
+wilder.setup({ modes = { ':', '/', '?' } })
+
+wilder.set_option('pipeline', {
 	wilder.branch(
 		wilder.cmdline_pipeline({
 			language = 'vim',
@@ -10,9 +17,9 @@
 			fuzzy_filter = wilder.vim_fuzzy_filter()
 		})
 	)
-}) ]]
+})
 
---[[ wilder.set_option('renderer', wilder.popupmenu_renderer(
+wilder.set_option('renderer', wilder.popupmenu_renderer(
 	wilder.popupmenu_border_theme({
 		highlighter = wilder.basic_highlighter(),
 		min_width = '40%',
@@ -21,4 +28,4 @@
 		left = { ' ', wilder.popupmenu_devicons() },
 		right = { ' ', wilder.popupmenu_scrollbar() }
 	})
-)) ]]
+))

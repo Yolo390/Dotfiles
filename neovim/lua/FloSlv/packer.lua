@@ -1,3 +1,11 @@
+-- Automatically source and re-sync packer whenever you save.
+-- local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
+-- vim.api.nvim_create_autocmd('BufWritePost', {
+-- 	command = 'source <afile> | PackerSync',
+-- 	group = packer_group,
+-- 	pattern = vim.fn.expand '$MYVIMRC'
+-- })
+
 -- Plugins
 return require'packer'.startup({
 	function(use)
@@ -120,6 +128,7 @@ return require'packer'.startup({
 		-- Others
 		use 'windwp/nvim-autopairs'
 		use 'norcalli/nvim-colorizer.lua'
+		use 'lukas-reineke/indent-blankline.nvim'
 		-- use 'ggandor/leap.nvim'
 	end,
 	config = {

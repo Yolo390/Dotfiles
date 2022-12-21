@@ -1,4 +1,26 @@
 require'nvim-treesitter.configs'.setup {
+	-- Add languages to be installed here that you want installed for treesitter
+	ensure_installed = {
+		'c',
+		'css',
+		'dockerfile',
+		'gitignore',
+		'graphql',
+		'help',
+		'html',
+		'javascript',
+		'json',
+		'lua',
+		'markdown',
+		'prisma',
+		'rasi',
+		'regex',
+		'rust',
+		'scss',
+		'toml',
+		'typescript',
+		'vim'
+	},
 	autotag = {
 		enable = true -- use nvim-ts-autotag plugin
 	},

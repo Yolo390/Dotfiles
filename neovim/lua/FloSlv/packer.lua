@@ -71,20 +71,35 @@ return require'packer'.startup({
 			'williamboman/mason-lspconfig.nvim',
 			'neovim/nvim-lspconfig'
 		}
+		use 'folke/neodev.nvim'
 		use 'j-hui/fidget.nvim'
 		use 'RRethy/vim-illuminate'
 
 		-- Nvim-cmp
-		use 'hrsh7th/nvim-cmp'
-		use 'hrsh7th/cmp-buffer'
-		use 'hrsh7th/cmp-path'
-		use 'hrsh7th/cmp-cmdline'
-		use 'hrsh7th/cmp-nvim-lua'
-		use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
-		use 'onsails/lspkind.nvim'
-		use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-		use 'L3MON4D3/LuaSnip' -- Snippets plugin
-		use 'rafamadriz/friendly-snippets'
+		use {
+			'hrsh7th/nvim-cmp',
+			requires = {
+				'hrsh7th/cmp-nvim-lsp',
+				'hrsh7th/cmp-path',
+				'hrsh7th/cmp-buffer',
+				'hrsh7th/cmp-cmdline',
+				'L3MON4D3/LuaSnip',
+				'saadparwaiz1/cmp_luasnip',
+				'rafamadriz/friendly-snippets',
+				'onsails/lspkind.nvim'
+			}
+		}
+
+		-- use 'hrsh7th/nvim-cmp'
+		-- use 'hrsh7th/cmp-buffer'
+		-- use 'hrsh7th/cmp-path'
+		-- use 'hrsh7th/cmp-cmdline'
+		-- use 'hrsh7th/cmp-nvim-lua'
+		-- use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
+		-- use 'onsails/lspkind.nvim'
+		-- use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
+		-- use 'L3MON4D3/LuaSnip' -- Snippets plugin
+		-- use 'rafamadriz/friendly-snippets'
 
 		-- Databases
 		use 'tpope/vim-dadbod'

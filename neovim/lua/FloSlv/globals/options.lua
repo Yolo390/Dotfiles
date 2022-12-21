@@ -52,6 +52,3 @@ local options = {
 for key, value in pairs(options) do
 	vim.opt[key] = value
 end
-
--- Window separator.
--- vim.api.nvim_set_hl(0, 'WinSeparator', { guibg = None })

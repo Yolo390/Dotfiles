@@ -7,7 +7,6 @@ require'winbar'.setup({
 		editor_state = '●',
 		lock_icon = '',
 	},
-
      exclude_filetype = {
 		'',
 		'dashboard',

@@ -29,7 +29,10 @@ return require'packer'.startup({
 		}
 		use 'TaDaa/vimade'
 
-		use 'fgheng/winbar.nvim' -- needed to avoid error with wilder. See wilder config !
+		use 'fgheng/winbar.nvim'
+		use 'nvim-zh/colorful-winsep.nvim'
+
+
 		use 'gelguy/wilder.nvim'
 
 		-- Telescope => fuzzy finder

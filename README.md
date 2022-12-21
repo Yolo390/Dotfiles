@@ -23,7 +23,7 @@ Here is the process if you want the same environment !<br><br><br />
 
 # Development Environment
 
-:warning: *August 2022* :warning:<br />
+:warning: *December 2022* :warning:<br />
 ► only tested and approved on Ubuntu 22.04 LTS x86_64 + on Virtual Box VM - Ubuntu 22.04 LTS x86_64
 <br /><br />
 
@@ -61,12 +61,42 @@ The complete installation take around ~60 min depending power of the computer an
 ---
 <br />
 
+## If you install Ubuntu with VirtualBox
+
+Here is few more steps if you start a fresh Ubuntu install with VirtualBox.
+
+Log in as root user.
+```sh
+su
+```
+
+Add your user to 'sudo' group. In my case, my user is called 'flo'.
+```sh
+sudo usermod -a -G sudo flo
+```
+
+If you still have an issue like 'you user is not in the sudoers file...', you need to add manually your user.
+
+```sh
+sudo visudo
+```
+
+```sh
+flo ALL=(ALL:ALL) ALL
+```
+
+Close your terminal and re open-it.
+
+<br /><br />
+
 ## Install dependencies
 ```sh
-sudo apt install git zsh zsh-syntax-highlighting curl i3 rofi compton \
+sudo apt update && \
+sudo apt upgrade -y && \
+sudo apt install -y git zsh zsh-syntax-highlighting curl i3 rofi compton \
 tree ripgrep fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
-libssl-dev
+libssl-dev wget
 ```
 <br /><br />
 
@@ -84,6 +114,10 @@ Open terminal.
 ```sh
 cd ~ && mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles
 ```
+
+```sh
+cd ~ && rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
+```
 <br /><br />
 
 ## NEOVIM - install from sources
@@ -91,13 +125,13 @@ https://github.com/neovim/neovim/wiki/Building-Neovim
 
 1. Install dependencies
 ```sh
-sudo apt install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config doxygen
+cd ~ && sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config doxygen
 ```
 <br />
 
 2. Clone Neovim repository
 ```sh
-cd ~/Flo/Apps && git clone https://github.com/neovim/neovim Neovim
+cd ~/Flo/Apps && git clone -b release-0.8 https://github.com/neovim/neovim Neovim
 ```
 <br />
 
@@ -136,100 +170,99 @@ Change ```{your-name}``` by your name. In my case ```FloSlv```.<br /><br />
 cd ~/.config && mkdir nvim nvim/lua nvim/plugin nvim/lua/{your-name} nvim/lua/{your-name}/undodir nvim/lua/{your-name}/globals
 ```
 ```sh
-cd nvim && touch init.lua
-```
-```sh
-cd lua/{your-name} && touch packer.lua
-```
-```sh
-cd globals && touch options.lua keymaps.lua utils.lua autosave.lua autorun.lua
+cd ~/.config/nvim/lua/FloSlv/globals
 ```
 <br />
 
 2. Add basic config<br />
 
-Open `options.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/options.lua
+Create `options.lua`<br />
+Dowload this file as 'options.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/options.lua
 
 ```sh
-nvim options.lua
+wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/options.lua
 ```
 <br />
 
-Open `keymaps.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/keymaps.lua
+Create `keymaps.lua`<br />
+Download this file as 'keymaps.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/keymaps.lua
 
 ```sh
-nvim keymaps.lua
+wget -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/keymaps.lua
 ```
 <br />
 
-Open `utils.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/utils.lua
+NB: You don't need this next three files: 'utils.lua', 'autosave.lua' and 'autorun.lua'.
+They are related to my personal projects and they are not stable and relevent for you.
+
+Create `utils.lua`<br />
+Download this file as 'utils.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/utils.lua
 
 ```sh
-nvim utils.lua
+wget -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/utils.lua
 ```
 <br />
 
-Open `autosave.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autosave.lua
+Create `autosave.lua`<br />
+Download this file as 'autosave.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autosave.lua
 
 ```sh
-nvim autosave.lua
+wget -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua
 ```
 <br />
 
-Open `autorun.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autorun.lua
+Create `autorun.lua`<br />
+Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autorun.lua
 
 ```sh
-nvim autorun.lua
+wget -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
 <br />
 
-Open `packer.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua
+Create `packer.lua`<br />
+Download this file as 'packer.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua
 
 ```sh
-cd .. && nvim packer.lua
+cd .. && wget -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
 ```
 <br />
 
-Open `init.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
+Create `init.lua`<br />
+Download this file as 'init.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
-cd ../.. && nvim init.lua
+cd ../.. && wget -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 ```
 <br />
 
 Go back open `packer.lua`<br />
 You will have an error about some modules not found. It's normal. Just push Enter.<br />
-Launch vim command: PackerSync
 ```sh
 cd lua/{your-name} && nvim packer.lua
 ```
+
+Launch vim command :so and :PackerSync
+
 If some modules are not Sync correctly, save/close, re open and re do :PackerSync
 <br /><br />
 
 Change Neovim colorscheme.<br />
 Go to plugin folder.<br />
 Create `colorscheme.lua`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/plugin/colorscheme.lua
+Download this file as 'colorscheme.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/plugin/colorscheme.lua
 
 ```sh
-cd ../../plugin && nvim colorscheme.lua
+cd ../../plugin && wget -O colorscheme.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/colorscheme.lua
 ```
 <br /><br />
 
 ## TMUX - install from sources
 1. Remove existing Tmux package
 ```sh
-cd ~ && sudo apt update && sudo apt upgrade
+cd ~ && sudo apt update && sudo apt upgrade -y
 ```
 ```sh
-sudo apt remove tmux && sudo apt autoremove
+sudo apt remove tmux && sudo apt autoremove -y
 ```
 ```sh
 rm -rf .tmux
@@ -238,7 +271,7 @@ rm -rf .tmux
 
 2. Install prerequisite libraries
 ```sh
-sudo apt install libevent-dev ncurses-dev build-essential bison
+sudo apt install -y libevent-dev ncurses-dev build-essential bison
 ```
 <br />
 
@@ -338,16 +371,18 @@ cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/F
 cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz
 ```
 ```sh
-sudo make install
+cd btop && sudo make install
 ```
 <br /><br />
 
 ## ZSH - config
 Create `ys-flo.zsh-theme`<br />
-Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
+Download this file as 'ys-flo.zsh-theme': https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
+
 ```sh
-cd ~/.oh-my-zsh/custom/themes && nvim ys-flo.zsh-theme
+cd ~/.oh-my-zsh/custom/themes && wget -O ys-flo.zsh-theme https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
 ```
+
 <br />
 
 Install plugin `zsh-autosuggestions`<br />
@@ -364,10 +399,11 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```
 <br />
 
-Open `.zshrc`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
+Create `.zshrc`<br />
+Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
+
 ```sh
-cd ~ && rm .zshrc && nvim .zshrc
+cd ~ && rm .zshrc && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
 ```
 Close terminal and re open it.<br />
 
@@ -435,9 +471,9 @@ cd ~ && npm install -g git-cz
 <br />
 
 Create `changelog.config.js`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/git/changelog.config.js
+Download this file as 'changelog.config.js': https://github.com/Flo-Slv/Dotfiles/blob/main/git/changelog.config.js
 ```sh
-cd ~ && nvim changelog.config.js
+cd ~ && wget -O changelog.config.js https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js
 ```
 <br /><br />
 
@@ -462,21 +498,21 @@ cargo install gitui
 
 3. Configure GitUI
 ```sh
-cd ~/.config && mkdir gitui && cd gitui && touch theme.ron key_bindings.ron
+cd ~/.config && mkdir gitui && cd gitui
 ```
 <br />
 
-Open `theme.ron`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/theme.ron
+Create `theme.ron`<br />
+Download this file as 'theme.ron': https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/theme.ron
 ```sh
-nvim theme.ron
+wget -O theme.ron https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron
 ```
 <br />
 
 Open `key_bindings.ron`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/key_bindings.ron
+Download this file as 'key_bindings.ron': https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/key_bindings.ron
 ```sh
-nvim key_bindings.ron
+wget -O key_bindings.ron https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron
 ```
 <br /><br />
 
@@ -488,9 +524,9 @@ cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 <br />
 
 Create `kitty.conf`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
+Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
 ```sh
-cd ~/.config/kitty && nvim kitty.conf
+cd ~/.config/kitty && wget -O kitty.conf https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf
 ```
 <br />
 
@@ -538,7 +574,7 @@ kitty +list-fonts
 Optional: to have Hack Nerd Font available in Polybar.
 ```sh
 sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
-sudo cp ~/.local/share/fonts/Hack\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
+sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
 ```
 <br /><br />
 
@@ -629,24 +665,22 @@ sudo apt update && sudo apt install glow
 ## I3WM - config
 1. ROFI - config
 ```sh
-cd ~/.config && mkdir rofi
+cd ~/.config && mkdir rofi && cd rofi
 ```
+
+<br />
+
+Create `config.rasi`<br />
+Download this file as 'config.rasi': https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/config.rasi
 ```sh
-cd rofi && touch config.rasi flo-theme.rasi
+wget -O config.rasi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi
 ```
 <br />
 
-Open `config.rasi`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/config.rasi
+Create `flo-theme.rasi`<br />
+Download this file as 'flo-theme.rasi': https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/flo-theme.rasi
 ```sh
-nvim config.rasi
-```
-<br />
-
-Open `flo-theme.rasi`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/flo-theme.rasi
-```sh
-nvim flo-theme.rasi
+wget -O flo-theme.rasi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi
 ```
 <br /><br />
 
@@ -655,13 +689,13 @@ nvim flo-theme.rasi
 https://github.com/polybar/polybar/wiki/Compiling<br />
 Install Polybar from sources and dependencies
 ```sh
-cd ~/ && sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+cd ~/ && sudo apt install -y build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
 ```
 <br />
 
 Download last release: https://github.com/polybar/polybar/releases
 ```sh
-cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar
+cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar.gz
 ```
 ```sh
 mv polybar-<version> ~/Flo/Apps/Polybar-<version> && cd ~/Flo/Apps/Polybar-<version> && mkdir build && cd build
@@ -679,40 +713,48 @@ sudo make install
 
 Create all necessaries folder and files.
 ```sh
-cd ~/.config && mkdir polybar && cd polybar && touch polybar.sh config.ini && chmod +x polybar.sh
+cd ~/.config && mkdir polybar && cd polybar
 ```
 <br />
 
-Open `polybar.sh`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/polybar.sh
+Create `polybar.sh` and make it executable.<br />
+Download this file as 'polybar.sh': https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/polybar.sh
 ```sh
-nvim polybar.sh
+wget -O polybar.sh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && chmod +x polybar.sh
 ```
 <br />
 
-Open `config.ini`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/config.ini
+Create `config.ini`<br />
+Download this file as 'config.ini': https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/config.ini
 ```sh
-nvim config.ini
+wget -O config.ini https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
+```
+
+<br />
+
+Install font-awesome
+```sh
+cd ~ && sudo apt install fonts-font-awesome
 ```
 <br /><br />
 
 3. I3-WM - config
 ```sh
-cd ~/.config && mkdir i3 && cd i3 && touch config
+cd ~/.config && mkdir i3 && cd i3
 ```
 <br />
 
-Open `config`<br />
-Copy/paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/i3/config
+Create `config`<br />
+Download this file as 'config': https://github.com/Flo-Slv/Dotfiles/blob/main/i3/config
 ```sh
-nvim config
+wget -O config https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
 ```
 <br />
 
 Close Kitty.<br />
 Close all others windows.<br />
 Logout.<br />
+Restart.<br />
 Choose i3 as windows manager.<br />
 Login.
 <br /><br /><br />
@@ -754,8 +796,34 @@ Install Tree-Sitter
 ```sh
 npm i -g tree-sitter-cli
 ```
+
+Set-up all plugins
 ```sh
-# TO DO !
+cd ~/Flo/Dotfiles/neovim/plugin
+```
+
+```sh
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/comment.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/dashboard.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/gitsigns.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/glow.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/leap.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lualine.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/luasnip.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-autopairs.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-cmp.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-colorizer.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-lspconfig.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-notify.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-tree.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-treesitter.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/nvim-web-devicons.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/rust-tools.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/telescope.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-dadbod-ui.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vim-illuminate.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/vimade.lua && \
+wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/wilder.lua
 ```
 <br /><br />
 
@@ -799,7 +867,7 @@ cd ~/Flo/Dotfiles && mkdir gitui && mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/
 mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gitui gitui
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir neovim && mv ~/.config/nvim/* ~/Flo/Dotfiles/neovim && stow -t ~/.config/nvim neovim
+cd ~/Flo/Dotfiles && rm -rf neovim && mkdir neovim && mv ~/.config/nvim/* ~/Flo/Dotfiles/neovim && stow -t ~/.config/nvim neovim
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir oh-my-zsh && mv ~/.oh-my-zsh oh-my-zsh && stow -t ~/ oh-my-zsh
@@ -812,7 +880,7 @@ stow -t ~/ tmux
 cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t ~/ zsh
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir git && mv ~/.changelog.config.js ~/.gitconfig git && stow -t ~/ git
+cd ~/Flo/Dotfiles && mkdir git && mv ~/changelog.config.js ~/.gitconfig git && stow -t ~/ git
 ```
 <br /><br />
 
@@ -821,21 +889,19 @@ https://github.com/starship/starship
 ```sh
 cd ~/ && curl -sS https://starship.rs/install.sh | sh
 ```
-```sh
-echo 'eval "$(starship init zsh)"' >> .zshrc
-```
 <br />
 
 Create `starship.toml`<br />
-*Nota Bene: there are 2 files, one for classic Ubuntu, one for Ubuntu VM version.*
+Download this file as 'starship.toml': https://github.com/Flo-Slv/Dotfiles/blob/main/starship
 
-Copy-paste this file: https://github.com/Flo-Slv/Dotfiles/blob/main/starship/starship.toml
 ```sh
-cd ~/.config && nvim starship.toml
+cd ~/.config && wget -O starship.toml https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir starship && mv ~/config/starship.toml starship && stow -t ~/.config starship
+cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship
 ```
+
+Close terminal and re open it.
 <br /><br />
 
 ### Special aliases for my laptop - in sudo mod

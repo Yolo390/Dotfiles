@@ -46,6 +46,7 @@ end
 
 -- Enable the following language servers. They will automatically be installed.
 local servers = {
+	bashls = {},
 	cssls = {},
 	graphql = {},
 	html = {},
@@ -67,6 +68,7 @@ local servers = {
 			telemetry = { enable = false }
 		}
 	},
+	tailwindcss = {},
 	taplo = {},
 	tsserver = {},
 	vimls = {}

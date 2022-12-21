@@ -888,7 +888,6 @@ wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/dashb
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/gitsigns.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/glow.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/indent-blankline.lua && \
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/leap.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lsp.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/lualine.lua && \
 wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/luasnip.lua && \

@@ -52,7 +52,7 @@ while true; do
 	fi
 
 	printf "\n"
-	printf "  It will create three folders: ~/%s, ~/%s/Apps/Neovim and ~/%s/Dotfiles\n" "$FolderName" "$FolderName" "$FolderName"
+	printf "  It will create three folders: ~/%s, ~/%s/Apps and ~/%s/Dotfiles\n" "$FolderName" "$FolderName" "$FolderName"
 	printf "  to get the following folder tree\n\n"
 	printf "  /home\n"
 	printf "     │\n"
@@ -84,7 +84,7 @@ while true; do
 			printf "\n"
 			printf "  ================================================\n"
 			printf "                                                  \n"
-			printf "      Nothing has been created and installed.     \n"
+			printf "      Nothing has been created or installed.      \n"
 			printf "                                                  \n"
 			printf "                  See you soon :)                 \n"
 			printf "                                                  \n"
@@ -97,7 +97,7 @@ done
 while true; do
 	printf "\n"
 	printf "  Please set your neovim username.\n"
-	printf "  e.g.: 'FloSlv' will create ~/$FolderName/Apps/Neovim/lua/FloSlv\n"
+	printf "  e.g.: 'FloSlv' will create ~/$FolderName/Dotfiles/Neovim/lua/FloSlv\n"
 	printf "\n"
 	printf "  Neovim username: "
 	read NeovimUsername
@@ -109,7 +109,7 @@ while true; do
 	fi
 
 	printf "\n"
-	printf "  It will create the following folder: ~/%s/Apps/Neovim/lua/%s\n" "$FolderName" "$NeovimUsername"
+	printf "  It will create the following folder: ~/%s/Dotfiles/Neovim/lua/%s\n" "$FolderName" "$NeovimUsername"
 	printf "  to get the following folder tree\n\n"
 	printf "  /home\n"
 	printf "     │\n"
@@ -136,12 +136,12 @@ while true; do
 	printf "                 │      └─ utils.lua\n"
 	printf "                 │\n"
 	printf "                 └─ after\n"
-	printf "                    │\n"
-	printf "                    └─ plugin\n"
-	printf "                       │\n"
-	printf "                       └─ plugin config file\n"
-	printf "                       └─ plugin config file\n"
-	printf "                       └─ ...\n"
+	printf "                     │\n"
+	printf "                     └─ plugin\n"
+	printf "                        │\n"
+	printf "                        └─ plugin config file\n"
+	printf "                        └─ plugin config file\n"
+	printf "                        └─ ...\n"
 	printf "\n"
 	printf "  Continue with '%s' as neovim username ?\n" "$NeovimUsername"
 	printf "  [y]es, [n]o or [q]uit: "
@@ -158,7 +158,7 @@ while true; do
 			printf "\n"
 			printf "  ================================================\n"
 			printf "                                                  \n"
-			printf "      Nothing has been created and installed.     \n"
+			printf "      Nothing has been created or installed.      \n"
 			printf "                                                  \n"
 			printf "                  See you soon :)                 \n"
 			printf "                                                  \n"
@@ -171,9 +171,11 @@ done
 echo "\n"
 
 BaseFolder="$HOME/$FolderName"
-Apps="$HOME/$FolderName/Apps"
-Dotfiles="$HOME/$FolderName/Dotfiles"
 
+Apps="$HOME/$FolderName/Apps"
+NeovimApps="$HOME/$FolderName/Apps/Neovim"
+
+Dotfiles="$HOME/$FolderName/Dotfiles"
 Neovim="$HOME/$FolderName/Dotfiles/neovim"
 Lua="$HOME/$FolderName/Dotfiles/neovim/lua"
 NeovimUserFolder="$HOME/$FolderName/Dotfiles/neovim/lua/$NeovimUsername"
@@ -181,10 +183,24 @@ Undodir="$HOME/$FolderName/Dotfiles/neovim/lua/$NeovimUsername/undodir"
 After="$HOME/$FolderName/Dotfiles/neovim/after"
 AfterPlugin="$HOME/$FolderName/Dotfiles/neovim/after/plugin"
 
-if [ -d "$Neovim" ]; then
+if [ -d "~/$FolderName/Apps/Neovim" ]; then
 	printf "  ================================================\n"
 	printf "                                                  \n"
-	printf "   Directory ~/%s/Apps/Neovim already exists !    \n" "$FolderName"
+	printf "   Directory /%s already exists !                 \n" "$NeovimApps"
+	printf "                                                  \n"
+	printf "     Please delete it then re run this script.    \n"
+	printf "                                                  \n"
+	printf "      Nothing has been created and installed.     \n"
+	printf "                                                  \n"
+	printf "                  See you soon :)                 \n"
+	printf "                                                  \n"
+	printf "  ================================================\n"
+	printf "\n"
+	exit 1
+elif [ -d "$Neovim" ]; then
+	printf "  ================================================\n"
+	printf "                                                  \n"
+	printf "  Directory %s already exists !                   \n" "$Neovim"
 	printf "                                                  \n"
 	printf "     Please delete it then re run this script.    \n"
 	printf "                                                  \n"
@@ -271,6 +287,7 @@ libssl-dev ripgrep fd-find silversearcher-ag bat libicu-dev libboost-all-dev
 printf "=== git clone nvim-release-0.8 ===\n"
 printf "\n"
 cd $Apps
+rm -rf Neovim
 git clone -b release-0.8 https://github.com/neovim/neovim Neovim
 cd Neovim
 printf "=== make ===\n"

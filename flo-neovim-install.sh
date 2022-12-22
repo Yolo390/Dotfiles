@@ -171,11 +171,9 @@ done
 echo "\n"
 
 BaseFolder="$HOME/$FolderName"
-
 Apps="$HOME/$FolderName/Apps"
-NeovimApps="$HOME/$FolderName/Apps/Neovim"
-
 Dotfiles="$HOME/$FolderName/Dotfiles"
+
 Neovim="$HOME/$FolderName/Dotfiles/neovim"
 Lua="$HOME/$FolderName/Dotfiles/neovim/lua"
 NeovimUserFolder="$HOME/$FolderName/Dotfiles/neovim/lua/$NeovimUsername"
@@ -183,35 +181,17 @@ Undodir="$HOME/$FolderName/Dotfiles/neovim/lua/$NeovimUsername/undodir"
 After="$HOME/$FolderName/Dotfiles/neovim/after"
 AfterPlugin="$HOME/$FolderName/Dotfiles/neovim/after/plugin"
 
-if [ -d "~/$FolderName/Apps/Neovim" ]; then
-	printf "  ================================================\n"
-	printf "                                                  \n"
-	printf "   Directory /%s already exists !                 \n" "$NeovimApps"
-	printf "                                                  \n"
-	printf "     Please delete it then re run this script.    \n"
-	printf "                                                  \n"
-	printf "      Nothing has been created and installed.     \n"
-	printf "                                                  \nNeovim"
-	printf "                  See you soon :)                 \n"
-	printf "                                                  \n"
-	printf "  ================================================\n"
-	printf "\n"
-	exit 1
-elif [ -d "$Neovim" ]; then
-	printf "  ================================================\n"
-	printf "                                                  \n"
-	printf "  Directory %s already exists !                   \n" "$Neovim"
-	printf "                                                  \n"
-	printf "     Please delete it then re run this script.    \n"
-	printf "                                                  \n"
-	printf "      Nothing has been created and installed.     \n"
-	printf "                                                  \n"
-	printf "                  See you soon :)                 \n"
-	printf "                                                  \n"
-	printf "  ================================================\n"
-	printf "\n"
-	exit 1
-elif [ -d "$BaseFolder" ] && [ ! -d "$Apps" ]; then
+printf "====================================\n"
+printf "      Removing existing Neovim      \n"
+printf "         - installation files       \n"
+printf "         - config files             \n"
+printf "====================================\n"
+rm -rf ~/.config/nvim
+rm -rf ~/.local/share/nvim
+rm -rf $Apps/Neovim
+rm -rf $Dotfiles/neovim
+
+if [ -d "$BaseFolder" ] && [ ! -d "$Apps" ]; then
 	mkdir $Apps
 	printf "=== %s created ! ===\n" "$Apps"
 elif [ -d "$BaseFolder" ] && [ ! -d "$Dotfiles" ]; then
@@ -288,7 +268,6 @@ printf "\n"
 printf "=== git clone nvim-release-0.8 ===\n"
 printf "\n"
 cd $Apps
-rm -rf Neovim
 git clone -b release-0.8 https://github.com/neovim/neovim Neovim
 cd Neovim
 printf "=== make ===\n"

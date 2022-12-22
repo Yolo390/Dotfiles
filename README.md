@@ -165,8 +165,8 @@ IMPORTANT: Replace ```FloSlv``` by your user name.<br /><br />
 
 1. Create folders
 ```sh
-cd ~/.config && \
-mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/FloSlv/undodir
+cd ~/Flo/Dotfiles && \
+mkdir -p neovim/lua neovim/after/plugin neovim/after/ftplugin neovim/lua/FloSlv/undodir
 ```
 
 <br />
@@ -181,11 +181,11 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
-wget -P ~/.config/nvim/lua/FloSlv -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
-wget -P ~/.config/nvim/lua/FloSlv -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
-wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua && \
-wget -P ~/.config/nvim/lua/FloSlv  -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
-wget -P ~/.config/nvim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
+wget -P ~/Flo/Dotfiles/neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 ```
 
 <br />
@@ -198,8 +198,8 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autosave.lua<br 
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
 
 ```sh
-wget -P ~/.config/nvim/lua/FloSlv -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
-wget -P ~/.config/nvim/lua/FloSlv -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
 
 <br />
@@ -238,6 +238,7 @@ wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Do
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua && \
+wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vimade.lua && \
@@ -265,7 +266,14 @@ npm i -g neovim
 
 <br />
 
-5. Open Neovim
+5. Stow
+```sh
+cd ~/Flo/Dotfiles && stow -t ~/.config/nvim neovim
+```
+
+<br />
+
+6. Open Neovim
 
 To be sure everyting's working great, just launch Neovim.
 ```sh
@@ -850,9 +858,6 @@ mv ~/.config/rofi/flo-theme.rasi ~/Flo/Dotfiles/rofi && stow -t ~/.config/rofi r
 ```sh
 cd ~/Flo/Dotfiles && mkdir gitui && mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/gitui &&\
 mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gitui gitui
-```
-```sh
-cd ~/Flo/Dotfiles && rm -rf neovim && mkdir neovim && mv ~/.config/nvim/* ~/Flo/Dotfiles/neovim && stow -t ~/.config/nvim neovim
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir oh-my-zsh && mv ~/.oh-my-zsh oh-my-zsh && stow -t ~/ oh-my-zsh

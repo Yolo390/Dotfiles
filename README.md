@@ -163,76 +163,55 @@ cd ~ && pip3 install pynvim
 ## NEOVIM - basic config
 *Nota Bene: Advanced config later.*
 
-Change ```{your-name}``` by your name. In my case ```FloSlv```.<br /><br />
+Change ```{your-name}``` by your user name. In my case ```FloSlv```.<br /><br />
 
 1. Create folders and files
 ```sh
-cd ~/.config && mkdir nvim nvim/lua nvim/plugin nvim/lua/{your-name} nvim/lua/{your-name}/undodir nvim/lua/{your-name}/globals
+cd ~/.config && \
+mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name}/undodir
 ```
-```sh
-cd ~/.config/nvim/lua/FloSlv/globals
-```
+
 <br />
 
 2. Add basic config<br />
 
-Create `options.lua`<br />
-Dowload this file as 'options.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/options.lua
+Create `options.lua`, `keymaps.lua` and `utils.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/options.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/keymaps.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua
 
 ```sh
-wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/options.lua
+wget -P ~/.config/nvim/lua/FloSlv -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
+wget -P ~/.config/nvim/lua/FloSlv -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
+wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
 ```
+
 <br />
 
-Create `keymaps.lua`<br />
-Download this file as 'keymaps.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/keymaps.lua
+
+NB: You don't need the next two files: `autosave.lua` and `autorun.lua`.
+They are related to my personal projects in Rust and they are not stable and relevent for you.
+
+Create `autosave.lua` and `autorun.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autosave.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
 
 ```sh
-wget -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/keymaps.lua
+wget -P ~/.config/nvim/lua/FloSlv -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
+wget -P ~/.config/nvim/lua/FloSlv -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
+
 <br />
 
-NB: You don't need this next three files: 'utils.lua', 'autosave.lua' and 'autorun.lua'.
-They are related to my personal projects and they are not stable and relevent for you.
-
-Create `utils.lua`<br />
-Download this file as 'utils.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/utils.lua
+Create `packer.lua` and `init.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
-wget -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/utils.lua
+wget -P ~/.config/nvim/lua/FloSlv  -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
+wget -P ~/.config/nvim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 ```
-<br />
 
-Create `autosave.lua`<br />
-Download this file as 'autosave.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autosave.lua
-
-```sh
-wget -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua
-```
-<br />
-
-Create `autorun.lua`<br />
-Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autorun.lua
-
-```sh
-wget -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
-```
-<br />
-
-Create `packer.lua`<br />
-Download this file as 'packer.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua
-
-```sh
-cd .. && wget -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
-```
-<br />
-
-Create `init.lua`<br />
-Download this file as 'init.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
-
-```sh
-cd ../.. && wget -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
-```
 <br />
 
 Go back open `packer.lua`<br />
@@ -241,18 +220,19 @@ You will have an error about some modules not found. It's normal. Just push Ente
 cd lua/{your-name} && nvim packer.lua
 ```
 
-Launch vim command :so and :PackerSync
+Launch vim command `:so` and `:PackerSync`.
 
-If some modules are not Sync correctly, save/close, re open and re do :PackerSync
+If some modules are not Sync correctly, save/close, re open and re do `:PackerSync`.
 <br /><br />
 
 Change Neovim colorscheme.<br />
-Go to plugin folder.<br />
-Create `colorscheme.lua`<br />
-Download this file as 'colorscheme.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/plugin/colorscheme.lua
+Go to `nvim/after/plugin` folder.<br />
+Create `colorscheme.lua`.
+
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/after/plugin/colorscheme.lua
 
 ```sh
-cd ../../plugin && wget -O colorscheme.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/plugin/colorscheme.lua
+wget -P ~/.config/nvim/after/plugin -O colorscheme.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua
 ```
 <br /><br />
 

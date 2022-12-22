@@ -1,4 +1,4 @@
-require("colorful-winsep").setup({
+require'colorful-winsep'.setup({
 	highlight = {
 		-- bg = '#eb6f92',
 		fg = '#eb6f92'

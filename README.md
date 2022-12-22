@@ -163,27 +163,31 @@ cd ~ && pip3 install pynvim
 ## NEOVIM - basic config
 *Nota Bene: Advanced config later.*
 
-Change ```{your-name}``` by your user name. In my case ```FloSlv```.<br /><br />
+IMPORTANT: Change ```FloSlv``` by your user name.<br /><br />
 
 1. Create folders and files
 ```sh
 cd ~/.config && \
-mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name}/undodir
+mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/FloSlv/undodir
 ```
 
 <br />
 
 2. Add basic config<br />
 
-Create `options.lua`, `keymaps.lua` and `utils.lua`.<br />
+Create `options.lua`, `keymaps.lua`, `utils.lua`, `packer.lua` and `init.lua`.<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/options.lua<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/keymaps.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua<br  />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
 wget -P ~/.config/nvim/lua/FloSlv -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
 wget -P ~/.config/nvim/lua/FloSlv -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
-wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
+wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua && \
+wget -P ~/.config/nvim/lua/FloSlv  -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
+wget -P ~/.config/nvim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 ```
 
 <br />
@@ -203,21 +207,10 @@ wget -P ~/.config/nvim/lua/FloSlv -O autorun.lua https://raw.githubusercontent.c
 
 <br />
 
-Create `packer.lua` and `init.lua`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
-
-```sh
-wget -P ~/.config/nvim/lua/FloSlv  -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
-wget -P ~/.config/nvim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
-```
-
-<br />
-
 Go back open `packer.lua`<br />
 You will have an error about some modules not found. It's normal. Just push Enter.<br />
 ```sh
-cd lua/{your-name} && nvim packer.lua
+nvim ~/.config/nvim/lua/FloSlv/packer.lua
 ```
 
 Launch vim command `:so` and `:PackerSync`.

@@ -261,6 +261,17 @@ npm i -g tree-sitter-cli
 npm i -g neovim
 ```
 
+<br />
+
+5. Open Neovim
+
+To be sure everyting's working great, just launch Neovim.
+```sh
+nvim
+```
+
+Then you can run this command: `:checkhealth`.
+
 <br /><br />
 
 ## TMUX - install from sources

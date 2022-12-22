@@ -160,7 +160,7 @@ cd ~ && pip3 install pynvim
 <br /><br />
 
 ## NEOVIM - config
-IMPORTANT: Change ```FloSlv``` by your user name.<br /><br />
+IMPORTANT: Replace ```FloSlv``` by your user name.<br /><br />
 
 1. Create folders
 ```sh

@@ -284,6 +284,7 @@ printf "\n"
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake \
 cmake g++ pkg-config doxygen zoxide python3-pip mlocate libsqlite3-dev \
 libssl-dev ripgrep fd-find silversearcher-ag bat libicu-dev libboost-all-dev
+printf "\n"
 printf "=== git clone nvim-release-0.8 ===\n"
 printf "\n"
 cd $Apps
@@ -293,6 +294,7 @@ cd Neovim
 printf "=== make ===\n"
 printf "\n"
 make CMAKE_BUILD_TYPE=RelWithDebInfo
+printf "\n"
 printf "=== make install ===\n"
 printf "\n"
 sudo make install
@@ -322,6 +324,7 @@ printf "=========================\n"
 printf "    INSTALLING PACKER    \n"
 printf "=========================\n"
 printf "\n"
+rm -rf ~/.local/share/nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 printf "\n"
 printf "==========================\n"
@@ -372,6 +375,7 @@ wget -P $NeovimUserFolder -O keymaps.lua https://raw.githubusercontent.com/Flo-S
 wget -P $NeovimUserFolder -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
 wget -P $NeovimUserFolder -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
 wget -P $Neovim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
+printf "\n"
 printf "=== install plugins config file ===\n"
 printf "\n"
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua

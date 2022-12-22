@@ -191,7 +191,7 @@ if [ -d "~/$FolderName/Apps/Neovim" ]; then
 	printf "     Please delete it then re run this script.    \n"
 	printf "                                                  \n"
 	printf "      Nothing has been created and installed.     \n"
-	printf "                                                  \n"
+	printf "                                                  \nNeovim"
 	printf "                  See you soon :)                 \n"
 	printf "                                                  \n"
 	printf "  ================================================\n"
@@ -235,7 +235,7 @@ elif [ -d "$BaseFolder" ] && [ ! -d "$Dotfiles" ]; then
 	printf "\n"
 	mkdir $AfterPlugin
 	printf "=== %s created ! ===\n" "$AfterPlugin"
-else
+elif [ ! -d "$BaseFolder" ]; then
 	mkdir $BaseFolder
 	printf "=== %s created ! ===\n" "$BaseFolder"
 	printf "\n"

@@ -16,7 +16,6 @@ return require'packer'.startup({
 		use 'folke/tokyonight.nvim'
 		-- use { 'catppuccin/nvim', as = 'catppuccin' }
 
-
 		-- Display
 		use 'glepnir/dashboard-nvim'
 		use 'kyazdani42/nvim-web-devicons'

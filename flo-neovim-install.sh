@@ -394,6 +394,7 @@ printf "    SYMBOLIC LINKS TO ~/.config/nvim    \n"
 printf "========================================\n"
 printf "\n"
 cd $HOME/.config
+rm -rf nvim
 mkdir nvim
 cd $Dotfiles
 stow -t $HOME/.config/nvim neovim

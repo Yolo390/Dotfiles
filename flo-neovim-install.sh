@@ -3,7 +3,7 @@
 Os=$(uname -s)
 
 if [ ! $Os = 'Linux' ]; then
-	echo 'Windows and Mac OS are supported !'
+	echo 'Windows and Mac OS are not supported !'
 	exit 1
 fi
 
@@ -60,7 +60,7 @@ else
 	echo '=== remove existing vim ==='
 	echo "\n"
 	sudo apt remove -y vim
-	echo '=== git clone ==='
+	echo '=== git clone release-0.8 ==='
 	echo "\n"
 	# git clone -b release-0.8 https://github.com/neovim/neovim ~/Coucou/Apps/Neovim
 	git clone -b release-0.8 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
@@ -102,43 +102,29 @@ else
 	echo "    PACKER INSTALLED !    "
 	echo "=========================="
 	echo "\n"
-	# Tmux
+	# Neovim config
 	echo "\n"
-	echo "======================="
-	echo "    INSTALLING TMUX    "
-	echo "======================="
+	echo "==================="
+	echo "   NEOVIM CONFIG   "
+	echo "==================="
 	echo "\n"
-	echo '=== dependencies ==='
+	echo '=== create folder structure ==='
 	echo "\n"
-	sudo apt install -y libevent-dev ncurses-dev build-essential bison
-	echo '=== remove existing tmux ==='
+	cd ~/.config
+	mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/FloSlv/undodir
+	echo '=== install config files ==='
 	echo "\n"
-	sudo apt remove -y tmux
-	echo '=== autoremove ==='
+	wget -P ~/.config/nvim/lua/FloSlv -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua
+	wget -P ~/.config/nvim/lua/FloSlv -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua
+	wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
+	wget -P ~/.config/nvim/lua/FloSlv  -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
+	wget -P ~/.config/nvim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 	echo "\n"
-	sudo apt autoremove -y
-	echo '=== remove existing .tmux ==='
+	echo "============================="
+	echo "   NEOVIM CONFIG INSTALLED   "
+	echo "============================="
 	echo "\n"
-	rm -rf .tmux
-	echo '=== git clone ==='
+	echo '=== neovim version ==='
 	echo "\n"
-	git clone https://github.com/tmux/tmux.git ~/Flo/Apps/Tmux
-	cd ~/Flo/Apps/Tmux
-	echo '=== autogen ==='
-	echo "\n"
-	sh autogen.sh
-	echo '=== configure ==='
-	echo "\n"
-	./configure
-	echo '=== make ==='
-	echo "\n"
-	make
-	echo '=== make install ==='
-	echo "\n"
-	sudo make install
-	echo "\n"
-	echo "========================"
-	echo "    TMUX INSTALLED !    "
-	echo "========================"
-	echo "\n"
+	nvim --version
 fi

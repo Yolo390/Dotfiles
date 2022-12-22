@@ -163,14 +163,14 @@ cd ~ && pip3 install pynvim
 ## NEOVIM - basic config
 *Nota Bene: Advanced config later.*
 
-Change ```{your-name}``` by your name. In my case ```FloSlv```.<br /><br />
+Change ```{your-name}``` by your user name. In my case ```FloSlv```.<br /><br />
 
 1. Create folders and files
 ```sh
-cd ~/.config && mkdir nvim nvim/lua nvim/plugin nvim/lua/{your-name} nvim/lua/{your-name}/undodir nvim/lua/{your-name}/globals
+cd ~/.config && mkdir nvim nvim/lua nvim/after nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name} nvim/lua/{your-name}/undodir
 ```
 ```sh
-cd ~/.config/nvim/lua/FloSlv/globals
+cd ~/.config/nvim/lua/FloSlv
 ```
 <br />
 

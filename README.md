@@ -167,56 +167,41 @@ Change ```{your-name}``` by your user name. In my case ```FloSlv```.<br /><br />
 
 1. Create folders and files
 ```sh
-cd ~/.config && mkdir nvim nvim/lua nvim/after nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name} nvim/lua/{your-name}/undodir
-```
-```sh
+cd ~/.config && \
+mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name}/undodir && \
 cd ~/.config/nvim/lua/FloSlv
 ```
+
 <br />
 
 2. Add basic config<br />
 
-Create `options.lua`<br />
-Dowload this file as 'options.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/options.lua
+Create `options.lua`, `keymaps.lua` and `utils.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/options.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/keymaps.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua
 
 ```sh
-wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/options.lua
+wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
+wget -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
+wget -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
 ```
+
 <br />
 
-Create `keymaps.lua`<br />
-Download this file as 'keymaps.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/keymaps.lua
+
+NB: You don't need this next two files: 'autosave.lua' and 'autorun.lua'.
+They are related to my personal projects in Rust and they are not stable and relevent for you.
+
+Create `autosave.lua` and `autorun.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autosave.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
 
 ```sh
-wget -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/keymaps.lua
-```
-<br />
-
-NB: You don't need this next three files: 'utils.lua', 'autosave.lua' and 'autorun.lua'.
-They are related to my personal projects and they are not stable and relevent for you.
-
-Create `utils.lua`<br />
-Download this file as 'utils.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/utils.lua
-
-```sh
-wget -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/utils.lua
-```
-<br />
-
-Create `autosave.lua`<br />
-Download this file as 'autosave.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autosave.lua
-
-```sh
-wget -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua
-```
-<br />
-
-Create `autorun.lua`<br />
-Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/globals/autorun.lua
-
-```sh
+wget -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
 wget -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
+
 <br />
 
 Create `packer.lua`<br />

@@ -165,8 +165,8 @@ IMPORTANT: Replace ```FloSlv``` by your user name.<br /><br />
 
 1. Create folders
 ```sh
-cd ~/.config && \
-mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/FloSlv/undodir
+cd ~/Flo/Dotfiles && \
+mkdir -p neovim/lua neovim/after/plugin neovim/after/ftplugin neovim/lua/FloSlv/undodir
 ```
 
 <br />
@@ -265,7 +265,14 @@ npm i -g neovim
 
 <br />
 
-5. Open Neovim
+5. Stow
+```sh
+cd ~/Flo/Dotfiles && stow -t ~/.config/nvim neovim
+```
+
+<br />
+
+6. Open Neovim
 
 To be sure everyting's working great, just launch Neovim.
 ```sh
@@ -850,9 +857,6 @@ mv ~/.config/rofi/flo-theme.rasi ~/Flo/Dotfiles/rofi && stow -t ~/.config/rofi r
 ```sh
 cd ~/Flo/Dotfiles && mkdir gitui && mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/gitui &&\
 mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gitui gitui
-```
-```sh
-cd ~/Flo/Dotfiles && rm -rf neovim && mkdir neovim && mv ~/.config/nvim/* ~/Flo/Dotfiles/neovim && stow -t ~/.config/nvim neovim
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir oh-my-zsh && mv ~/.oh-my-zsh oh-my-zsh && stow -t ~/ oh-my-zsh

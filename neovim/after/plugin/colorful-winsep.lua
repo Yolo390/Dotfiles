@@ -7,7 +7,7 @@ require'colorful-winsep'.setup({
 	interval = 10,
 	-- This plugin will not be activated for filetype in the following table.
 	no_exec_files = { 'packer', 'TelescopePrompt', 'mason', 'NvimTree' },
-	symbols = { "━", '┃', '┏', '┓', '┗', '┛' },
+	symbols = { "─", "│", "┌", "┐", "└", "┘" },
 	close_event = function()
 		-- Executed after closing the window separator
 	end,

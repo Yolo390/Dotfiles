@@ -71,8 +71,11 @@ return require'packer'.startup({
 			}
 		}
 
-		-- Harpoon => navigation between files
-		use 'ThePrimeagen/harpoon'
+		-- Harpoon => navigate between files
+		use {
+			'ThePrimeagen/harpoon',
+			requires = { 'nvim-lua/plenary.nvim' }
+		}
 
 		-- Nvim-treesitter => highlighting and indenting code
 	    use {

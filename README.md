@@ -168,8 +168,7 @@ Change ```{your-name}``` by your user name. In my case ```FloSlv```.<br /><br />
 1. Create folders and files
 ```sh
 cd ~/.config && \
-mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name}/undodir && \
-cd ~/.config/nvim/lua/FloSlv
+mkdir -p nvim/lua nvim/after/plugin nvim/after/ftplugin nvim/lua/{your-name}/undodir
 ```
 
 <br />
@@ -182,9 +181,9 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/keymaps.lua<br /
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua
 
 ```sh
-wget -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
-wget -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
-wget -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
+wget -P ~/.config/nvim/lua/FloSlv -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
+wget -P ~/.config/nvim/lua/FloSlv -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
+wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
 ```
 
 <br />
@@ -198,26 +197,21 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autosave.lua<br 
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
 
 ```sh
-wget -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
-wget -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
+wget -P ~/.config/nvim/lua/FloSlv -O autosave.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
+wget -P ~/.config/nvim/lua/FloSlv -O autorun.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
 
 <br />
 
-Create `packer.lua`<br />
-Download this file as 'packer.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua
+Create `packer.lua` and `init.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
 
 ```sh
-cd .. && wget -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
+wget -P ~/.config/nvim/lua/FloSlv  -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
+wget -P ~/.config/nvim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
 ```
-<br />
 
-Create `init.lua`<br />
-Download this file as 'init.lua': https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
-
-```sh
-cd ../.. && wget -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
-```
 <br />
 
 Go back open `packer.lua`<br />

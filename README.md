@@ -247,10 +247,21 @@ wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Do
 
 <br />
 
-4. Install Tree-Sitter
+4. Node.js required packages
+
+Check if you already have Tree-Sitter and Neovim node.js package installed.
+```sh
+npm list -g
+```
+
+If not, you can easily install it.
 ```sh
 npm i -g tree-sitter-cli
 ```
+```sh
+npm i -g neovim
+```
+
 <br /><br />
 
 ## TMUX - install from sources

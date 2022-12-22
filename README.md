@@ -867,14 +867,6 @@ Close terminal and re open it.
 
 <br /><br />
 
-## NEOVIM - advanced config
-1. Install Tree-Sitter
-```sh
-npm i -g tree-sitter-cli
-```
-
-
-<br /><br />
 
 ### Special aliases for my laptop - in sudo mod
 ```sh

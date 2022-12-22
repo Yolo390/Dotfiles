@@ -1,8 +1,8 @@
 #!/bin/sh
 
-Os=$(uname -s)
+Os="$(uname -s)"
 
-if [ ! $Os = 'Linux' ]; then
+if [ ! "$Os" = 'Linux' ]; then
 	echo 'Windows and Mac OS are not supported !'
 	exit 1
 fi

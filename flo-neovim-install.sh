@@ -27,7 +27,7 @@ while true; do
 	printf "  Please set your folder name: "
 	read folderName
 
-	if [ -z "$folderName" ]; then
+	if [ "$folderName" = "" ]; then
 		printf "\n"
 		printf "  You need to enter a folder name !\n"
 		continue

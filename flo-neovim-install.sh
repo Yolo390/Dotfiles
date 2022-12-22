@@ -142,6 +142,8 @@ while true; do
 	printf "                        └─ plugin config file\n"
 	printf "                        └─ plugin config file\n"
 	printf "                        └─ ...\n"
+	printf "                     │\n"
+	printf "                     └─ ftplugin\n"
 	printf "\n"
 	printf "  Continue with '%s' as neovim username ?\n" "$NeovimUsername"
 	printf "  [y]es, [n]o or [q]uit: "
@@ -180,6 +182,8 @@ NeovimUserFolder="$HOME/$FolderName/Dotfiles/neovim/lua/$NeovimUsername"
 Undodir="$HOME/$FolderName/Dotfiles/neovim/lua/$NeovimUsername/undodir"
 After="$HOME/$FolderName/Dotfiles/neovim/after"
 AfterPlugin="$HOME/$FolderName/Dotfiles/neovim/after/plugin"
+AfterFtPlugin="$HOME/$FolderName/Dotfiles/neovim/after/ftplugin"
+Plugin="$HOME/$FolderName/Dotfiles/neovim/plugin"
 
 printf "====================================\n"
 printf "      Removing existing Neovim      \n"
@@ -191,14 +195,18 @@ rm -rf $HOME/.local/share/nvim
 rm -rf $Apps/Neovim
 rm -rf $Dotfiles/neovim
 
-if [ -d "$BaseFolder" ] && [ ! -d "$Apps" ]; then
-	mkdir $Apps
+if [ ! -d "$Apps" ]; then
+	mkdir -p $Apps
 	printf "=== %s created ! ===\n" "$Apps"
-elif [ -d "$BaseFolder" ] && [ ! -d "$Dotfiles" ]; then
-	mkdir $Dotfiles
+fi
+
+if [ ! -d "$Dotfiles" ]; then
+	mkdir -p $Dotfiles
 	printf "=== %s created ! ===\n" "$Dotfiles"
-	printf "\n"
-	mkdir $Neovim
+fi
+
+if [ ! -d "$Neovim" ]; then
+	mkdir -p $Neovim
 	printf "=== %s created ! ===\n" "$Neovim"
 	printf "\n"
 	mkdir $Lua
@@ -215,33 +223,10 @@ elif [ -d "$BaseFolder" ] && [ ! -d "$Dotfiles" ]; then
 	printf "\n"
 	mkdir $AfterPlugin
 	printf "=== %s created ! ===\n" "$AfterPlugin"
-elif [ ! -d "$BaseFolder" ]; then
-	mkdir $BaseFolder
-	printf "=== %s created ! ===\n" "$BaseFolder"
-	printf "\n"
-	mkdir $Apps
-	printf "=== %s created ! ===\n" "$Apps"
-	printf "\n"
-	mkdir $Dotfiles
-	printf "=== %s created ! ===\n" "$Dotfiles"
-	printf "\n"
-	mkdir $Neovim
-	printf "=== %s created ! ===\n" "$Neovim"
-	printf "\n"
-	mkdir $Lua
-	printf "=== %s created ! ===\n" "$Lua"
-	printf "\n"
-	mkdir $NeovimUserFolder
-	printf "=== %s created ! ===\n" "$NeovimUserFolder"
-	printf "\n"
-	mkdir $Undodir
-	printf "=== %s created ! ===\n" "$Undodir"
-	printf "\n"
-	mkdir $After
-	printf "=== %s created ! ===\n" "$After"
-	printf "\n"
-	mkdir $AfterPlugin
-	printf "=== %s created ! ===\n" "$AfterPlugin"
+	mkdir $AfterFtPlugin
+	printf "=== %s created ! ===\n" "$AfterFtPlugin"
+	mkdir $Plugin
+	printf "=== %s created ! ===\n" "$Plugin"
 fi
 
 printf "\n"
@@ -349,11 +334,14 @@ printf "=====================\n"
 printf "\n"
 printf "=== install config files ===\n"
 printf "\n"
-wget -P $NeovimUserFolder -O options.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua
-wget -P $NeovimUserFolder -O keymaps.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua
-wget -P $NeovimUserFolder -O utils.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
-wget -P $NeovimUserFolder -O packer.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
-wget -P $Neovim -O init.lua https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
+wget -P $NeovimUserFolder https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua
+wget -P $NeovimUserFolder https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua
+wget -P $NeovimUserFolder https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua
+wget -P $NeovimUserFolder https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua
+wget -P $Neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
+# Next two are not required: autorun and autosave
+wget -P $NeovimUserFolder https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/autorun.lua
+wget -P $NeovimUserFolder https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/autosave.lua
 printf "\n"
 printf "=== install plugins config file ===\n"
 printf "\n"
@@ -376,6 +364,8 @@ wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neo
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua
+# Be careful with undotree, because I hardcode path inside this file !
+wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vimade.lua

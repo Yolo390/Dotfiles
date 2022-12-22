@@ -189,7 +189,7 @@ wget -P ~/.config/nvim/lua/FloSlv -O utils.lua https://raw.githubusercontent.com
 <br />
 
 
-NB: You don't need this next two files: 'autosave.lua' and 'autorun.lua'.
+NB: You don't need the next two files: `autosave.lua` and `autorun.lua`.
 They are related to my personal projects in Rust and they are not stable and relevent for you.
 
 Create `autosave.lua` and `autorun.lua`.<br />

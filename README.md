@@ -219,10 +219,9 @@ Launch vim command `:so` and `:PackerSync`.
 If some modules are not Sync correctly, save/close, re open and re do `:PackerSync`.
 <br /><br />
 
-Change Neovim colorscheme.<br />
-Go to `nvim/after/plugin` folder.<br />
-Create `colorscheme.lua`.
+3. Change Neovim colorscheme.<br />
 
+Create `colorscheme.lua`.<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/after/plugin/colorscheme.lua
 
 ```sh

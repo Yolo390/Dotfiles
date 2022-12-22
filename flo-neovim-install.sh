@@ -186,8 +186,8 @@ printf "      Removing existing Neovim      \n"
 printf "         - installation files       \n"
 printf "         - config files             \n"
 printf "====================================\n"
-rm -rf ~/.config/nvim
-rm -rf ~/.local/share/nvim
+rm -rf $HOME/.config/nvim
+rm -rf $HOME/.local/share/nvim
 rm -rf $Apps/Neovim
 rm -rf $Dotfiles/neovim
 
@@ -394,7 +394,6 @@ printf "    SYMBOLIC LINKS TO ~/.config/nvim    \n"
 printf "========================================\n"
 printf "\n"
 cd $HOME/.config
-rm -rf nvim
 mkdir nvim
 cd $Dotfiles
 stow -t $HOME/.config/nvim neovim

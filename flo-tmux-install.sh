@@ -79,12 +79,12 @@ else
 	echo '=== make install ==='
 	echo '\n'
 	sudo make install
-	echo '=== tmux version ==='
-	echo '\n'
-	tmux -V
 	echo '\n'
 	echo "========================"
 	echo "    TMUX INSTALLED !    "
 	echo "========================"
 	echo '\n'
+	echo '=== tmux version ==='
+	echo '\n'
+	tmux -V
 fi

@@ -1,5 +1,12 @@
 #!/bin/sh
 
+Os=$(uname -s)
+
+if [ ! $Os = 'Linux' ]; then
+	echo 'Windows and Mac OS are supported !'
+	exit 1
+fi
+
 Flo=~/Flo
 Apps=~/Flo/Apps
 Nvim=~/.config/nvim
@@ -8,9 +15,8 @@ Nvim=~/.config/nvim
 # CoucouApps=~/Coucou/Apps
 # CoucouNvim=~/.config/Coucou/nvim
 
-# if [ -d "$Coucou" ] && [ -d "$CoucouApps" ]
-if [ -d "$Flo" ] && [ -d "$Apps" ]
-then
+# if [ -d "$Coucou" ] && [ -d "$CoucouApps" ]; then
+if [ -d "$Flo" ] && [ -d "$Apps" ]; then
 	# echo " ========================================================="
 	# echo '   Directories ~/Coucou & ~/Coucou/Apps already exists ! '
 	# echo " ========================================================="

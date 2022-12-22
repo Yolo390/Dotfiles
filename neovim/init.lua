@@ -1,8 +1,9 @@
 require'FloSlv.packer'
 
-require'FloSlv.globals.options'
-require'FloSlv.globals.keymaps'
-require'FloSlv.globals.utils'
+require'FloSlv.options'
+require'FloSlv.keymaps'
+require'FloSlv.utils'
 
-require'FloSlv.globals.autosave'
-require'FloSlv.globals.autorun'
+-- Rust but still WIP
+require'FloSlv.autosave'
+require'FloSlv.autorun'

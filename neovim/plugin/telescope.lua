@@ -1,5 +1,9 @@
+local ok, telescope = pcall(require, 'telescope')
+if not ok then
+	return
+end
 
-require'telescope'.setup {
+telescope.setup {
 	defaults = {
 		prompt_prefix = '🔍 ',
 		hidden = true,
@@ -20,14 +24,14 @@ require'telescope'.setup {
 	}
 }
 
-pcall(require'telescope'.load_extension, 'fzf')
-pcall(require'telescope'.load_extension, 'luasnip')
-pcall(require'telescope'.load_extension, 'notify')
-pcall(require'telescope'.load_extension, 'zoxide')
-pcall(require'telescope'.load_extension, 'repo')
-pcall(require'telescope'.load_extension, 'packer')
-pcall(require'telescope'.load_extension, 'bookmarks')
-pcall(require'telescope'.load_extension, 'neoclip')
+pcall(telescope.load_extension, 'fzf')
+pcall(telescope.load_extension, 'luasnip')
+pcall(telescope.load_extension, 'notify')
+pcall(telescope.load_extension, 'zoxide')
+pcall(telescope.load_extension, 'repo')
+pcall(telescope.load_extension, 'packer')
+pcall(telescope.load_extension, 'bookmarks')
+pcall(telescope.load_extension, 'neoclip')
 require'neoclip'.setup()
 
 -- UI

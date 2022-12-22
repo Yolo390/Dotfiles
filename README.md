@@ -207,11 +207,12 @@ wget -P ~/.config/nvim/lua/FloSlv -O autorun.lua https://raw.githubusercontent.c
 
 <br />
 
-Go back open `packer.lua`<br />
-You will have an error about some modules not found. It's normal. Just push Enter.<br />
+Open `packer.lua`.
 ```sh
 nvim ~/.config/nvim/lua/FloSlv/packer.lua
 ```
+
+You will have an error about some modules not found. It's normal. Just push Enter.
 
 Launch vim command `:so` and `:PackerSync`.
 

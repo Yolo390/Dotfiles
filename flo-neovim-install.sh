@@ -24,7 +24,10 @@ printf "  =========================================\n"
 
 while true; do
 	printf "\n"
-	printf "  Please set your folder name: "
+	printf "  Please set your folder name.\n"
+	printf "  e.g.: 'Flo' will create ~/Flo\n"
+	printf "\n"
+	printf "  Folder name: "
 	read folderName
 
 	if [ "$folderName" = "" ]; then
@@ -46,10 +49,12 @@ while true; do
 	printf "                  │\n"
 	printf "                  └─ Neovim\n"
 	printf "\n"
-	printf "  Continue with '%s' as folder name ? [y]es, [n]o or [q]uit): " "$folderName"
-	read choice
+	printf "  Continue with '%s' as folder name ?\n" "$folderName"
+	printf "\n"
+	printf "  [y]es, [n]o or [q]uit: "
+	read choiceFolderName
 
-	case "$choice" in
+	case "$choiceFolderName" in
 		y|yes|Y|YES|YEs|YeS|yeS|yES)
 			break
 			;;
@@ -70,17 +75,68 @@ done
 
 while true; do
 	printf "\n"
-	printf "  Please set your neovim username: "
+	printf "  Please set your neovim username.\n"
+	printf "  e.g.: 'FloSlv' will create ~/$folderName/Apps/Neovim/lua/FloSlv\n"
+	printf "\n"
+	printf "  Neovim username: "
 	read neovimUsername
 
-	case $neovimUsername in
-		"")
-			printf "\n"
-			printf "  You need to enter an username to set the neovim config !\n"
+	if [ "$neovimUsername" = "" ]; then
+		printf "\n"
+		printf "  You need to enter an username to set the neovim config !\n"
+		continue
+	fi
+
+	printf "\n"
+	printf "  It will create the following folder: ~/%s/Apps/Neovim/lua/%s\n" "$folderName" "$neovimUsername"
+	printf "  to get the following folder tree\n\n"
+	printf "  /home\n"
+	printf "     │\n"
+	printf "     └─ %s\n" "$USER"
+	printf "          │\n"
+	printf "          └─ %s\n" "$folderName"
+	printf "              │\n"
+	printf "              └─ Apps\n"
+	printf "                  │\n"
+	printf "                  └─ Neovim\n"
+	printf "                      │\n"
+	printf "                      └─ lua\n"
+	printf "                      │    │\n"
+	printf "                      │    └─ %s\n" "$neovimUsername"
+	printf "                      │        │\n"
+	printf "                      │        └─ packer.lua\n"
+	printf "                      │        └─ options.lua\n"
+	printf "                      │        └─ keymaps.lua\n"
+	printf "                      │        └─ utils.lua\n"
+	printf "                      │        └─ undodir/\n"
+	printf "                      │\n"
+	printf "                      └─ after\n"
+	printf "                          │\n"
+	printf "                          └─ plugin\n"
+	printf "                              │\n"
+	printf "                              └─ plugin config file\n"
+	printf "                              └─ plugin config file\n"
+	printf "                              └─ ...\n"
+	printf "\n"
+	printf "  Continue with '%s' as neovim username ?\n" "$neovimUsername"
+	printf "  [y]es, [n]o or [q]uit: "
+	read choiceNeovimUsername
+
+	case "$choiceNeovimUsername" in
+		y|yes|Y|YES|YEs|YeS|yeS|yES)
+			break
+			;;
+		n|N|no|NO|No|nO)
 			continue
 			;;
 		*)
-			break
+			printf "\n"
+			printf "  ================================================\n"
+			printf "      Nothing has been created and installed.     \n"
+			printf "                                                  \n"
+			printf "                  See you soon :)                 \n"
+			printf "  ================================================\n"
+			exit 1
 			;;
 	esac
 done
@@ -92,15 +148,7 @@ Apps="$HOME/$folderName/Apps"
 Neovim="$HOME/$folderName/Apps/Neovim"
 Nvim="$HOME/.config/nvim"
 
-# Coucou\n"$HOME/Coucou"
-# CoucouApps\n"$HOME/Coucou/Apps"
-# CoucouNvim\n"$HOME/.config/Coucou/nvim"
-
-# if [ -d "$Coucou" ] && [ -d "$CoucouApps" ]; then
 if [ -d "$Neovim" ]; then
-	# printf " ========================================================\n"
-	# printf '   Directories ~/Coucou & ~/Coucou/Apps already exists ! '
-	# printf " ========================================================\n"
 	printf "\n"
 	printf "  ================================================\n"
 	printf "   Directory ~/%s/Apps/Neovim already exists !    \n" "$folderName"
@@ -113,17 +161,11 @@ if [ -d "$Neovim" ]; then
 	printf "  ================================================\n"
 	printf "\n"
 	exit 1
-elif [ -d "$Apps" ]; then
-	continue
-elif [ -d "$BaseDirectory" ]; then
+elif [ -d "$BaseDirectory" ] && [ ! -d "$Apps" ]; then
 	mkdir $Apps
 	printf "=== ~/%s/Apps created ! ===\n" "$BaseDirectory"
 	printf "\n"
 else
-	# mkdir ~/Coucou
-	# printf "=== ~/Coucou created ! ==\n"
-	# mkdir ~/Coucou/Apps
-	# printf "=== ~/Coucou/Apps created ! ==\n"
 	mkdir $BaseDirectory
 	printf "=== ~/%s created ! ===\n" "$BaseDirectory"
 	printf "\n"

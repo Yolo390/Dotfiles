@@ -26,24 +26,13 @@ Flo="$HOME/$username"
 Apps="$HOME/$username/Apps"
 Tmux="$HOME/$username/Apps/Tmux"
 
-# Coucou="$HOME/Coucou"
-# CoucouApps="$HOME/Coucou/Apps"
-
-# if [ -d "$Coucou" ] && [ -d "$CoucouApps" ]; then
 if [ -d "$Flo" ] && [ -d "$Apps" ]; then
-	# echo " ========================================================="
-	# echo '   Directories ~/Coucou & ~/Coucou/Apps already exists ! '
-	# echo " ========================================================="
 	echo "\n"
 	echo " ==================================================="
 	echo '   Directories ~/Flo & ~/Flo/Apps already exists ! '
 	echo " ==================================================="
 	exit 1
 else
-	# mkdir ~/Coucou
-	# echo '=== ~/Coucou created ! ==='
-	# mkdir ~/Coucou/Apps
-	# echo '=== ~/Coucou/Apps created ! ==='
 	mkdir ~/Flo
 	echo '=== ~/Flo created ! ==='
 	echo "\n"

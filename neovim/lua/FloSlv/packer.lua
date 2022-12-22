@@ -25,6 +25,7 @@ return require'packer'.startup({
 			tag = 'nightly'
 		}
 		use 'TaDaa/vimade'
+		use 'folke/which-key.nvim'
 
 		-- Lualine => status bar (bottom)
 		use 'nvim-lualine/lualine.nvim'
@@ -33,9 +34,11 @@ return require'packer'.startup({
 		use 'fgheng/winbar.nvim'
 		use 'nvim-zh/colorful-winsep.nvim'
 
-
 		-- Wilder => wildmenu
-		use 'gelguy/wilder.nvim'
+		use {
+			'gelguy/wilder.nvim',
+			requires = { 'romgrk/fzy-lua-native' }
+		}
 
 		-- Telescope => fuzzy finder
 		use {

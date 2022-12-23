@@ -1,4 +1,4 @@
--- auto install packer if not installed
+-- Auto install packer if not installed
 local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
@@ -9,6 +9,7 @@ local ensure_packer = function()
 	end
 	return false
 end
+
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
 -- Automatically source and re-sync packer whenever you save.
@@ -19,13 +20,18 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 	pattern = vim.fn.expand("packer.lua"),
 })
 
-local status, packer = pcall(require, "packer")
-if not status then
+local packer_ok, packer = pcall(require, "packer")
+if not packer_ok then
+	return
+end
+
+local packer_util_ok, packer_util = pcall(require, "packer.util")
+if not packer_util_ok then
 	return
 end
 
 -- Plugins
-return require("packer").startup({
+packer.startup({
 	function(use)
 		-- Packer manager
 		use("wbthomason/packer.nvim")
@@ -186,11 +192,15 @@ return require("packer").startup({
 
 		-- vim-tmux-navigator => integration for Tmux !
 		use("christoomey/vim-tmux-navigator")
+
+		if packer_bootstrap then
+			require("packer").sync()
+		end
 	end,
 	config = {
 		display = {
 			open_fn = function()
-				return require("packer.util").float({ border = "single" })
+				return packer_util.float({ border = "single" })
 			end,
 		},
 	},

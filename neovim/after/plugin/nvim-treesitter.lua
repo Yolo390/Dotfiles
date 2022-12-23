@@ -2,7 +2,12 @@ if not pcall(require, 'nvim-treesitter') then
   return
 end
 
-require'nvim-treesitter.configs'.setup {
+local tree_conf_status, nvim_treesitter_configs = pcall(require, 'nvim-treesitter.configs')
+if not tree_conf_status then
+	return
+end
+
+nvim_treesitter_configs.setup {
 	-- Add languages to be installed here that you want installed for treesitter
 	ensure_installed = {
 		'bash',

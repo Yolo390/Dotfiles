@@ -1,4 +1,24 @@
-local db = require'dashboard'
+local dash_status, dashboard = pcall(require, 'dashboard')
+if not dash_status then
+	return
+end
+
+local ts_status, telescope = pcall(require, 'telescope')
+if not ts_status then
+	return
+end
+
+local ts_builtin_status, ts_builtin = pcall(require, 'telescope.builtin')
+if not ts_builtin_status then
+	return
+end
+
+local ts_themes_status, ts_themes = pcall(require, 'telescope.themes')
+if not ts_themes_status then
+	return
+end
+
+local db = dashboard
 
 db.custom_header = {
 ' ____ ____ ____ ____ ____ ____ ',
@@ -10,9 +30,9 @@ db.custom_header = {
 ' '
 }
 
-local builtin = require'telescope.builtin'
-local themes = require'telescope.themes'
-local extensions = require'telescope'.extensions
+local builtin = ts_builtin
+local themes = ts_themes
+local extensions = telescope.extensions
 
 db.custom_center = {
 	{

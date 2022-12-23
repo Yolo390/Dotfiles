@@ -1,4 +1,9 @@
-require('gitsigns').setup {
+local gs_status, gitsigns = pcall(require, 'gitsigns')
+if not gs_status then
+	return
+end
+
+gitsigns.setup {
 	signs = {
 		add = {
 			hl = 'GitSignsAdd',

@@ -1,8 +1,24 @@
-local cmp = require'cmp'
-local lspkind = require'lspkind'
-local luasnip = require 'luasnip'
+local cmp_status, cmp = pcall(require, 'cmp')
+if not cmp_status then
+	return
+end
 
-require'luasnip.loaders.from_vscode'.lazy_load()
+local lspkind_status, lspkind = pcall(require, 'lspkind')
+if not lspkind_status then
+	return
+end
+
+local luasnip_status, luasnip = pcall(require, 'luasnip')
+if not luasnip_status then
+	return
+end
+
+local luasnip_vsc_status, luasnip_load_vsc = pcall(require, 'luasnip.loaders.from_vscode')
+if not luasnip_vsc_status then
+	return
+end
+
+luasnip_load_vsc.lazy_load()
 
 cmp.setup {
 	snippet = {

@@ -731,20 +731,16 @@ cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar.gz && rm -rf polybar-<versi
 mv polybar-<version> ~/Flo/Apps/Polybar-<version> && cd ~/Flo/Apps/Polybar-<version> && mkdir build && cd build
 ```
 ```sh
-cmake ..
+cmake .. && make -j$(nproc) && sudo make install
 ```
-```sh
-make -j$(nproc)
-```
-```sh
-sudo make install
-```
+
 <br />
 
 Create all necessaries folder and files.
 ```sh
 cd ~/.config && mkdir polybar && cd polybar
 ```
+
 <br />
 
 Create `polybar.sh` and make it executable.<br />

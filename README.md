@@ -219,6 +219,7 @@ If some modules are not Sync correctly, save/close, re open and re do `:PackerSy
 
 3. Set up all plugins
 ```sh
+wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/autopairs.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorful-winsep.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/comment.lua && \
@@ -229,6 +230,7 @@ wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Do
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/lsp.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/lualine.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/luasnip.lua && \
+wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/null-ls.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-autopairs.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-cmp.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-colorizer.lua && \

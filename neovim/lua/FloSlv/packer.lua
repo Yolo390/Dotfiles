@@ -107,8 +107,9 @@ packer.startup({
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = function()
-				local ts_update = pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-				ts_update() -- make sure parsers are automatically updated whenever nvim-treesitter is installed/updated
+				pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+				-- local ts_update = pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+				-- ts_update() -- make sure parsers are automatically updated whenever nvim-treesitter is installed/updated
 			end,
 		})
 		use("p00f/nvim-ts-rainbow")

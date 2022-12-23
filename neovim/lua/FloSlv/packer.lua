@@ -25,7 +25,6 @@ return require("packer").startup({
 			tag = "nightly",
 		})
 		use("TaDaa/vimade")
-		use("windwp/nvim-autopairs")
 		use("norcalli/nvim-colorizer.lua")
 		use("lukas-reineke/indent-blankline.nvim")
 
@@ -84,7 +83,8 @@ return require("packer").startup({
 		use({
 			"nvim-treesitter/nvim-treesitter",
 			run = function()
-				pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+				local ts_update = pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+				ts_update() -- make sure parsers are automatically updated whenever nvim-treesitter is installed/updated
 			end,
 		})
 		use("p00f/nvim-ts-rainbow")
@@ -155,10 +155,10 @@ return require("packer").startup({
 		-- nvim-dap => debug
 		use("mfussenegger/nvim-dap")
 
-		-- HTML
-		-- use 'AndrewRadev/tagalong.vim' -- Change an HTML(ish) opening/closing tag
-		use("tpope/vim-surround")
-		use("windwp/nvim-ts-autotag")
+		-- Autoclosing, autorename and autopair
+		use("tpope/vim-surround") -- easy way to surround word or text
+		use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose and autorename html tag with treesitter
+		use("windwp/nvim-autopairs") -- autopair parents, brackets, quotes, etc...
 
 		-- taboo => tab manager
 		use("gcmt/taboo.vim")

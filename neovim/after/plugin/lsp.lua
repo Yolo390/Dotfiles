@@ -18,6 +18,11 @@ if not fidget_status then
 	return
 end
 
+local mas_null_ls_status, mason_null_ls = pcall(require, 'mason-null-ls')
+if not mas_null_ls_status then
+	return
+end
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -64,7 +69,7 @@ local on_attach = function(_, bufnr)
 	end, { desc = 'Format current buffer with LSP' })
 end
 
--- Enable the following language servers. They will automatically be installed.
+-- Enable the following LSP servers. They will automatically be installed.
 local servers = {
 	bashls = {},
 	cssls = {},
@@ -113,10 +118,19 @@ mason.setup({
 	}
 })
 
--- Ensure the servers above are installed.
-mason_lspconfig.setup { ensure_installed = vim.tbl_keys(servers) }
+-- Ensure the LSP servers above are installed.
+mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(servers) })
 
-mason_lspconfig.setup_handlers {
+-- Ensure the linters and formatters are installed.
+mason_null_ls.setup({
+	ensure_installed = {
+		'prettier', -- formatter for HTML, CSS and JS
+		'stylelua', -- formatter for lua
+		'eslint_d' -- linter for JS
+	}
+})
+
+mason_lspconfig.setup_handlers({
 	function(server_name)
 		require'lspconfig'[server_name].setup {
 			capabilities = capabilities,
@@ -124,10 +138,10 @@ mason_lspconfig.setup_handlers {
 			settings = servers[server_name]
 		}
 	end
-}
+})
 
 -- Turn on lsp status information.
-fidget.setup{}
+fidget.setup({})
 
 -- UI
 local lsp = vim.lsp

@@ -25,29 +25,35 @@ return require'packer'.startup({
 			tag = 'nightly'
 		}
 		use 'TaDaa/vimade'
+		use 'windwp/nvim-autopairs'
+		use 'norcalli/nvim-colorizer.lua'
+		use 'lukas-reineke/indent-blankline.nvim'
+
+		-- which-key => easy way to find your <leader> mapping
 		use 'folke/which-key.nvim'
 
-		-- Lualine => status bar (bottom)
+		-- lualine => status bar (bottom)
 		use 'nvim-lualine/lualine.nvim'
 
-		-- Windows bar => top
+		-- winbar => window bar (top)
 		use 'fgheng/winbar.nvim'
+
+		-- colorful-winsep => window color separation
 		use 'nvim-zh/colorful-winsep.nvim'
+		-- Have an issue with Lualine and performance...
+		-- see https://github.com/nvim-zh/colorful-winsep.nvim/issues/26
 
-		-- Wilder => wildmenu
-		use {
-			'gelguy/wilder.nvim',
-			requires = { 'romgrk/fzy-lua-native' }
-		}
+		-- wilder => wildmenu
+		use { 'gelguy/wilder.nvim', requires = { 'romgrk/fzy-lua-native' } }
 
-		-- Telescope => fuzzy finder
+		-- telescope => fuzzy finder
 		use {
 			'nvim-telescope/telescope.nvim',
 			branch = '0.1.x', -- tag = '0.1.0',
 			requires = { 'nvim-lua/plenary.nvim' }
 		}
 
-		-- Telescope => Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
+		-- telescope-fzf-native => Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
 		use {
 			'nvim-telescope/telescope-fzf-native.nvim',
 			run = 'make',
@@ -55,7 +61,7 @@ return require'packer'.startup({
 			cond = vim.fn.executable 'make' == 1
 		}
 
-		-- Telescope => more Telescope plugins integration.
+		-- telescope => more Telescope plugins integration.
 		use 'benfowler/telescope-luasnip.nvim'
 		use 'jvgrootveld/telescope-zoxide'
 		use 'cljoly/telescope-repo.nvim'
@@ -71,13 +77,10 @@ return require'packer'.startup({
 			}
 		}
 
-		-- Harpoon => navigate between files
-		use {
-			'ThePrimeagen/harpoon',
-			requires = { 'nvim-lua/plenary.nvim' }
-		}
+		-- harpoon => navigate between files
+		use { 'ThePrimeagen/harpoon', requires = { 'nvim-lua/plenary.nvim' } }
 
-		-- Nvim-treesitter => highlighting and indenting code
+		-- nvim-treesitter => highlighting and indenting code
 	    use {
 			'nvim-treesitter/nvim-treesitter',
 			run = function()
@@ -86,15 +89,16 @@ return require'packer'.startup({
 		}
 		use 'p00f/nvim-ts-rainbow'
 
-		-- Language Server Protocol => LSP
+		-- nvim-lspconfig => integration for LSP (Language Server Protocol)
+		-- mason => installing and managing LSP servers, linters and formatters
+		-- mason-lspconfig => fill the gap between nvim-lspconfig and mason
 		use {
 			'neovim/nvim-lspconfig',
 			requires = {
-				-- Automatically install LSPs to stdpath for neovim
 				'williamboman/mason.nvim',
 				'williamboman/mason-lspconfig.nvim',
 
-				-- Useful status updates for LSP
+				-- Display useful loading status updates for LSP
 				'j-hui/fidget.nvim',
 
 				-- Additional lua configuration, makes nvim stuff amazing
@@ -104,17 +108,22 @@ return require'packer'.startup({
 			}
 		}
 
-		-- Nvim-cmp => autocompletion
+		-- null-ls => formatting and linting
+		-- mason-null-ls => fill the gap between null-ls and mason
+		use 'jose-elias-alvarez/null-ls.nvim'
+		use 'jayp0521/mason-null-ls.nvim'
+
+		-- nvim-cmp => autocompletion
 		use {
 			'hrsh7th/nvim-cmp',
 			requires = {
-				'hrsh7th/cmp-nvim-lsp',
+				'hrsh7th/cmp-nvim-lsp', -- integration for nvim-lspconfig
 				'hrsh7th/cmp-path',
 				'hrsh7th/cmp-buffer',
 				'hrsh7th/cmp-cmdline',
 				'L3MON4D3/LuaSnip',
-				'saadparwaiz1/cmp_luasnip',
-				'rafamadriz/friendly-snippets',
+				'saadparwaiz1/cmp_luasnip', -- integration for luasnip
+				'rafamadriz/friendly-snippets', -- collection of snippets
 				'onsails/lspkind.nvim'
 			}
 		}
@@ -123,26 +132,27 @@ return require'packer'.startup({
 		use 'tpope/vim-dadbod'
 		use 'kristijanhusak/vim-dadbod-ui'
 
-		-- Commentaries
+		-- Comment => easy way to comment code
 		use 'numToStr/Comment.nvim'
 
-		-- Notifications
+		-- nvim-notify => notifications
 		use 'rcarriga/nvim-notify'
 
 		-- GIT
 		use 'lewis6991/gitsigns.nvim'
 
-		-- MARKDOWN
+		-- glow => markdown
 		use 'ellisonleao/glow.nvim'
 
 		-- Documentation
+		-- check if it's still relevant since we have neodev for lsp !
 		use 'nanotee/luv-vimdocs'
 		use 'milisims/nvim-luaref'
 
-		-- RUST
+		-- rust-tools => toolbox for Rust
 		use 'simrat39/rust-tools.nvim'
 
-		-- Debug
+		-- nvim-dap => debug
 		use 'mfussenegger/nvim-dap'
 
 		-- HTML
@@ -150,19 +160,14 @@ return require'packer'.startup({
 		use 'tpope/vim-surround'
 		use 'windwp/nvim-ts-autotag'
 
-		-- Tabs
+		-- taboo => tab manager
 		use 'gcmt/taboo.vim'
 
-		-- Marks
+		-- vim-signature => easy way to manage marks
 		use 'kshenoy/vim-signature'
 
-		-- Tmux
+		-- vim-tmux-navigator => integration for Tmux !
 		use 'christoomey/vim-tmux-navigator'
-
-		-- Others
-		use 'windwp/nvim-autopairs'
-		use 'norcalli/nvim-colorizer.lua'
-		use 'lukas-reineke/indent-blankline.nvim'
 	end,
 	config = {
 		display = {

@@ -249,6 +249,7 @@ printf "\n"
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake \
 cmake g++ pkg-config doxygen zoxide python3-pip mlocate libsqlite3-dev \
 libssl-dev ripgrep fd-find silversearcher-ag bat libicu-dev libboost-all-dev
+sudo apt autoremove -y
 printf "\n"
 printf "=== git clone nvim-release-0.8 ===\n"
 printf "\n"

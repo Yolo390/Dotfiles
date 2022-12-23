@@ -113,7 +113,6 @@ packer.startup({
 			end,
 		})
 		use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
-		-- use("p00f/nvim-ts-rainbow")
 
 		-- nvim-lspconfig => integration for LSP (Language Server Protocol)
 		-- mason => installing and managing LSP servers, linters and formatters

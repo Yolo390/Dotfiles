@@ -585,10 +585,10 @@ Close terminal and open Kitty terminal.
 Go to https://www.nerdfonts.com/font-downloads<br />
 Download Hack Nerd Font into `~/Flo/Downloads`.
 ```sh
-cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip .
+wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
 ```
 ```sh
-unzip Hack.zip && rm -rf Hack.zip
+cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip . && unzip Hack.zip && rm -rf Hack.zip
 ```
 <br />
 

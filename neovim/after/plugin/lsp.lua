@@ -125,7 +125,7 @@ mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(servers) })
 mason_null_ls.setup({
 	ensure_installed = {
 		'prettier', -- formatter for HTML, CSS and JS
-		'stylelua', -- formatter for lua
+		'stylua', -- formatter for lua
 		'eslint_d' -- linter for JS
 	}
 })

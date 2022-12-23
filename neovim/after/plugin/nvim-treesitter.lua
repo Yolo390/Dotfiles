@@ -8,7 +8,7 @@ if not tree_conf_status then
 end
 
 nvim_treesitter_configs.setup({
-	auto_install = true,
+	-- auto_install = true,
 	-- Add languages to be installed here that you want installed for treesitter
 	ensure_installed = {
 		"bash",

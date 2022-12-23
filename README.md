@@ -725,7 +725,7 @@ cd ~/ && sudo apt install -y build-essential git cmake cmake-data pkg-config pyt
 
 Download last release: https://github.com/polybar/polybar/releases
 ```sh
-cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar.gz
+cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar.gz && rm -rf polybar-<version>.tar.gz
 ```
 ```sh
 mv polybar-<version> ~/Flo/Apps/Polybar-<version> && cd ~/Flo/Apps/Polybar-<version> && mkdir build && cd build

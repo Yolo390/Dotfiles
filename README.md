@@ -157,7 +157,9 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 Close and re open terminal.
 
 ```sh
-nvm install 18 && nvm install 16 && nvm use 18
+nvm install 18 && \
+nvm install 16 && \
+nvm use 18
 ```
 
 <br /><br /><br />

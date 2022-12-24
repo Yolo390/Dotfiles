@@ -550,12 +550,14 @@ cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 Create `kitty.conf`<br />
 Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
 ```sh
-wget -P ~./config/kitty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf
+mkdir -p ~/Flo/Dotfiles/kitty && \
+wget -P ~/Flo/Dotfiles/kitty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf && \
+stow -t ~/.config/kitty ~/Flo/Dotfiles/kitty
 ```
 
 <br />
 
-Desktop icons etc...
+To have desktop icons etc...
 ```sh
 cd ~/.local && mkdir bin && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ && \
 cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/ && \
@@ -895,9 +897,6 @@ If you need more info: `stow --help`
 Configuration of my Dotfiles folder.
 ```sh
 cd ~/Flo/Dotfiles && mkdir i3 && mv ~/.config/i3/config ~/Flo/Dotfiles/i3 && stow -t ~/.config/i3 i3
-```
-```sh
-cd ~/Flo/Dotfiles && mkdir kitty && mv ~/.config/kitty/kitty.conf ~/Flo/Dotfiles/kitty && stow -t ~/.config/kitty kitty
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir polybar && mv ~/.config/polybar/config.ini ~/Flo/Dotfiles/polybar &&\

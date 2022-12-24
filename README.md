@@ -368,6 +368,26 @@ chmod +x ~/flo-neovim-install.sh
 cd ~ && ./flo-neovim-install.sh
 ```
 
+Open `packer.lua`.
+```sh
+nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+```
+
+Then run this command: `:PackerSync`
+
+Save and close: `:wq`
+
+Re open `packer.lua`
+```sh
+nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+```
+
+And wait for LSP servers installation and Treesitter parsers installation.
+
+You can run `:Mason` to be sure that every LSP server is correctly installed.
+
+You can also run `:TSUpdate` to be sure that every Treesitter parsers is installed.
+
 <br /><br /><br />
 
 ## TMUX - install from sources

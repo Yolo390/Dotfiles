@@ -738,22 +738,9 @@ cmake .. && make -j$(nproc) && sudo make install
 
 Create all necessaries folder and files.
 ```sh
-cd ~/.config && mkdir polybar && cd polybar
-```
-
-<br />
-
-Create `polybar.sh` and make it executable.<br />
-Download this file as 'polybar.sh': https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/polybar.sh
-```sh
-wget -O polybar.sh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && chmod +x polybar.sh
-```
-<br />
-
-Create `config.ini`<br />
-Download this file as 'config.ini': https://github.com/Flo-Slv/Dotfiles/blob/main/polybar/config.ini
-```sh
-wget -O config.ini https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
+mkdir ~/.config/polybar && \
+wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && chmod +x polybar.sh && \
+wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
 ```
 
 <br />
@@ -766,15 +753,9 @@ cd ~ && sudo apt install fonts-font-awesome
 
 3. I3-WM - config
 ```sh
-cd ~/.config && mkdir i3 && cd i3
+mkdir ~/.config/i3 && wget -P ~/.config/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
 ```
-<br />
 
-Create `config`<br />
-Download this file as 'config': https://github.com/Flo-Slv/Dotfiles/blob/main/i3/config
-```sh
-wget -O config https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
-```
 <br />
 
 Close Kitty.<br />
@@ -883,7 +864,7 @@ Create `starship.toml`<br />
 Download this file as 'starship.toml': https://github.com/Flo-Slv/Dotfiles/blob/main/starship
 
 ```sh
-cd ~/.config && wget -O starship.toml https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
+wget -P ~/.config https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir starship && mv ~/.config/starship.toml starship && stow -t ~/.config starship

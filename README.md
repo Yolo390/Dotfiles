@@ -31,12 +31,21 @@ Here is the process if you want the same environment ! 🚀<br><br><br />
 
 At first, this repo was for my own usage but I tried to comment every step so you can follow my instructions and take inspiration from my repo :blush:
 
+I assume you start with a fresh installation of Ubuntu 22.04.1 LTS
+
+I also assume you know basics of VIM like how to edit and save/quit :stuck_out_tongue_closed_eyes:
+
+Each step respect a specific order. Please respect same order !
+
+The complete installation take around ~60 min depending power of the computer and your knowledges to understand what I am doing.
+
 ---
 
 - Dependencies
   - [Folder structure](#create-folder-structure)
   - [Install packages](#install-dependencies)
   - [Node.js via nvm](#nodejs-via-nvm---install)
+  - [Rust and Cargo](#rust---install)
 - [Oh-my-zsh](#oh-my-zsh---install)
 - Neovim
   - [Install from sources](#neovim---install-from-sources) 
@@ -54,7 +63,6 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 - Polybar
 - Rofi
 - Git with GitUI and git-cz
-- Rust and Cargo
 - Notion
 - Insomnia
 - Stow
@@ -62,15 +70,6 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 
 ---
 
-I assume you start with a fresh installation of Ubuntu 22.04.1 LTS
-
-I also assume you know basics of VIM like how to edit and save/quit :stuck_out_tongue_closed_eyes:
-
-Each step respect a specific order. Please respect same order !
-
-The complete installation take around ~60 min depending power of the computer and your knowledges to understand what I am doing.
-
----
 <br />
 
 ## If you install Ubuntu with VirtualBox

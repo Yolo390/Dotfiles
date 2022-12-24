@@ -513,17 +513,11 @@ wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dot
 
 <br />
 
-Install plugin `zsh-autosuggestions`<br />
-https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
-```sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-```
-
-<br />
-
-Install plugin `zsh-syntax-highlighting`<br />
+Install plugin `zsh-autosuggestions` and `zsh-syntax-highlighting`<br />
+https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh<br />
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 ```sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
@@ -538,6 +532,14 @@ wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
 Close terminal and re open it.
 
 PS: do not copy/paste if you don't understand. You need to adapt with your own aliases, tmux panes sizes etc...
+
+2. Stow
+```sh
+mkdir -p ~/Flo/Dotfiles/zsh && \
+mv ~/.zshrc ~/Flo/Dotfiles/zsh && \
+mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
+stow -t ~/ ~/Flo/Dotfiles/zsh
+```
 
 <br /><br /><br />
 
@@ -912,9 +914,6 @@ mv ~/.config/rofi/flo-theme.rasi ~/Flo/Dotfiles/rofi && stow -t ~/.config/rofi r
 ```sh
 cd ~/Flo/Dotfiles && mkdir gitui && mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/gitui &&\
 mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gitui gitui
-```
-```sh
-cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t ~/ zsh
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir git && mv ~/changelog.config.js ~/.gitconfig git && stow -t ~/ git

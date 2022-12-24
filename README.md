@@ -373,7 +373,7 @@ sudo apt install -y libevent-dev ncurses-dev build-essential bison
 
 3. Fetch Tmux from Git repo
 ```sh
-cd ~/Flo/Apps && git clone https://github.com/tmux/tmux.git Tmux
+git clone https://github.com/tmux/tmux.git ~/Flo/Apps/Tmux
 ```
 <br />
 

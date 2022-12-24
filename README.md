@@ -53,6 +53,7 @@ The complete installation take around ~60 min depending power of the computer an
      1. [Install from sources](#neovim---install-from-sources) 
      2. [Packer as plugin management](#packer---install)
      3. [Neovim config](#neovim---config)
+     4. [Optional: flo-neovim-install.sh script](
 
 4. Tmux
      1. [Install from sources](#tmux---install-from-sources)
@@ -335,7 +336,21 @@ nvim
 
 Then you can run this command: `:checkhealth`
 
-<br /><br />
+<br /><br /><br />
+
+## Optional: custom Neovim installation script
+https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
+
+I developed an installation script who will create the needed folder structure and install/config Neovim.<br />
+```sh
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/flo-neovim-install.sh && \
+chmod +x ~/flo-neovim-install.sh
+```
+```sh
+cd ~ && ./flo-neovim-install.sh
+```
+
+<br /><br /><br />
 
 ## TMUX - install from sources
 1. Remove existing Tmux package

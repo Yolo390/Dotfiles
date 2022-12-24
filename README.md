@@ -130,13 +130,13 @@ automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev
 
 2. Clone Neovim repository
 ```sh
-cd ~/Flo/Apps && git clone -b release-0.8 https://github.com/neovim/neovim Neovim
+git clone -b release-0.8 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
 ```
 <br />
 
 3. Compile sources
 ```sh
-cd Neovim && \
+cd ~/Flo/Apps/Neovim && \
 make CMAKE_BUILD_TYPE=RelWithDebInfo && \
 sudo make install
 ```

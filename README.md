@@ -577,7 +577,12 @@ Go to https://www.nerdfonts.com/font-downloads to check if link is the lastest r
 
 ```sh
 wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \
-cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip . && unzip Hack.zip && rm -rf Hack.zip
+cd ~/.local/share && \
+mkdir fonts && \
+cd fonts && \
+mv ~/Flo/Downloads/Hack.zip . && \
+unzip Hack.zip && \
+rm -rf Hack.zip
 ```
 
 <br />
@@ -602,7 +607,8 @@ sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/
 ## Starship - install
 https://github.com/starship/starship
 ```sh
-cd ~/ && curl -sS https://starship.rs/install.sh | sh
+cd ~/ && \
+curl -sS https://starship.rs/install.sh | sh
 ```
 ```sh
 mkdir ~/Flo/Dotfiles/starship && \
@@ -622,8 +628,12 @@ Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downl
 Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
 ```sh
 wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
-cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop && \
-cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz && \
+cd ~/Flo/Apps && \
+mkdir Btop && \
+mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop && \
+cd ~/Flo/Apps/Btop && \
+tar -xjf btop-x86_64-linux-musl.tbz && \
+rm btop-x86_64-linux-musl.tbz && \
 cd btop && sudo make install
 ```
 
@@ -632,8 +642,8 @@ cd btop && sudo make install
 ## fzf - install
 https://github.com/junegunn/fzf
 ```sh
-cd ~/ && git clone https://github.com/junegunn/fzf .fzf && \
-cd .fzf && ./install
+git clone https://github.com/junegunn/fzf ~/.fzf && \
+cd ~/.fzf && ./install
 ```
 
 <br />
@@ -662,7 +672,8 @@ EOF
 ## GIT-CZ - install and config
 https://github.com/streamich/git-cz
 ```sh
-cd ~ && npm install -g git-cz
+cd ~ && \
+npm install -g git-cz
 ```
 
 <br />
@@ -698,7 +709,8 @@ https://notion-enhancer.github.io/getting-started/installation/
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
 ```
 ```sh
-sudo apt update && sudo apt install -y notion-app-enhanced
+sudo apt update && \
+sudo apt install -y notion-app-enhanced
 ```
 <br /><br />
 
@@ -708,7 +720,8 @@ https://docs.insomnia.rest/insomnia/install
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 ```
 ```sh
-sudo apt update && sudo apt install -y insomnia
+sudo apt update && \
+sudo apt install -y insomnia
 ```
 <br />
 
@@ -719,16 +732,20 @@ You can install plugins in Insomnia: tokyonight theme, gist integration and os i
 https://discord.com/<br />
 Download tar.gz archive into `~/Flo/Downloads`.
 ```sh
-cd ~/Flo/Downloads && sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
+cd ~/Flo/Downloads && \
+sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
 ```
 ```sh
-cd ~ && sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
+cd ~ && \
+sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
 ```
 ```sh
-cd ~ && sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
+cd ~ && \
+sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
 ```
 ```sh
-cd /usr/share/applications && sudo nvim discord.desktop
+cd /usr/share/applications && \
+sudo nvim discord.desktop
 ```
 ```sh
 Exec=/usr/bin/Discord
@@ -740,7 +757,8 @@ Icon=/opt/Discord/discord.png
 https://github.com/BetterDiscord/BetterDiscord<br />
 Download Linux AppImage into `~/Flo/Downloads`
 ```sh
-cd ~/Flo/Downloads && chmod +x BetterDiscord-Linux.AppImage
+cd ~/Flo/Downloads && \
+chmod +x BetterDiscord-Linux.AppImage
 ```
 <br />
 
@@ -772,7 +790,8 @@ https://github.com/charmbracelet/glow
 echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
 ```
 ```sh
-sudo apt update && sudo apt install -y glow
+sudo apt update && \
+sudo apt install -y glow
 ```
 <br /><br />
 
@@ -791,7 +810,13 @@ wget -P ~/config/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/ro
 https://github.com/polybar/polybar/wiki/Compiling<br />
 Install Polybar from sources and dependencies
 ```sh
-cd ~/ && sudo apt install -y build-essential git cmake cmake-data pkg-config python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+cd ~/ && \
+sudo apt install -y build-essential git cmake cmake-data pkg-config \
+python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev \
+libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen \
+xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev \
+libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm \
+libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
 ```
 <br />
 
@@ -799,10 +824,15 @@ Go to https://github.com/polybar/polybar/releases to check if link is the last r
 
 ```sh
 wget -P ~/Flo/Downloads https://github.com/polybar/polybar/releases/download/3.6.3/polybar-3.6.3.tar.gz && \
-cd ~/Flo/Downloads && tar xvzf polybar-3.6.3.tar.gz && rm -rf polybar-3.6.3.tar.gz
+cd ~/Flo/Downloads && \
+tar xvzf polybar-3.6.3.tar.gz && \
+rm -rf polybar-3.6.3.tar.gz
 ```
 ```sh
-mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && cd ~/Flo/Apps/Polybar-3.6.3 && mkdir build && cd build
+mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && \
+cd ~/Flo/Apps/Polybar-3.6.3 && \
+mkdir build && \
+cd build
 ```
 ```sh
 cmake .. && make -j$(nproc) && sudo make install
@@ -822,13 +852,15 @@ wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/mai
 
 Install font-awesome
 ```sh
-cd ~ && sudo apt install fonts-font-awesome
+cd ~ && \
+sudo apt install -y fonts-font-awesome
 ```
 <br /><br />
 
 3. I3-WM - config
 ```sh
-mkdir ~/.config/i3 && wget -P ~/.config/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
+mkdir ~/.config/i3 && \
+wget -P ~/.config/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
 ```
 
 <br />
@@ -844,7 +876,8 @@ Login.
 ## SSH - github keys
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 ```sh
-cd ~/.ssh && ssh-keygen -t ed25519 -C "your_email@example.com"
+cd ~/.ssh && \
+ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
 ```sh
 eval "$(ssh-agent -s)"
@@ -871,7 +904,7 @@ alias sa="eval `ssh-agent`"
 alias ss="ssh-add ~/.ssh/id_ed25519"
 ```
 
-<br /><br />
+<br /><br /><br />
 
 
 ## STOW
@@ -892,26 +925,41 @@ cd ~/Flo/Dotfiles/i3wm/i3
 stow -t ~/.config -D i3
 ```
 If you need more info: `stow --help`
-<br /><br />
+<br /><br /><br />
 
 Configuration of my Dotfiles folder.
 ```sh
-cd ~/Flo/Dotfiles && mkdir i3 && mv ~/.config/i3/config ~/Flo/Dotfiles/i3 && stow -t ~/.config/i3 i3
+cd ~/Flo/Dotfiles && \
+mkdir i3 && \
+mv ~/.config/i3/config ~/Flo/Dotfiles/i3 && \
+stow -t ~/.config/i3 i3
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir polybar && mv ~/.config/polybar/config.ini ~/Flo/Dotfiles/polybar &&\
-mv ~/.config/polybar/polybar.sh ~/Flo/Dotfiles/polybar && stow -t ~/.config/polybar polybar
+cd ~/Flo/Dotfiles && \
+mkdir polybar && \
+mv ~/.config/polybar/config.ini ~/Flo/Dotfiles/polybar && \
+mv ~/.config/polybar/polybar.sh ~/Flo/Dotfiles/polybar && \
+stow -t ~/.config/polybar polybar
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir rofi && mv ~/.config/rofi/config.rasi ~/Flo/Dotfiles/rofi &&\
-mv ~/.config/rofi/flo-theme.rasi ~/Flo/Dotfiles/rofi && stow -t ~/.config/rofi rofi
+cd ~/Flo/Dotfiles && \
+mkdir rofi && \
+mv ~/.config/rofi/config.rasi ~/Flo/Dotfiles/rofi && \
+mv ~/.config/rofi/flo-theme.rasi ~/Flo/Dotfiles/rofi && \
+stow -t ~/.config/rofi rofi
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir gitui && mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/gitui &&\
-mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gitui gitui
+cd ~/Flo/Dotfiles && \
+mkdir gitui && \
+mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/gitui && \
+mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && \
+stow -t ~/.config/gitui gitui
 ```
 ```sh
-cd ~/Flo/Dotfiles && mkdir git && mv ~/changelog.config.js ~/.gitconfig git && stow -t ~/ git
+cd ~/Flo/Dotfiles && \
+mkdir git && \
+mv ~/changelog.config.js ~/.gitconfig git && \
+stow -t ~/ git
 ```
 <br /><br /><br />
 

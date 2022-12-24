@@ -793,30 +793,32 @@ echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/source
 sudo apt update && \
 sudo apt install -y glow
 ```
-<br /><br />
 
-## I3WM - config
-1. ROFI - config
+<br /><br /><br />
+
+## ROFI - config
 ```sh
 mkdir ~/.config/rofi && \
-wget -P ~/.config/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
-wget -P ~/config/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi
+mkdir -p ~/Flo/Dotfiles/rofi && \
+wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
+wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi && \
+stow -t ~/.config/rofi ~/Flo/Dotfiles/rofi
 ```
 
-<br /><br />
+<br /><br /><br />
 
-2. POLYBAR - install and config
+## POLYBAR - install and config
 
-https://github.com/polybar/polybar/wiki/Compiling<br />
-Install Polybar from sources and dependencies
+1. Install from sources
+https://github.com/polybar/polybar/wiki/Compiling
 ```sh
 cd ~/ && \
-sudo apt install -y build-essential git cmake cmake-data pkg-config \
-python3-sphinx python3-packaging libuv1-dev libcairo2-dev libxcb1-dev \
+sudo apt install -y cmake-data pkg-config python3-sphinx python3-packaging \
+libuv1-dev libcairo2-dev libxcb1-dev libcurl4-openssl-dev libnl-genl-3-dev \
 libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen \
 xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev \
 libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm \
-libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev
+libjsoncpp-dev libmpdclient-dev
 ```
 <br />
 
@@ -843,9 +845,11 @@ cmake .. && make -j$(nproc) && sudo make install
 Create all necessaries folder and files.
 ```sh
 mkdir ~/.config/polybar && \
-wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
-chmod +x ~/.config/polybar/polybar.sh && \
-wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
+mkdir ~/Flo/Dotfiles/polybar && \
+wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
+chmod +x ~/Flo/Dotfiles/polybar/polybar.sh && \
+wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini && \
+stow -t ~/.config/polybar ~/Flo/Dotfiles/polybar
 ```
 
 <br />
@@ -855,12 +859,15 @@ Install font-awesome
 cd ~ && \
 sudo apt install -y fonts-font-awesome
 ```
-<br /><br />
 
-3. I3-WM - config
+<br /><br /><br />
+
+## I3-WM - config
 ```sh
 mkdir ~/.config/i3 && \
-wget -P ~/.config/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config
+mkdir -p ~/Flo/Dotfiles/i3 && \
+wget -P ~/Flo/Dotfiles/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config && \
+stow -t ~/.config/i3 ~/Flo/Dotfiles/i3
 ```
 
 <br />
@@ -871,6 +878,7 @@ Logout.<br />
 Restart.<br />
 Choose i3 as windows manager.<br />
 Login.
+
 <br /><br /><br />
 
 ## SSH - github keys
@@ -928,26 +936,6 @@ If you need more info: `stow --help`
 <br /><br /><br />
 
 Configuration of my Dotfiles folder.
-```sh
-cd ~/Flo/Dotfiles && \
-mkdir i3 && \
-mv ~/.config/i3/config ~/Flo/Dotfiles/i3 && \
-stow -t ~/.config/i3 i3
-```
-```sh
-cd ~/Flo/Dotfiles && \
-mkdir polybar && \
-mv ~/.config/polybar/config.ini ~/Flo/Dotfiles/polybar && \
-mv ~/.config/polybar/polybar.sh ~/Flo/Dotfiles/polybar && \
-stow -t ~/.config/polybar polybar
-```
-```sh
-cd ~/Flo/Dotfiles && \
-mkdir rofi && \
-mv ~/.config/rofi/config.rasi ~/Flo/Dotfiles/rofi && \
-mv ~/.config/rofi/flo-theme.rasi ~/Flo/Dotfiles/rofi && \
-stow -t ~/.config/rofi rofi
-```
 ```sh
 cd ~/Flo/Dotfiles && \
 mkdir gitui && \

@@ -19,7 +19,7 @@ Inside it, there is my `Dotfiles` directory and all other folders I use every da
 
 To deal with that and keep my dotfiles in the same folder, I use `stow`, which is a symlink manager.<br><br>
 
-Here is the process if you want the same environment !<br><br><br />
+Here is the process if you want the same environment ! 🚀<br><br><br />
 
 # Development Environment
 
@@ -83,12 +83,16 @@ Install `sudo` package
 apt install sudo
 ```
 
-If you still have an issue like 'you user is not in the sudoers file...', you need to add manually your user.
+If you still have an issue like `you user is not in the sudoers file...`, you need to add manually your user.
+```sh
+su
+```
 
 ```sh
 sudo visudo
 ```
 
+Write this line just after `Root ALL=(ALL:ALL) ALL`.
 ```sh
 flo ALL=(ALL:ALL) ALL
 ```

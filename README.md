@@ -112,12 +112,10 @@ Open terminal.
 
 ## Create folder structure
 ```sh
-cd ~ && mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles
-```
-
-```sh
+cd ~ && mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles && \
 cd ~ && rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
 ```
+
 <br /><br />
 
 ## NEOVIM - install from sources
@@ -138,11 +136,11 @@ cd ~/Flo/Apps && git clone -b release-0.8 https://github.com/neovim/neovim Neovi
 
 3. Compile sources
 ```sh
-cd Neovim && make CMAKE_BUILD_TYPE=RelWithDebInfo
-```
-```sh
+cd Neovim && \
+make CMAKE_BUILD_TYPE=RelWithDebInfo && \
 sudo make install
 ```
+
 <br /><br />
 
 ## PACKER - install
@@ -209,9 +207,7 @@ Open `packer.lua`.
 nvim ~/.config/nvim/lua/FloSlv/packer.lua
 ```
 
-You will have an error about some modules not found. It's normal. Just push Enter.
-
-Launch vim command `:so` and `:PackerSync`.
+Launch vim command: `:PackerSync`
 
 If some modules are not Sync correctly, save/close, re open and re do `:PackerSync`.
 
@@ -260,9 +256,7 @@ npm list -g
 
 If not, you can easily install it.
 ```sh
-npm i -g tree-sitter-cli
-```
-```sh
+npm i -g tree-sitter-cli && \
 npm i -g neovim
 ```
 
@@ -282,21 +276,21 @@ To be sure everyting's working great, just launch Neovim.
 nvim
 ```
 
-Then you can run this command: `:checkhealth`.
+Then you can run this command: `:checkhealth`
 
 <br /><br />
 
 ## TMUX - install from sources
 1. Remove existing Tmux package
 ```sh
-cd ~ && sudo apt update && sudo apt upgrade -y
-```
-```sh
-sudo apt remove tmux && sudo apt autoremove -y
-```
-```sh
+cd ~ && \
+sudo apt update && \
+sudo apt upgrade -y && \
+sudo apt remove tmux && \
+sudo apt autoremove -y && \
 rm -rf .tmux
 ```
+
 <br />
 
 2. Install prerequisite libraries
@@ -313,14 +307,13 @@ cd ~/Flo/Apps && git clone https://github.com/tmux/tmux.git Tmux
 
 4. Compile sources
 ```sh
-cd Tmux && sh autogen.sh
+cd Tmux && \
+sh autogen.sh && \
+./configure && \
+make && \
+sudo make install
 ```
-```sh
-./configure
-```
-```sh
-make && sudo make install
-```
+
 <br />
 
 5. Check version of Tmux
@@ -338,29 +331,23 @@ cd ~ && mkdir .tmux .tmux/tmux-powerline-custom-themes
 
 2. Clone TMUX Plugin Manager and TMUX Powerline
 ```sh
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-```sh
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
 git clone https://github.com/erikw/tmux-powerline.git ~/.tmux/plugins/tmux-powerline
 ```
+
 <br />
 
 3. Fetch `.tmux.conf` and `.tmux-powerlinerc` files from my GitHub repo
 
-https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf
-```sh
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf
-```
-
-https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc
-```sh
-wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc
-```
-
+https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf<br />
+https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc<br />
 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
 ```sh
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf && \
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc && \
 wget -P ~/.tmux/tmux-powerline-custom-themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
 ```
+
 <br />
 
 4. Open `.tmux.conf`, install plugins and reload TMUX.
@@ -368,7 +355,7 @@ wget -P ~/.tmux/tmux-powerline-custom-themes https://raw.githubusercontent.com/F
 tmux
 ```
 ```sh
-cd ~ && nvim .tmux.conf
+nvim ~/.tmux.conf
 ```
 ```sh
 # ctrl+z I to install plugins
@@ -392,7 +379,8 @@ Close Tmux then close and re open terminal.
 ## BTOP - install
 https://github.com/aristocratos/btop#installation
 
-Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`<br />
+Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`.
+
 Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
 ```sh
 wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \

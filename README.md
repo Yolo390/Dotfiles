@@ -79,7 +79,7 @@ The complete installation take around ~60 min depending power of the computer an
 
 14. Git with GitUI and git-cz
 
-15.Insomnia
+15. Insomnia
 
 16. Notion
 

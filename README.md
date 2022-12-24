@@ -33,15 +33,18 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 
 ---
 
-- Zsh with Oh-my-zsh
+- [Zsh with Oh-my-zsh](#oh-my-zsh---install)
+- Neovim
+  - [Install from sources](#neovim---install-from-sources) 
+  - [Packer as plugin management](#packer---install)
+  - [Neovim config](#neovim---config)
+- Tmux
 - Kitty as terminal
 - Hack Nerd Font as main font
 - Starship custom prompt
 - i3 as windows manager
 - Polybar
 - Rofi
-- Tmux
-- Neovim with Packer as plugin management
 - Git with GitUI and git-cz
 - Nvm for Node.js and npm
 - Rust and Cargo
@@ -101,6 +104,14 @@ Close your terminal and re open-it.
 
 <br /><br />
 
+## Create folder structure
+```sh
+mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles && \
+rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
+```
+
+<br /><br />
+
 ## Install dependencies
 ```sh
 sudo apt update && \
@@ -120,15 +131,9 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 Close terminal.<br />
 Logout then login.<br />
 Open terminal.
-<br /><br /><br />
-
-## Create folder structure
-```sh
-mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles && \
-rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
-```
 
 <br /><br />
+
 
 ## NEOVIM - install from sources
 https://github.com/neovim/neovim/wiki/Building-Neovim
@@ -160,20 +165,20 @@ https://github.com/wbthomason/packer.nvim
 ```sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
+
 <br /><br />
 
-## PYNVIM - install
+## NEOVIM - config
+1. PYNVIM - install
 https://github.com/neovim/pynvim<br />
 We need it for some Neovim's plugins.
 ```sh
 cd ~ && pip3 install pynvim
 ```
-<br /><br />
 
-## NEOVIM - config
-IMPORTANT: Replace ```FloSlv``` by your user name.<br /><br />
+2. Create folders
 
-1. Create folders
+IMPORTANT: Replace ```FloSlv``` by your user name.
 ```sh
 cd ~/Flo/Dotfiles && \
 mkdir -p neovim/lua neovim/after/plugin neovim/after/ftplugin neovim/lua/FloSlv/undodir
@@ -181,7 +186,7 @@ mkdir -p neovim/lua neovim/after/plugin neovim/after/ftplugin neovim/lua/FloSlv/
 
 <br />
 
-2. Add config<br />
+3. Add config<br />
 
 Create `options.lua`, `keymaps.lua`, `utils.lua`, `packer.lua` and `init.lua`.<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/options.lua<br />
@@ -225,7 +230,7 @@ If some modules are not Sync correctly, save/close, re open and re do `:PackerSy
 
 <br />
 
-3. Set up all plugins
+4. Set up all plugins
 ```sh
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/autopairs.lua && \
 wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua && \
@@ -259,7 +264,7 @@ wget -P ~/.config/nvim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Do
 
 <br />
 
-4. Node.js required packages
+5. Node.js required packages
 
 Check if you already have Tree-Sitter and Neovim node.js package installed.
 ```sh
@@ -274,14 +279,14 @@ npm i -g neovim
 
 <br />
 
-5. Stow
+6. Stow
 ```sh
 cd ~/Flo/Dotfiles && stow -t ~/.config/nvim neovim
 ```
 
 <br />
 
-6. Open Neovim
+7. Open Neovim
 
 To be sure everyting's working great, just launch Neovim.
 ```sh

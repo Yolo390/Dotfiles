@@ -657,7 +657,8 @@ Close terminal and re open it.
 
 Just copy/paste those lines into your terminal but change before your email and name before type Enter !
 ```sh
-cd ~ && touch .gitconfig && \
+mkdir -p ~/Flo/Dotfiles/git && \
+touch ~/Flo/Dotfiles/git/.gitconfig && \
 cat << EOF >> .gitconfig
 [user]
     email = {your-email}
@@ -667,7 +668,11 @@ cat << EOF >> .gitconfig
 EOF
 ```
 
-<br /><br />
+```sh
+stow -t ~/ ~/Flo/Dotfiles/git
+```
+
+<br /><br /><br />
 
 ## GIT-CZ - install and config
 https://github.com/streamich/git-cz
@@ -680,9 +685,11 @@ npm install -g git-cz
 
 Create `changelog.config.js`
 ```sh
-wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js
+wget -P ~/Flo/Dotfiles/git https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js && \
+stow -t ~/ ~/Flo/Dotfiles/git
 ```
-<br /><br />
+
+<br /><br /><br />
 
 ## GITUI - install and config
 1. Install GitUI
@@ -697,8 +704,10 @@ cargo install gitui
 2. Configure GitUI
 ```sh
 mkdir ~/.config/gitui && \
-wget -P ~/.config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron && \
-wget -P ~./config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron
+mkdir -p ~/Flo/Dotfiles/gitui && \
+wget -P ~/Flo/Dotfiles/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron && \
+wget -P ~/Flo/Dotfiles/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron && \
+stow -t ~/.config/gitui ~/Flo/Dotfiles/gitui
 ```
 
 <br /><br /><br />
@@ -914,7 +923,6 @@ alias ss="ssh-add ~/.ssh/id_ed25519"
 
 <br /><br /><br />
 
-
 ## STOW
 https://linux.die.net/man/8/stow<br />
 At this point, I would like to have an unique Dotfiles directory.<br />
@@ -933,22 +941,7 @@ cd ~/Flo/Dotfiles/i3wm/i3
 stow -t ~/.config -D i3
 ```
 If you need more info: `stow --help`
-<br /><br /><br />
 
-Configuration of my Dotfiles folder.
-```sh
-cd ~/Flo/Dotfiles && \
-mkdir gitui && \
-mv ~/.config/gitui/theme.ron ~/Flo/Dotfiles/gitui && \
-mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && \
-stow -t ~/.config/gitui gitui
-```
-```sh
-cd ~/Flo/Dotfiles && \
-mkdir git && \
-mv ~/changelog.config.js ~/.gitconfig git && \
-stow -t ~/ git
-```
 <br /><br /><br />
 
 ### Special aliases for my laptop - in sudo mod

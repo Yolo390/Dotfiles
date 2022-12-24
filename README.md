@@ -484,6 +484,17 @@ ln -s ~/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/.tmux/plugins/tmux-pow
 
 Close Tmux then close and re open terminal.
 
+<br />
+
+6. Stow
+```sh
+mkdir ~/Flo/Dotfiles/tmux && \
+mv ~/.tmux ~/Flo/Dotfiles/tmux && \
+mv ~/.tmux.conf ~/Flo/Dotfiles/tmux && \
+mv ~/.tmux.powerlinerc ~/Flo/Dotfiles/tmux && \
+stow -t ~/ ~/Flo/Dotfiles/tmux
+```
+
 <br /><br /><br />
 
 ## ZSH - config
@@ -898,10 +909,6 @@ mv ~/.config/gitui/key_bindings.ron ~/Flo/Dotfiles/gitui && stow -t ~/.config/gi
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir oh-my-zsh && mv ~/.oh-my-zsh oh-my-zsh && stow -t ~/ oh-my-zsh
-```
-```sh
-cd ~/Flo/Dotfiles && mkdir tmux && mv ~/.tmux tmux && mv ~/.tmux.conf tmux && mv ~/.tmux.powerlinerc tmux &&\
-stow -t ~/ tmux
 ```
 ```sh
 cd ~/Flo/Dotfiles && mkdir zsh && mv ~/.zshrc zsh && mv ~/.zshenv zsh && stow -t ~/ zsh

@@ -67,17 +67,25 @@ The complete installation take around ~60 min depending power of the computer an
 
 8. [Starship](#starship---install) custom zsh prompt
 
-8. [Btop](#btop---install)
+9. [fzf](#fzf---install)
 
+10. [Rofi](#rofi---config)
 
-- i3 as windows manager
-- Polybar
-- Rofi
-- Git with GitUI and git-cz
-- Notion
-- Insomnia
-- Stow
-- Discord
+11. [Polybar](#polybar---install-and-config)
+
+12. [I3 as windows manager](#i3-wm---config)
+
+13. [Btop](#btop---install)
+
+14. Git with GitUI and git-cz
+
+15.Insomnia
+
+16. Notion
+
+17. Discord
+
+18. Telegram
 
 ---
 
@@ -620,6 +628,104 @@ Close terminal and re open it.
 
 <br /><br /><br />
 
+## fzf - install
+https://github.com/junegunn/fzf
+```sh
+git clone https://github.com/junegunn/fzf ~/.fzf && \
+cd ~/.fzf && ./install
+```
+
+<br />
+
+Close terminal and re open it.
+
+<br /><br /><br />
+
+## ROFI - config
+```sh
+mkdir ~/.config/rofi && \
+mkdir -p ~/Flo/Dotfiles/rofi && \
+wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
+wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi && \
+stow -t ~/.config/rofi ~/Flo/Dotfiles/rofi
+```
+
+<br /><br /><br />
+
+## POLYBAR - install and config
+
+1. Install from sources
+https://github.com/polybar/polybar/wiki/Compiling
+```sh
+cd ~/ && \
+sudo apt install -y git cmake build-essential cmake-data pkg-config python3-sphinx \
+libuv1-dev libcairo2-dev libxcb1-dev libcurl4-openssl-dev libnl-genl-3-dev \
+libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen \
+xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev \
+libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm \
+libjsoncpp-dev libmpdclient-dev python3-packaging
+```
+<br />
+
+Go to https://github.com/polybar/polybar/releases to check if link is the last release version.
+
+```sh
+wget -P ~/Flo/Downloads https://github.com/polybar/polybar/releases/download/3.6.3/polybar-3.6.3.tar.gz && \
+cd ~/Flo/Downloads && \
+tar xvzf polybar-3.6.3.tar.gz && \
+rm -rf polybar-3.6.3.tar.gz
+```
+```sh
+mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && \
+cd ~/Flo/Apps/Polybar-3.6.3 && \
+mkdir build && \
+cd build
+```
+```sh
+cmake .. && make -j$(nproc) && sudo make install
+```
+
+<br />
+
+Create all necessaries folder and files.
+```sh
+mkdir ~/.config/polybar && \
+mkdir ~/Flo/Dotfiles/polybar && \
+wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
+chmod +x ~/Flo/Dotfiles/polybar/polybar.sh && \
+wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini && \
+stow -t ~/.config/polybar ~/Flo/Dotfiles/polybar
+```
+
+<br />
+
+Install font-awesome
+```sh
+cd ~ && \
+sudo apt install -y fonts-font-awesome
+```
+
+<br /><br /><br />
+
+## I3-WM - config
+```sh
+mkdir ~/.config/i3 && \
+mkdir -p ~/Flo/Dotfiles/i3 && \
+wget -P ~/Flo/Dotfiles/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config && \
+stow -t ~/.config/i3 ~/Flo/Dotfiles/i3
+```
+
+<br />
+
+Close Kitty.<br />
+Close all others windows.<br />
+Logout.<br />
+Restart.<br />
+Choose i3 as windows manager.<br />
+Login.
+
+<br /><br /><br />
+
 ## BTOP - install
 https://github.com/aristocratos/btop#installation
 
@@ -636,19 +742,6 @@ tar -xjf btop-x86_64-linux-musl.tbz && \
 rm btop-x86_64-linux-musl.tbz && \
 cd btop && sudo make install
 ```
-
-<br /><br /><br />
-
-## fzf - install
-https://github.com/junegunn/fzf
-```sh
-git clone https://github.com/junegunn/fzf ~/.fzf && \
-cd ~/.fzf && ./install
-```
-
-<br />
-
-Close terminal and re open it.
 
 <br /><br /><br />
 
@@ -802,91 +895,6 @@ echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/source
 sudo apt update && \
 sudo apt install -y glow
 ```
-
-<br /><br /><br />
-
-## ROFI - config
-```sh
-mkdir ~/.config/rofi && \
-mkdir -p ~/Flo/Dotfiles/rofi && \
-wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
-wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi && \
-stow -t ~/.config/rofi ~/Flo/Dotfiles/rofi
-```
-
-<br /><br /><br />
-
-## POLYBAR - install and config
-
-1. Install from sources
-https://github.com/polybar/polybar/wiki/Compiling
-```sh
-cd ~/ && \
-sudo apt install -y git cmake build-essential cmake-data pkg-config python3-sphinx \
-libuv1-dev libcairo2-dev libxcb1-dev libcurl4-openssl-dev libnl-genl-3-dev \
-libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python3-xcbgen \
-xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev \
-libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm \
-libjsoncpp-dev libmpdclient-dev python3-packaging
-```
-<br />
-
-Go to https://github.com/polybar/polybar/releases to check if link is the last release version.
-
-```sh
-wget -P ~/Flo/Downloads https://github.com/polybar/polybar/releases/download/3.6.3/polybar-3.6.3.tar.gz && \
-cd ~/Flo/Downloads && \
-tar xvzf polybar-3.6.3.tar.gz && \
-rm -rf polybar-3.6.3.tar.gz
-```
-```sh
-mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && \
-cd ~/Flo/Apps/Polybar-3.6.3 && \
-mkdir build && \
-cd build
-```
-```sh
-cmake .. && make -j$(nproc) && sudo make install
-```
-
-<br />
-
-Create all necessaries folder and files.
-```sh
-mkdir ~/.config/polybar && \
-mkdir ~/Flo/Dotfiles/polybar && \
-wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
-chmod +x ~/Flo/Dotfiles/polybar/polybar.sh && \
-wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini && \
-stow -t ~/.config/polybar ~/Flo/Dotfiles/polybar
-```
-
-<br />
-
-Install font-awesome
-```sh
-cd ~ && \
-sudo apt install -y fonts-font-awesome
-```
-
-<br /><br /><br />
-
-## I3-WM - config
-```sh
-mkdir ~/.config/i3 && \
-mkdir -p ~/Flo/Dotfiles/i3 && \
-wget -P ~/Flo/Dotfiles/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config && \
-stow -t ~/.config/i3 ~/Flo/Dotfiles/i3
-```
-
-<br />
-
-Close Kitty.<br />
-Close all others windows.<br />
-Logout.<br />
-Restart.<br />
-Choose i3 as windows manager.<br />
-Login.
 
 <br /><br /><br />
 

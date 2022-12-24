@@ -504,10 +504,12 @@ stow -t ~/ ~/Flo/Dotfiles/tmux
 <br /><br /><br />
 
 ## ZSH - config
-Create `ys-flo.zsh-theme`<br />
-Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
+Create `.zshrc` and `ys-flo.zsh-theme`<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 
 ```sh
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc && \
 wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
 ```
 
@@ -523,12 +525,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 <br />
 
-Create `.zshrc`<br />
-Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
-
-```sh
-wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
-```
 Close terminal and re open it.
 
 PS: do not copy/paste if you don't understand. You need to adapt with your own aliases, tmux panes sizes etc...

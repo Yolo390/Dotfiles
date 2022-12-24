@@ -379,38 +379,36 @@ cd ~ && nvim .tmux.conf
 
 5. Add my custom `flo-theme.sh` as `default.sh` theme for tmux-powerline 
 ```sh
-mv ~/.tmux/plugins/tmux-powerline/themes/default.sh ~/.tmux/plugins/tmux-powerline/themes/default.sh.old
-```
-```sh
+mv ~/.tmux/plugins/tmux-powerline/themes/default.sh ~/.tmux/plugins/tmux-powerline/themes/default.sh.old && \
 ln -s ~/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/.tmux/plugins/tmux-powerline/themes/default.sh
 ```
+
 <br />
 
 Close Tmux then close and re open terminal.
+
 <br /><br /><br />
 
 ## BTOP - install
 https://github.com/aristocratos/btop#installation
 
-Download latest release (x86_64 linux version in my case) into `~/Flo/Downloads`<br />
-https://github.com/aristocratos/btop/releases
+Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`<br />
+Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
 ```sh
-cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop
-```
-```sh
-cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz
-```
-```sh
+wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
+cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop && \
+cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz && \
 cd btop && sudo make install
 ```
+
 <br /><br />
 
 ## ZSH - config
 Create `ys-flo.zsh-theme`<br />
-Download this file as 'ys-flo.zsh-theme': https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
+Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 
 ```sh
-cd ~/.oh-my-zsh/custom/themes && wget -O ys-flo.zsh-theme https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
+wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
 ```
 
 <br />
@@ -433,7 +431,7 @@ Create `.zshrc`<br />
 Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
 
 ```sh
-cd ~ && rm .zshrc && wget https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
 ```
 Close terminal and re open it.<br />
 
@@ -443,11 +441,10 @@ PS: do not copy/paste if you don't understand. You need to adapt with your own a
 ## fzf - install
 https://github.com/junegunn/fzf
 ```sh
-cd ~/ && git clone https://github.com/junegunn/fzf .fzf
-```
-```sh
+cd ~/ && git clone https://github.com/junegunn/fzf .fzf && \
 cd .fzf && ./install
 ```
+
 <br />
 
 Close terminal and re open it.
@@ -462,27 +459,17 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 Close terminal and re open it.
 
 ```sh
-nvm install 18
+nvm install 18 && nvm install 16 && nvm use 18
 ```
-```sh
-nvm install 16
-```
-```sh
-nvm use 16
-```
+
 <br /><br />
 
 ## GIT - config
-1. Create `.gitconfig`<br />
-```sh
-cd ~ && touch .gitconfig
-```
-<br />
+1. Create `.gitconfig`
 
-2. Add content to `.gitconfig`<br />
-
-Just copy/paste those lines into your terminal but change before your email and name !
+Just copy/paste those lines into your terminal but change before your email and name before type Enter !
 ```sh
+cd ~ && touch .gitconfig && \
 cat << EOF >> .gitconfig
 [user]
     email = {your-email}
@@ -491,6 +478,7 @@ cat << EOF >> .gitconfig
     editor = nvim
 EOF
 ```
+
 <br /><br />
 
 ## GIT-CZ - install and config
@@ -498,12 +486,12 @@ https://github.com/streamich/git-cz
 ```sh
 cd ~ && npm install -g git-cz
 ```
+
 <br />
 
-Create `changelog.config.js`<br />
-Download this file as 'changelog.config.js': https://github.com/Flo-Slv/Dotfiles/blob/main/git/changelog.config.js
+Create `changelog.config.js`
 ```sh
-cd ~ && wget -O changelog.config.js https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js
 ```
 <br /><br />
 
@@ -524,26 +512,19 @@ https://github.com/extrawurst/gitui#build
 ```sh
 cargo install gitui
 ```
+
 <br />
 
 3. Configure GitUI
 ```sh
-cd ~/.config && mkdir gitui && cd gitui
+mkdir ~/.config/gitui && \
+wget -P ~/.config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron && \
+wget -P ~./config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron
 ```
+
 <br />
 
-Create `theme.ron`<br />
-Download this file as 'theme.ron': https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/theme.ron
-```sh
-wget -O theme.ron https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron
-```
-<br />
 
-Open `key_bindings.ron`<br />
-Download this file as 'key_bindings.ron': https://github.com/Flo-Slv/Dotfiles/blob/main/gitui/key_bindings.ron
-```sh
-wget -O key_bindings.ron https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron
-```
 <br /><br />
 
 ## KITTY - install
@@ -562,34 +543,27 @@ cd ~/.config/kitty && wget -O kitty.conf https://raw.githubusercontent.com/Flo-S
 
 Desktop icons etc...
 ```sh
-cd ~/.local && mkdir bin && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/
-```
-```sh
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
-```
-```sh
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
-```
-```sh
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-```
-```sh
+cd ~/.local && mkdir bin && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ && \
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/ && \
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/ && \
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop && \
 sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 ```
+
 <br />
 
 Close terminal and open Kitty terminal.
+
 <br /><br /><br />
 
 ## HACK FONT - install
-Go to https://www.nerdfonts.com/font-downloads<br />
-Download Hack Nerd Font into `~/Flo/Downloads`.
+Go to https://www.nerdfonts.com/font-downloads to check if link is the last release version !
+
 ```sh
-wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip
-```
-```sh
+wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \
 cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip . && unzip Hack.zip && rm -rf Hack.zip
 ```
+
 <br />
 
 Close and re open Kitty terminal.
@@ -614,7 +588,7 @@ https://notion-enhancer.github.io/getting-started/installation/
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
 ```
 ```sh
-sudo apt update && sudo apt install notion-app-enhanced
+sudo apt update && sudo apt install -y notion-app-enhanced
 ```
 <br /><br />
 
@@ -624,7 +598,7 @@ https://docs.insomnia.rest/insomnia/install
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 ```
 ```sh
-sudo apt update && sudo apt install insomnia
+sudo apt update && sudo apt install -y insomnia
 ```
 <br />
 
@@ -666,7 +640,7 @@ https://github.com/AppImage/AppImageKit/wiki/FUSE
 sudo add-apt-repository universe
 ```
 ```sh
-sudo apt install libfuse2
+sudo apt install -y libfuse2
 ```
 <br />
 
@@ -688,30 +662,18 @@ https://github.com/charmbracelet/glow
 echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
 ```
 ```sh
-sudo apt update && sudo apt install glow
+sudo apt update && sudo apt install -y glow
 ```
 <br /><br />
 
 ## I3WM - config
 1. ROFI - config
 ```sh
-cd ~/.config && mkdir rofi && cd rofi
+mkdir ~/.config/rofi && \
+wget -P ~/.config/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
+wget -P ~/config/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi
 ```
 
-<br />
-
-Create `config.rasi`<br />
-Download this file as 'config.rasi': https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/config.rasi
-```sh
-wget -O config.rasi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi
-```
-<br />
-
-Create `flo-theme.rasi`<br />
-Download this file as 'flo-theme.rasi': https://github.com/Flo-Slv/Dotfiles/blob/main/rofi/flo-theme.rasi
-```sh
-wget -O flo-theme.rasi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi
-```
 <br /><br />
 
 2. POLYBAR - install and config
@@ -723,12 +685,14 @@ cd ~/ && sudo apt install -y build-essential git cmake cmake-data pkg-config pyt
 ```
 <br />
 
-Download last release: https://github.com/polybar/polybar/releases
+Go to https://github.com/polybar/polybar/releases to check if link is the last release version.
+
 ```sh
-cd ~/Flo/Downloads && tar xvzf polybar-<version>.tar.gz && rm -rf polybar-<version>.tar.gz
+wget -P ~/Flo/Downloads https://github.com/polybar/polybar/releases/download/3.6.3/polybar-3.6.3.tar.gz && \
+cd ~/Flo/Downloads && tar xvzf polybar-3.6.3.tar.gz && rm -rf polybar-3.6.3.tar.gz
 ```
 ```sh
-mv polybar-<version> ~/Flo/Apps/Polybar-<version> && cd ~/Flo/Apps/Polybar-<version> && mkdir build && cd build
+mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && cd ~/Flo/Apps/Polybar-3.6.3 && mkdir build && cd build
 ```
 ```sh
 cmake .. && make -j$(nproc) && sudo make install
@@ -739,7 +703,8 @@ cmake .. && make -j$(nproc) && sudo make install
 Create all necessaries folder and files.
 ```sh
 mkdir ~/.config/polybar && \
-wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && chmod +x polybar.sh && \
+wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
+chmod +x ~/.config/polybar/polybar.sh && \
 wget -P ~/.config/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini
 ```
 

@@ -379,7 +379,7 @@ git clone https://github.com/tmux/tmux.git ~/Flo/Apps/Tmux
 
 4. Compile sources
 ```sh
-cd Tmux && \
+cd ~/Flo/Apps/Tmux && \
 sh autogen.sh && \
 ./configure && \
 make && \

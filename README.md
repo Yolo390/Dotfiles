@@ -194,7 +194,8 @@ https://github.com/neovim/neovim/wiki/Building-Neovim
 
 1. Install dependencies
 ```sh
-cd ~ && sudo apt install -y ninja-build gettext libtool libtool-bin autoconf \
+cd ~ && \
+sudo apt install -y ninja-build gettext libtool libtool-bin autoconf \
 automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev
 ```
 <br />
@@ -228,7 +229,8 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nv
 https://github.com/neovim/pynvim<br />
 We need it for some Neovim's plugins.
 ```sh
-cd ~ && pip3 install pynvim
+cd ~ && \
+pip3 install pynvim
 ```
 
 <br />
@@ -276,17 +278,6 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autosave.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/globals/autorun.lua
 ```
-
-<br />
-
-Open `packer.lua`.
-```sh
-nvim ~/.config/nvim/lua/FloSlv/packer.lua
-```
-
-Launch vim command: `:PackerSync`
-
-If some modules are not Sync correctly, save/close, re open and re do `:PackerSync`.
 
 <br />
 

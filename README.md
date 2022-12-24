@@ -488,7 +488,7 @@ Close Tmux then close and re open terminal.
 
 6. Stow
 ```sh
-mkdir ~/Flo/Dotfiles/tmux && \
+mkdir -p ~/Flo/Dotfiles/tmux && \
 mv ~/.tmux ~/Flo/Dotfiles/tmux && \
 mv ~/.tmux.conf ~/Flo/Dotfiles/tmux && \
 mv ~/.tmux.powerlinerc ~/Flo/Dotfiles/tmux && \

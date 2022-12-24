@@ -167,7 +167,8 @@ nvm use 18
 ## RUST - install
 https://www.rust-lang.org/tools/install
 ```sh
-cd ~ && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cd ~ && \
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 <br />
 Close and re open terminal.

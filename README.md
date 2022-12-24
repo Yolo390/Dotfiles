@@ -518,7 +518,7 @@ Close terminal and open Kitty terminal.
 <br /><br /><br />
 
 ## HACK FONT - install
-Go to https://www.nerdfonts.com/font-downloads to check if link is the last release version !
+Go to https://www.nerdfonts.com/font-downloads to check if link is the lastest release version !
 
 ```sh
 wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \

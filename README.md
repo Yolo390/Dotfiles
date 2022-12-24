@@ -33,16 +33,19 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 
 ---
 
-- zsh
-  - [Oh-my-zsh](#oh-my-zsh---install)
-  - [zsh config](#zsh---config)
+- Dependencies
+  - [Folder structure](#create-folder-structure)
+  - [Install packages](#install-dependencies)
+  - [Node.js via nvm](#nodejs-via-nvm---install)
+- [Oh-my-zsh](#oh-my-zsh---install)
 - Neovim
   - [Install from sources](#neovim---install-from-sources) 
   - [Packer as plugin management](#packer---install)
   - [Neovim config](#neovim---config)
 - Tmux
-  - [Install from source](#tmux---install-from-sources)
+  - [Install from sources](#tmux---install-from-sources)
   - [Tmux config](#tmux---config)
+- [zsh config](#zsh---config)
 - [Btop](#btop---install)
 - Kitty as terminal
 - Hack Nerd Font as main font
@@ -51,7 +54,6 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 - Polybar
 - Rofi
 - Git with GitUI and git-cz
-- Nvm for Node.js and npm
 - Rust and Cargo
 - Notion
 - Insomnia
@@ -125,6 +127,30 @@ tree ripgrep fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
 libssl-dev wget
 ```
+
+<br /><br /><br />
+
+## NODE.JS via NVM - install
+https://github.com/nvm-sh/nvm#installing-and-updating
+```sh
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+Close and re open terminal.
+
+```sh
+nvm install 18 && nvm install 16 && nvm use 18
+```
+
+<br /><br /><br />
+
+## RUST - install
+https://www.rust-lang.org/tools/install
+```sh
+cd ~ && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+<br />
+Close and re open terminal.
 
 <br /><br /><br />
 
@@ -466,20 +492,6 @@ Close terminal and re open it.
 
 <br /><br /><br />
 
-## NVM - install
-https://github.com/nvm-sh/nvm#installing-and-updating
-```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-```
-
-Close terminal and re open it.
-
-```sh
-nvm install 18 && nvm install 16 && nvm use 18
-```
-
-<br /><br /><br />
-
 ## GIT - config
 1. Create `.gitconfig`
 
@@ -512,17 +524,7 @@ wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog
 <br /><br />
 
 ## GITUI - install and config
-1. Install Rust (and Cargo)
-
-https://www.rust-lang.org/tools/install
-```sh
-cd ~ && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-<br />
-Close and re open terminal.<br />
-<br />
-
-2. Install GitUI
+1. Install GitUI
 
 https://github.com/extrawurst/gitui#build
 ```sh
@@ -531,17 +533,14 @@ cargo install gitui
 
 <br />
 
-3. Configure GitUI
+2. Configure GitUI
 ```sh
 mkdir ~/.config/gitui && \
 wget -P ~/.config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron && \
 wget -P ~./config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron
 ```
 
-<br />
-
-
-<br /><br />
+<br /><br /><br />
 
 ## KITTY - install
 https://sw.kovidgoyal.net/kitty/binary/

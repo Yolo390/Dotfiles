@@ -33,12 +33,17 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 
 ---
 
-- [Zsh with Oh-my-zsh](#oh-my-zsh---install)
+- zsh
+  - [Oh-my-zsh](#oh-my-zsh---install)
+  - [zsh config](#zsh---config)
 - Neovim
   - [Install from sources](#neovim---install-from-sources) 
   - [Packer as plugin management](#packer---install)
   - [Neovim config](#neovim---config)
 - Tmux
+  - [Install from source](#tmux---install-from-sources)
+  - [Tmux config](#tmux---config)
+- [Btop](#btop---install)
 - Kitty as terminal
 - Hack Nerd Font as main font
 - Starship custom prompt
@@ -50,7 +55,6 @@ At first, this repo was for my own usage but I tried to comment every step so yo
 - Rust and Cargo
 - Notion
 - Insomnia
-- Btop
 - Stow
 - Discord
 
@@ -110,7 +114,7 @@ mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles && \
 rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
 ```
 
-<br /><br />
+<br /><br /><br />
 
 ## Install dependencies
 ```sh
@@ -121,7 +125,8 @@ tree ripgrep fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
 libssl-dev wget
 ```
-<br /><br />
+
+<br /><br /><br />
 
 ## OH-MY-ZSH - install
 https://ohmyz.sh/#install
@@ -132,8 +137,7 @@ Close terminal.<br />
 Logout then login.<br />
 Open terminal.
 
-<br /><br />
-
+<br /><br /><br />
 
 ## NEOVIM - install from sources
 https://github.com/neovim/neovim/wiki/Building-Neovim
@@ -158,7 +162,7 @@ make CMAKE_BUILD_TYPE=RelWithDebInfo && \
 sudo make install
 ```
 
-<br /><br />
+<br /><br /><br />
 
 ## PACKER - install
 https://github.com/wbthomason/packer.nvim
@@ -166,7 +170,7 @@ https://github.com/wbthomason/packer.nvim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
-<br /><br />
+<br /><br /><br />
 
 ## NEOVIM - config
 1. PYNVIM - install
@@ -345,7 +349,7 @@ tmux -V
 ## TMUX - config
 1. Create .tmux and tmux-powerline-custom-themes folders
 ```sh
-cd ~ && mkdir .tmux .tmux/tmux-powerline-custom-themes
+mkdir ~/.tmux ~/.tmux/tmux-powerline-custom-themes
 ```
 <br />
 
@@ -396,21 +400,6 @@ Close Tmux then close and re open terminal.
 
 <br /><br /><br />
 
-## BTOP - install
-https://github.com/aristocratos/btop#installation
-
-Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`.
-
-Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
-```sh
-wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
-cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop && \
-cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz && \
-cd btop && sudo make install
-```
-
-<br /><br />
-
 ## ZSH - config
 Create `ys-flo.zsh-theme`<br />
 Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
@@ -426,6 +415,7 @@ https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zs
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
+
 <br />
 
 Install plugin `zsh-syntax-highlighting`<br />
@@ -433,6 +423,7 @@ https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 ```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
+
 <br />
 
 Create `.zshrc`<br />
@@ -441,9 +432,25 @@ Download this file: https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc
 ```sh
 wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc
 ```
-Close terminal and re open it.<br />
+Close terminal and re open it.
 
 PS: do not copy/paste if you don't understand. You need to adapt with your own aliases, tmux panes sizes etc...
+
+<br /><br /><br />
+
+## BTOP - install
+https://github.com/aristocratos/btop#installation
+
+Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`.
+
+Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
+```sh
+wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
+cd ~/Flo/Apps && mkdir Btop && mv ~/Flo/Downloads/btop-x86_64-linux-musl.tbz ~/Flo/Apps/Btop && \
+cd ~/Flo/Apps/Btop && tar -xjf btop-x86_64-linux-musl.tbz && rm btop-x86_64-linux-musl.tbz && \
+cd btop && sudo make install
+```
+
 <br /><br /><br />
 
 ## fzf - install
@@ -456,6 +463,7 @@ cd .fzf && ./install
 <br />
 
 Close terminal and re open it.
+
 <br /><br /><br />
 
 ## NVM - install
@@ -470,7 +478,7 @@ Close terminal and re open it.
 nvm install 18 && nvm install 16 && nvm use 18
 ```
 
-<br /><br />
+<br /><br /><br />
 
 ## GIT - config
 1. Create `.gitconfig`

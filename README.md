@@ -53,7 +53,7 @@ The complete installation take around ~60 min depending power of the computer an
      1. [Install from sources](#neovim---install-from-sources) 
      2. [Packer as plugin management](#packer---install)
      3. [Neovim config](#neovim---config)
-     4. [Optional: flo-neovim-install.sh script](
+     4. Optional: [flo-neovim-install.sh](#optional-custom-neovim-installation-script) script
 
 4. Tmux
      1. [Install from sources](#tmux---install-from-sources)
@@ -353,7 +353,7 @@ cd ~ && ./flo-neovim-install.sh
 <br /><br /><br />
 
 ## TMUX - install from sources
-1. Remove existing Tmux package
+1. Update packages and remove existing Tmux package.
 ```sh
 cd ~ && \
 sudo apt update && \

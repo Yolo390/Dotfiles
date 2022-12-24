@@ -170,11 +170,14 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\ ~/.local/share/nv
 
 ## NEOVIM - config
 1. PYNVIM - install
+
 https://github.com/neovim/pynvim<br />
 We need it for some Neovim's plugins.
 ```sh
 cd ~ && pip3 install pynvim
 ```
+
+<br />
 
 2. Create folders
 

@@ -41,23 +41,31 @@ The complete installation take around ~60 min depending power of the computer an
 
 ---
 
-- Dependencies
-  - [Folder structure](#create-folder-structure)
-  - [Install packages](#install-dependencies)
-  - [Node.js via nvm](#nodejs-via-nvm---install)
-  - [Rust and Cargo](#rust---install)
-- [Oh-my-zsh](#oh-my-zsh---install)
-- Neovim
-  - [Install from sources](#neovim---install-from-sources) 
-  - [Packer as plugin management](#packer---install)
-  - [Neovim config](#neovim---config)
-- Tmux
-  - [Install from sources](#tmux---install-from-sources)
-  - [Tmux config](#tmux---config)
-- [zsh config](#zsh---config)
-- [Btop](#btop---install)
-- Kitty as terminal
-- Hack Nerd Font as main font
+1. Dependencies
+     1. [Folder structure](#create-folder-structure)
+     2. [Install packages](#install-dependencies)
+     3. [Node.js via nvm](#nodejs-via-nvm---install)
+     4. [Rust and Cargo](#rust---install)
+
+2. [Oh-my-zsh](#oh-my-zsh---install)
+
+3. Neovim
+     1. [Install from sources](#neovim---install-from-sources) 
+     2. [Packer as plugin management](#packer---install)
+     3. [Neovim config](#neovim---config)
+
+4. Tmux
+     1. [Install from sources](#tmux---install-from-sources)
+     2. [Tmux config](#tmux---config)
+
+5. [zsh config](#zsh---config)
+
+6. [Kitty as terminal](#kitty---install)
+
+7. [Hack Nerd Font](#hack-font---install)
+
+8. [Btop](#btop---install)
+
 - Starship custom prompt
 - i3 as windows manager
 - Polybar
@@ -463,6 +471,64 @@ PS: do not copy/paste if you don't understand. You need to adapt with your own a
 
 <br /><br /><br />
 
+## KITTY - install
+https://sw.kovidgoyal.net/kitty/binary/
+```sh
+cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+```
+
+<br />
+
+Create `kitty.conf`<br />
+Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
+```sh
+wget -P ~./config/kitty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf
+```
+
+<br />
+
+Desktop icons etc...
+```sh
+cd ~/.local && mkdir bin && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ && \
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/ && \
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/ && \
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop && \
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+```
+
+<br />
+
+Close terminal and open Kitty terminal.
+
+<br /><br /><br />
+
+## HACK FONT - install
+Go to https://www.nerdfonts.com/font-downloads to check if link is the last release version !
+
+```sh
+wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \
+cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip . && unzip Hack.zip && rm -rf Hack.zip
+```
+
+<br />
+
+Close and re open Kitty terminal.
+<br /><br />
+
+Check if Hack Nerd Font have been installed correctly.
+```sh
+kitty +list-fonts
+```
+<br />
+
+Optional: to have Hack Nerd Font available in Polybar.
+```sh
+sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
+sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
+```
+
+<br /><br /><br />
+
 ## BTOP - install
 https://github.com/aristocratos/btop#installation
 
@@ -540,61 +606,6 @@ wget -P ~./config/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/
 ```
 
 <br /><br /><br />
-
-## KITTY - install
-https://sw.kovidgoyal.net/kitty/binary/
-```sh
-cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-```
-<br />
-
-Create `kitty.conf`<br />
-Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
-```sh
-cd ~/.config/kitty && wget -O kitty.conf https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf
-```
-<br />
-
-Desktop icons etc...
-```sh
-cd ~/.local && mkdir bin && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ && \
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/ && \
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/ && \
-sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop && \
-sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
-```
-
-<br />
-
-Close terminal and open Kitty terminal.
-
-<br /><br /><br />
-
-## HACK FONT - install
-Go to https://www.nerdfonts.com/font-downloads to check if link is the last release version !
-
-```sh
-wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \
-cd ~/.local/share && mkdir fonts && cd fonts && mv ~/Flo/Downloads/Hack.zip . && unzip Hack.zip && rm -rf Hack.zip
-```
-
-<br />
-
-Close and re open Kitty terminal.
-<br /><br />
-
-Check if Hack Nerd Font have been installed correctly.
-```sh
-kitty +list-fonts
-```
-<br />
-
-Optional: to have Hack Nerd Font available in Polybar.
-```sh
-sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
-sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
-```
-<br /><br />
 
 ## NOTION - install
 https://notion-enhancer.github.io/getting-started/installation/

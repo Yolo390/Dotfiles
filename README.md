@@ -149,7 +149,9 @@ sudo apt upgrade -y && \
 sudo apt install -y git zsh zsh-syntax-highlighting curl i3 rofi compton \
 tree ripgrep fd-find silversearcher-ag unzip bat \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
-libssl-dev wget
+libssl-dev wget && \
+sudo apt autoremove -y && \
+sudo apt autoclean -y
 ```
 
 <br /><br /><br />

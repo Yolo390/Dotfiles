@@ -77,7 +77,10 @@ The complete installation take around ~60 min depending power of the computer an
 
 13. [Btop](#btop---install)
 
-14. Git with GitUI and git-cz
+14. Git
+     1. [Git config](#git---config)
+     2. [Git CZ](#git-cz---install-and-config)
+     3. [GitUI](#gitui---install-and-config)
 
 15. Insomnia
 
@@ -740,9 +743,7 @@ cd btop && sudo make install
 <br /><br /><br />
 
 ## GIT - config
-1. Create `.gitconfig`
-
-Just copy/paste those lines into your terminal but change before your email and name before type Enter !
+Just copy/paste those lines into your terminal but change your email and name before type Enter !
 ```sh
 mkdir -p ~/Flo/Dotfiles/git && \
 touch ~/Flo/Dotfiles/git/.gitconfig && \

@@ -991,6 +991,7 @@ git checkout -b main
 ```sh
 cd ~/Flo/Dotfiles && \
 rm -rf git gitui kitty neovim i3 polybar rofi starship zsh
+git pull origin main
 ```
 
 <br /><br /><br />

@@ -192,7 +192,8 @@ Open terminal.
 ```sh
 mkdir -p ~/Flo/Dotfiles/oh-my-zsh && \
 mv ~/.oh-my-zsh ~/Flo/Dotfiles/oh-my-zsh && \
-stow -t ~/ ~/Flo/Dotfiles/oh-my-zsh
+cd ~/Flo/Dotfiles && \
+stow -t ~/ oh-my-zsh
 ```
 
 <br /><br /><br />
@@ -340,7 +341,8 @@ npm i -g neovim
 
 6. Stow
 ```sh
-stow -t ~/.config/nvim ~/Flo/Dotfiles/neovim
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/nvim neovim
 ```
 
 <br />
@@ -505,7 +507,8 @@ mkdir -p ~/Flo/Dotfiles/tmux && \
 mv ~/.tmux ~/Flo/Dotfiles/tmux && \
 mv ~/.tmux.conf ~/Flo/Dotfiles/tmux && \
 mv ~/.tmux.powerlinerc ~/Flo/Dotfiles/tmux && \
-stow -t ~/ ~/Flo/Dotfiles/tmux
+cd ~/Flo/Dotfiles && \
+stow -t ~/ tmux
 ```
 
 <br /><br /><br />
@@ -541,7 +544,8 @@ PS: do not copy/paste if you don't understand. You need to adapt with your own a
 mkdir -p ~/Flo/Dotfiles/zsh && \
 mv ~/.zshrc ~/Flo/Dotfiles/zsh && \
 mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
-stow -t ~/ ~/Flo/Dotfiles/zsh
+cd ~/Flo/Dotfiles && \
+stow -t ~/ zsh
 ```
 
 <br /><br /><br />
@@ -559,7 +563,8 @@ Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/mai
 ```sh
 mkdir -p ~/Flo/Dotfiles/kitty && \
 wget -P ~/Flo/Dotfiles/kitty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf && \
-stow -t ~/.config/kitty ~/Flo/Dotfiles/kitty
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/kitty kitty
 ```
 
 <br />
@@ -620,7 +625,8 @@ curl -sS https://starship.rs/install.sh | sh
 ```sh
 mkdir ~/Flo/Dotfiles/starship && \
 wget -P ~/Flo/Dotfiles/starship https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml && \
-stow -t ~/.config ~/Flo/Dotfiles/starship
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config starship
 ```
 
 Close terminal and re open it.
@@ -646,7 +652,8 @@ mkdir ~/.config/rofi && \
 mkdir -p ~/Flo/Dotfiles/rofi && \
 wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/config.rasi && \
 wget -P ~/Flo/Dotfiles/rofi https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/rofi/flo-theme.rasi && \
-stow -t ~/.config/rofi ~/Flo/Dotfiles/rofi
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/rofi rofi
 ```
 
 <br /><br /><br />
@@ -693,7 +700,8 @@ mkdir ~/Flo/Dotfiles/polybar && \
 wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/polybar.sh && \
 chmod +x ~/Flo/Dotfiles/polybar/polybar.sh && \
 wget -P ~/Flo/Dotfiles/polybar https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/polybar/config.ini && \
-stow -t ~/.config/polybar ~/Flo/Dotfiles/polybar
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/polybar polybar
 ```
 
 <br />
@@ -711,7 +719,8 @@ sudo apt install -y fonts-font-awesome
 mkdir ~/.config/i3 && \
 mkdir -p ~/Flo/Dotfiles/i3 && \
 wget -P ~/Flo/Dotfiles/i3 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/i3/config && \
-stow -t ~/.config/i3 ~/Flo/Dotfiles/i3
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/i3 i3
 ```
 
 <br />
@@ -759,7 +768,8 @@ EOF
 ```
 
 ```sh
-stow -t ~/ ~/Flo/Dotfiles/git
+cd ~/Flo/Dotfiles && \
+stow -t ~/ git
 ```
 
 <br /><br /><br />
@@ -776,7 +786,8 @@ npm install -g git-cz
 Create `changelog.config.js`
 ```sh
 wget -P ~/Flo/Dotfiles/git https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js && \
-stow -t ~/ ~/Flo/Dotfiles/git
+cd ~/Flo/Dotfiles && \
+stow -t ~/ git
 ```
 
 <br /><br /><br />
@@ -797,7 +808,8 @@ mkdir ~/.config/gitui && \
 mkdir -p ~/Flo/Dotfiles/gitui && \
 wget -P ~/Flo/Dotfiles/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/theme.ron && \
 wget -P ~/Flo/Dotfiles/gitui https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/gitui/key_bindings.ron && \
-stow -t ~/.config/gitui ~/Flo/Dotfiles/gitui
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/gitui gitui
 ```
 
 <br /><br /><br />

@@ -573,7 +573,8 @@ PS: do not copy/paste if you don't understand. You need to adapt with your own a
 ## KITTY - install
 https://sw.kovidgoyal.net/kitty/binary/
 ```sh
-cd ~ && curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+cd ~ && \
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
 
 <br />

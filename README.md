@@ -912,7 +912,7 @@ ssh-add ~/.ssh/id_ed25519
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 ```sh
-cat id_ed25519.pub
+cat ~/.ssh/id_ed25519.pub
 ```
 Copy/paste to GitHub.
 <br /><br />

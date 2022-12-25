@@ -253,7 +253,7 @@ nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
 
 And wait for LSP servers installation and Treesitter parsers installation.
 
-You can run `:Mason` to be sure that every LSP server is correctly installed.
+You have to run `:Mason` to be sure that every LSP server is correctly installed.
 
 You can also run `:TSUpdate` to be sure that every Treesitter parsers is installed.
 

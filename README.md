@@ -486,7 +486,7 @@ tmux -V
 <br /><br />
 
 ## TMUX - config
-1. Create .tmux and tmux-powerline-custom-themes folders
+1. Create `.tmux` and `tmux-powerline-custom-themes` folders.
 ```sh
 mkdir -p ~/Flo/Dotfiles/tmux/.tmux && \
 mdkir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
@@ -494,7 +494,7 @@ mdkir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
 
 <br />
 
-2. Clone TMUX Plugin Manager and TMUX Powerline
+2. Clone TMUX Plugin Manager and TMUX Powerline.
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/Flo/Dotfiles/tmux/.tmux/plugins/tpm && \
 git clone https://github.com/erikw/tmux-powerline.git ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline
@@ -502,7 +502,7 @@ git clone https://github.com/erikw/tmux-powerline.git ~/Flo/Dotfiles/tmux/.tmux/
 
 <br />
 
-3. Fetch `.tmux.conf` and `.tmux-powerlinerc` files from my GitHub repo
+3. Fetch `.tmux.conf`, `.tmux-powerlinerc` and `flo-theme.sh` files from my GitHub repo.
 
 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf<br />
 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc<br />
@@ -515,7 +515,7 @@ wget -P ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes https://raw.githu
 
 <br />
 
-4. Add my custom `flo-theme.sh` as `default.sh` theme for tmux-powerline 
+4. Add my custom `flo-theme.sh` as `default.sh` theme for tmux-powerline.
 ```sh
 mv ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh.old && \
 ln -s ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh

@@ -520,8 +520,12 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 
 ```sh
-wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc && \
-wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme
+mkdir -p ~/Flo/Dotfiles/zsh && \
+wget -P ~/Flo/Dotfiles/zsh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc && \
+wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
+mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
+cd ~/Flo/Dotfiles && \
+stow -t ~/ zsh
 ```
 
 <br />
@@ -539,15 +543,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 Close terminal and re open it.
 
 PS: do not copy/paste if you don't understand. You need to adapt with your own aliases, tmux panes sizes etc...
-
-2. Stow
-```sh
-mkdir -p ~/Flo/Dotfiles/zsh && \
-mv ~/.zshrc ~/Flo/Dotfiles/zsh && \
-mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
-cd ~/Flo/Dotfiles && \
-stow -t ~/ zsh
-```
 
 <br /><br /><br />
 

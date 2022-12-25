@@ -784,7 +784,7 @@ Just copy/paste those lines into your terminal but change your email and name be
 ```sh
 mkdir -p ~/Flo/Dotfiles/git && \
 touch ~/Flo/Dotfiles/git/.gitconfig && \
-cat << EOF >> .gitconfig
+cat << EOF >> ~/Flo/Dotfiles/git/.gitconfig
 [user]
     email = {your-email}
     name = {your-name}

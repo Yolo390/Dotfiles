@@ -490,7 +490,7 @@ tmux -V
 1. Create `.tmux` and `tmux-powerline-custom-themes` folders.
 ```sh
 mkdir -p ~/Flo/Dotfiles/tmux/.tmux && \
-mdkir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
+mkdir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
 ```
 
 <br />

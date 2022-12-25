@@ -184,9 +184,17 @@ Close terminal.<br />
 Logout then login.<br />
 Open terminal.
 
+<br />
+
+Create needed folder and files, and install plugins `zsh-autosuggestions` and `zsh-syntax-highlighting`.<br />
+https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh<br />
+https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
+
 ```sh
 mkdir -p ~/Flo/Dotfiles/oh-my-zsh && \
 wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 mv ~/.oh-my-zsh ~/Flo/Dotfiles/oh-my-zsh && \
 cd ~/Flo/Dotfiles && \
 stow -t ~/ oh-my-zsh
@@ -552,16 +560,6 @@ wget -P ~/Flo/Dotfiles/zsh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/ma
 mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
 cd ~/Flo/Dotfiles && \
 stow -t ~/ zsh
-```
-
-<br />
-
-Install plugin `zsh-autosuggestions` and `zsh-syntax-highlighting`<br />
-https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh<br />
-https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
-```sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
 <br />

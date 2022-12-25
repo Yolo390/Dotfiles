@@ -61,7 +61,7 @@ The complete installation take around ~60 min depending power of the computer an
 
 5. [zsh config](#zsh---config)
 
-6. [Kitty as terminal](#kitty---install)
+6. [Kitty](#kitty---install) as terminal
 
 7. [Hack Nerd Font](#hack-font---install)
 
@@ -73,7 +73,7 @@ The complete installation take around ~60 min depending power of the computer an
 
 11. [Polybar](#polybar---install-and-config)
 
-12. [I3 as windows manager](#i3-wm---config)
+12. [I3wm](#i3-wm---config) as windows manager
 
 13. [Btop](#btop---install)
 
@@ -82,13 +82,15 @@ The complete installation take around ~60 min depending power of the computer an
      2. [Git CZ](#git-cz---install-and-config)
      3. [GitUI](#gitui---install-and-config)
 
-15. Insomnia
+15. [Insomnia](#insomnia---install)
 
-16. Notion
+16. [Notion](#notion---install)
 
-17. Discord
+17. [Discord](#discord---install)
 
-18. Telegram
+18. [Glow](#glow---install)
+
+19. [SSH](#ssh---github-keys)
 
 ---
 
@@ -800,17 +802,6 @@ stow -t ~/.config/gitui ~/Flo/Dotfiles/gitui
 
 <br /><br /><br />
 
-## NOTION - install
-https://notion-enhancer.github.io/getting-started/installation/
-```sh
-echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
-```
-```sh
-sudo apt update && \
-sudo apt install -y notion-app-enhanced
-```
-<br /><br />
-
 ## INSOMNIA - install
 https://docs.insomnia.rest/insomnia/install
 ```sh
@@ -823,6 +814,18 @@ sudo apt install -y insomnia
 <br />
 
 You can install plugins in Insomnia: tokyonight theme, gist integration and os infos.
+<br /><br /><br />
+
+## NOTION - install
+https://notion-enhancer.github.io/getting-started/installation/
+```sh
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
+```
+```sh
+sudo apt update && \
+sudo apt install -y notion-app-enhanced
+```
+
 <br /><br /><br />
 
 ## DISCORD - install

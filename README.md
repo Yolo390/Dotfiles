@@ -773,6 +773,10 @@ rm btop-x86_64-linux-musl.tbz && \
 cd btop && sudo make install
 ```
 
+<br />
+
+Close and re open terminal.
+
 <br /><br /><br />
 
 ## GIT - config

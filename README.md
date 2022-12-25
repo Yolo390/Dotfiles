@@ -44,54 +44,56 @@ The complete installation take around ~60 min depending power of the computer an
 1. Dependencies
      1. [Folder structure](#create-folder-structure)
      2. [Install packages](#install-dependencies)
-     3. [Node.js via nvm](#nodejs-via-nvm---install)
-     4. [Rust and Cargo](#rust---install)
 
 2. [Oh-my-zsh](#oh-my-zsh---install)
 
-3. Neovim
+3. More dependencies
+     1. [Node.js via nvm](#nodejs-via-nvm---install)
+     2. [Rust and Cargo](#rust---install)
+
+4. Neovim
      1. First option: install and config Neovim from [flo-neovim-install.sh](#first-option-install-and-config-neovim-from-a-bash-script)
      2. Second option:
           1. [Install from sources](#second-option-neovim---install-from-sources) 
           2. [Packer as plugin management](#packer---install)
           3. [Neovim config](#neovim---config)
 
-4. Tmux
+5. Tmux
      1. [Install from sources](#tmux---install-from-sources)
      2. [Tmux config](#tmux---config)
 
-5. [zsh config](#zsh---config)
+6. [zsh config](#zsh---config)
 
-6. [Kitty](#kitty---install) as terminal
+7. [Kitty](#kitty---install) as terminal
 
-7. [Hack Nerd Font](#hack-font---install)
+8. [Hack Nerd Font](#hack-font---install)
 
-8. [Starship](#starship---install) custom zsh prompt
+9. [Starship](#starship---install) custom zsh prompt
 
-9. [fzf](#fzf---install)
+10. [fzf](#fzf---install)
 
-10. [Rofi](#rofi---config)
+11. [Rofi](#rofi---config)
 
-11. [Polybar](#polybar---install-and-config)
+12. [Polybar](#polybar---install-and-config)
 
-12. [I3wm](#i3-wm---config) as windows manager
+13. [I3wm](#i3-wm---config) as windows manager
 
-13. [Btop](#btop---install)
+14. [Btop](#btop---install)
 
-14. Git
+15. Git
      1. [Git config](#git---config)
      2. [Git CZ](#git-cz---install-and-config)
      3. [GitUI](#gitui---install-and-config)
 
-15. [Insomnia](#insomnia---install)
+16. [Insomnia](#insomnia---install)
 
-16. [Notion](#notion---install)
+17. [Notion](#notion---install)
 
-17. [Discord](#discord---install)
+18. [Discord](#discord---install)
 
-18. [Glow](#glow---install)
+19. [Glow](#glow---install)
 
-19. [SSH](#ssh---github-keys)
+20. [SSH](#ssh---github-keys)
 
 ---
 
@@ -173,6 +175,25 @@ sudo apt autoclean -y
 
 <br /><br /><br />
 
+## OH-MY-ZSH - install
+https://ohmyz.sh/#install
+```sh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+Close terminal.<br />
+Logout then login.<br />
+Open terminal.
+
+```sh
+mkdir -p ~/Flo/Dotfiles/oh-my-zsh && \
+wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
+mv ~/.oh-my-zsh ~/Flo/Dotfiles/oh-my-zsh && \
+cd ~/Flo/Dotfiles && \
+stow -t ~/ oh-my-zsh
+```
+
+<br /><br /><br />
+
 ## NODE.JS via NVM - install
 https://github.com/nvm-sh/nvm#installing-and-updating
 ```sh
@@ -199,25 +220,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 <br />
 Close and re open terminal.
-
-<br /><br /><br />
-
-## OH-MY-ZSH - install
-https://ohmyz.sh/#install
-```sh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-Close terminal.<br />
-Logout then login.<br />
-Open terminal.
-
-```sh
-mkdir -p ~/Flo/Dotfiles/oh-my-zsh && \
-wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
-mv ~/.oh-my-zsh ~/Flo/Dotfiles/oh-my-zsh && \
-cd ~/Flo/Dotfiles && \
-stow -t ~/ oh-my-zsh
-```
 
 <br /><br /><br />
 

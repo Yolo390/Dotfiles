@@ -132,7 +132,18 @@ flo ALL=(ALL:ALL) ALL
 
 Close your terminal and re open-it.
 
-<br /><br />
+<br />
+
+Update/Upgrade packages and delete useless programs and tools.
+```sh
+sudo apt update && \
+sudo apt upgrade -y && \
+sudo apt autoremove -y && \
+sudo apt autoclean -y && \
+sudo snap refresh firefox snapd snapd-desktop-integration
+```
+
+<br /><br /><br />
 
 ## Create folder structure
 ```sh

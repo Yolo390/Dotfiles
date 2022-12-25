@@ -581,6 +581,7 @@ https://sw.kovidgoyal.net/kitty/binary/
 cd ~ && \
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
+A new terminal has opened, close it for now.
 
 <br />
 

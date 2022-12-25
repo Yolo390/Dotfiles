@@ -134,14 +134,19 @@ Close your terminal and re open-it.
 
 <br />
 
-Update/Upgrade packages and delete useless programs and tools.
+Update/Upgrade packages, update snap packages and delete pre-install useless games, programs and tools.
 ```sh
 sudo apt update && \
 sudo apt upgrade -y && \
 sudo apt autoremove -y && \
 sudo apt autoclean -y && \
-sudo snap refresh firefox snapd snapd-desktop-integration
+sudo snap refresh firefox snapd snapd-desktop-integration && \
+sudo apt remove gnome-sudoku gnome-mines gnome-mahjongg gnome-todo gnome-todo-common
 ```
+
+You also need to update version of `core` and version of `gnome` by going to Ubuntu Software tool (aka Snap Store).
+
+To update `snap-store` itself, you need to first kill his process, then run `sudo snap refresh snap-store`.
 
 <br /><br /><br />
 

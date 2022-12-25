@@ -750,8 +750,7 @@ stow -t ~/.config/i3 i3
 
 Close Kitty.<br />
 Close all others windows.<br />
-Logout.<br />
-Restart.<br />
+Restart Ubuntu.<br />
 Choose i3 as windows manager.<br />
 Login.
 

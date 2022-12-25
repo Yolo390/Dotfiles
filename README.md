@@ -226,7 +226,9 @@ Close and re open terminal.
 ## First option: install and config Neovim from a bash script
 https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
 
-I developed an installation script who will create the needed folder structure and install/config Neovim.<br />
+I developed an installation script who will create the needed folder structure and install/config Neovim.
+
+Warning: this script only run on Linux (sorry for users of Windows and Mac OS) and only if you have Node.js installed.
 ```sh
 wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/flo-neovim-install.sh && \
 chmod +x ~/flo-neovim-install.sh

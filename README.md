@@ -709,7 +709,9 @@ mkdir build && \
 cd build
 ```
 ```sh
-cmake .. && make -j$(nproc) && sudo make install
+cmake .. && \
+make -j$(nproc) && \
+sudo make install
 ```
 
 <br />

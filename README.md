@@ -50,10 +50,11 @@ The complete installation take around ~60 min depending power of the computer an
 2. [Oh-my-zsh](#oh-my-zsh---install)
 
 3. Neovim
-     1. [Install from sources](#neovim---install-from-sources) 
-     2. [Packer as plugin management](#packer---install)
-     3. [Neovim config](#neovim---config)
-     4. Optional: [flo-neovim-install.sh](#optional-custom-neovim-installation-script) script
+     1. First option: install and config Neovim from [flo-neovim-install.sh](#first-option-install-and-config-neovim-from-a-bash-script)
+     2. Second option:
+          1. [Install from sources](#second-option-neovim---install-from-sources) 
+          2. [Packer as plugin management](#packer---install)
+          3. [Neovim config](#neovim---config)
 
 4. Tmux
      1. [Install from sources](#tmux---install-from-sources)
@@ -198,7 +199,41 @@ stow -t ~/ oh-my-zsh
 
 <br /><br /><br />
 
-## NEOVIM - install from sources
+## First option: install and config Neovim from a bash script
+https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
+
+I developed an installation script who will create the needed folder structure and install/config Neovim.<br />
+```sh
+wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/flo-neovim-install.sh && \
+chmod +x ~/flo-neovim-install.sh
+```
+```sh
+cd ~ && ./flo-neovim-install.sh
+```
+
+Open `packer.lua`.
+```sh
+nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+```
+
+Then run this command: `:PackerSync`
+
+Save and close: `:wq`
+
+Re open `packer.lua`
+```sh
+nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+```
+
+And wait for LSP servers installation and Treesitter parsers installation.
+
+You can run `:Mason` to be sure that every LSP server is correctly installed.
+
+You can also run `:TSUpdate` to be sure that every Treesitter parsers is installed.
+
+<br /><br /><br />
+
+## Second option: NEOVIM - install from sources
 https://github.com/neovim/neovim/wiki/Building-Neovim
 
 1. Install dependencies
@@ -348,40 +383,6 @@ stow -t ~/.config/nvim neovim
 <br />
 
 7. Last step
-
-Open `packer.lua`.
-```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
-```
-
-Then run this command: `:PackerSync`
-
-Save and close: `:wq`
-
-Re open `packer.lua`
-```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
-```
-
-And wait for LSP servers installation and Treesitter parsers installation.
-
-You can run `:Mason` to be sure that every LSP server is correctly installed.
-
-You can also run `:TSUpdate` to be sure that every Treesitter parsers is installed.
-
-<br /><br /><br />
-
-## Optional: custom Neovim installation script
-https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
-
-I developed an installation script who will create the needed folder structure and install/config Neovim.<br />
-```sh
-wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/flo-neovim-install.sh && \
-chmod +x ~/flo-neovim-install.sh
-```
-```sh
-cd ~ && ./flo-neovim-install.sh
-```
 
 Open `packer.lua`.
 ```sh

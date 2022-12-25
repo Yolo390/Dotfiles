@@ -192,6 +192,7 @@ Open terminal.
 
 ```sh
 mkdir -p ~/Flo/Dotfiles/oh-my-zsh && \
+wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
 mv ~/.oh-my-zsh ~/Flo/Dotfiles/oh-my-zsh && \
 cd ~/Flo/Dotfiles && \
 stow -t ~/ oh-my-zsh
@@ -520,9 +521,9 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 
 ```sh
+rm -rf ~/.zshrc && \
 mkdir -p ~/Flo/Dotfiles/zsh && \
 wget -P ~/Flo/Dotfiles/zsh https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/zsh/.zshrc && \
-wget -P ~/.oh-my-zsh/custom/themes https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/oh-my-zsh/ys-flo.zsh-theme && \
 mv ~/.zshenv ~/Flo/Dotfiles/zsh && \
 cd ~/Flo/Dotfiles && \
 stow -t ~/ zsh

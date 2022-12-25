@@ -970,16 +970,11 @@ alias ss="ssh-add ~/.ssh/id_ed25519"
 ## ~/Flo/Dotfiles as git repo
 https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
 
-1. Initialize Dotfiles folder as a git repo.
+1. Initialize `Dotfiles` folder as a git repo and add `Dotfiles` github remote repo.
 ```sh
-git init
-```
-
-<br />
-
-2. Add github remote repo.
-```sh
-git remote add origin git@github.com:Flo-Slv/Dotfiles.git
+cd ~/Flo/Dotfiles && \
+git init && \
+git remote add origin git@github.com:Flo-Slv/Dotfiles.git && \
 git checkout -b main
 ```
  
@@ -988,7 +983,7 @@ git checkout -b main
 3. Remove and pull from remote
 ```sh
 cd ~/Flo/Dotfiles && \
-rm -rf git gitui kitty neovim i3 polybar rofi starship zsh
+rm -rf git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
 git pull origin main
 ```
 

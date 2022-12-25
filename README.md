@@ -187,6 +187,8 @@ nvm install 16 && \
 nvm use 18
 ```
 
+Again, close and re open terminal.
+
 <br /><br /><br />
 
 ## RUST - install

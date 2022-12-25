@@ -982,6 +982,15 @@ git init
 2. Add github remote repo.
 ```sh
 git remote add origin git@github.com:Flo-Slv/Dotfiles.git
+git checkout -b main
+```
+ 
+ <br />
+
+3. Remove and pull from remote
+```sh
+cd ~/Flo/Dotfiles && \
+rm -rf git gitui kitty neovim i3 polybar rofi starship zsh
 ```
 
 <br /><br /><br />

@@ -186,7 +186,8 @@ Open terminal.
 
 <br />
 
-Create needed folder and files, and install plugins `zsh-autosuggestions` and `zsh-syntax-highlighting`.<br />
+Create needed folder and files, install custom theme `ys-flo.zsh-theme` and install plugins `zsh-autosuggestions` and `zsh-syntax-highlighting`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme<br />
 https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh<br />
 https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 
@@ -549,9 +550,8 @@ stow -t ~/ tmux
 <br /><br /><br />
 
 ## ZSH - config
-Create `.zshrc` and `ys-flo.zsh-theme`<br />
+Create `.zshrc`.<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/oh-my-zsh/ys-flo.zsh-theme
 
 ```sh
 rm -rf ~/.zshrc && \

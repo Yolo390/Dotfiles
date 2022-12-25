@@ -532,6 +532,10 @@ stow -t ~/ tmux
 
 <br />
 
+Close and re open terminal.
+
+<br />
+
 6. Open `.tmux.conf`, install plugins and reload TMUX.
 ```sh
 tmux

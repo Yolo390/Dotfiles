@@ -138,10 +138,11 @@ Update/Upgrade packages, update snap packages and delete pre-install useless gam
 ```sh
 sudo apt update && \
 sudo apt upgrade -y && \
-sudo apt autoremove -y && \
-sudo apt autoclean -y && \
 sudo snap refresh firefox snapd snapd-desktop-integration && \
-sudo apt remove gnome-sudoku gnome-mines gnome-mahjongg gnome-todo gnome-todo-common
+sudo apt remove -y thunderbird rhytmbox simple-scan shotwell remmina libreoffice-impress libreoffice-draw cheese \
+aisleriot gnome-sudoku gnome-mines gnome-mahjongg gnome-todo gnome-todo-common && \
+sudo apt autoremove -y && \
+sudo apt autoclean -y
 ```
 
 You also need to update version of `core` and version of `gnome` by going to Ubuntu Software tool (aka Snap Store).

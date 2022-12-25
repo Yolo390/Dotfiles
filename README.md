@@ -95,6 +95,8 @@ The complete installation take around ~60 min depending power of the computer an
 
 20. [SSH](#ssh---github-keys)
 
+21. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
+
 ---
 
 <br />
@@ -963,6 +965,23 @@ nvim ~/.zshrc
 # Add Github key to SSH agent.
 alias sa="eval `ssh-agent`"
 alias ss="ssh-add ~/.ssh/id_ed25519"
+```
+
+<br /><br /><br />
+
+## ~/Flo/Dotfiles as git repo
+https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
+
+1. Initialize Dotfiles folder as a git repo.
+```sh
+git init
+```
+
+<br />
+
+2. Add github remote repo.
+```sh
+git remote add origin git@github.com:Flo-Slv/Dotfiles.git
 ```
 
 <br /><br /><br />

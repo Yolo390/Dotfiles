@@ -858,6 +858,12 @@ echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ 
 sudo apt update && \
 sudo apt install -y insomnia
 ```
+
+<br />
+
+Close terminal.
+Logout then login.
+
 <br />
 
 You can install plugins in Insomnia: tokyonight theme, gist integration and os infos.

@@ -138,12 +138,13 @@ Close your terminal and re open-it.
 
 <br />
 
-Update/Upgrade packages, update snap packages and delete pre-install useless games, programs and tools.
+Update/Upgrade packages, update snap packages and delete pre-install useless games, programs and tools.<br />
+You need to close Firefox first and run those commands.
 ```sh
 sudo apt update && \
 sudo apt upgrade -y && \
 sudo snap refresh firefox snapd snapd-desktop-integration && \
-sudo apt remove -y thunderbird rhytmbox simple-scan shotwell remmina libreoffice-impress libreoffice-draw cheese \
+sudo apt remove -y thunderbird rhythmbox simple-scan shotwell remmina libreoffice-impress libreoffice-draw cheese \
 aisleriot gnome-sudoku gnome-mines gnome-mahjongg gnome-todo gnome-todo-common && \
 sudo apt autoremove -y && \
 sudo apt autoclean -y

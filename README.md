@@ -968,10 +968,7 @@ alias ss="ssh-add ~/.ssh/id_ed25519"
 <br /><br /><br />
 
 ## STOW
-https://linux.die.net/man/8/stow<br />
-At this point, I would like to have an unique Dotfiles directory.<br />
-Do not reproduce if you don't understand !
-<br />
+https://linux.die.net/man/8/stow
 
 Here is basics usages
 ```sh

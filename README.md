@@ -856,7 +856,8 @@ echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ 
 ```
 ```sh
 sudo apt update && \
-sudo apt install -y insomnia
+sudo apt install -y insomnia && \
+sudo apt autoremove -y
 ```
 
 <br />
@@ -876,7 +877,8 @@ echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /et
 ```
 ```sh
 sudo apt update && \
-sudo apt install -y notion-app-enhanced
+sudo apt install -y notion-app-enhanced && \
+sudo apt autoremove -y
 ```
 
 <br /><br /><br />
@@ -944,7 +946,8 @@ echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/source
 ```
 ```sh
 sudo apt update && \
-sudo apt install -y glow
+sudo apt install -y glow && \
+sudo apt autoremove -y
 ```
 
 <br /><br /><br />

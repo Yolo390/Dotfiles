@@ -278,7 +278,8 @@ https://github.com/neovim/neovim/wiki/Building-Neovim
 ```sh
 cd ~ && \
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf \
-automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev
+automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev libssl-dev \
+ripgrep fd-find silversearcher-ag mlocate zoxide python3-pip libsqlite3-dev
 ```
 <br />
 

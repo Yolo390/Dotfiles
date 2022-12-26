@@ -169,7 +169,7 @@ rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/
 sudo apt update && \
 sudo apt upgrade -y && \
 sudo apt install -y git zsh zsh-syntax-highlighting curl i3 rofi compton \
-tree ripgrep fd-find silversearcher-ag unzip bat \
+tree ripgrep fd-find silversearcher-ag unzip bat python3-dev \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
 libssl-dev wget && \
 sudo apt autoremove -y && \

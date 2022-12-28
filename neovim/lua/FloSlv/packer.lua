@@ -69,6 +69,9 @@ packer.startup({
 		-- wilder => wildmenu
 		use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" } })
 
+		-- bqf => better quickfix list
+		use({ "kevinhwang91/nvim-bqf" })
+
 		-- telescope => fuzzy finder
 		use({
 			"nvim-telescope/telescope.nvim",

@@ -8,6 +8,11 @@ if not mas_lsp_status then
 	return
 end
 
+local lspconfig_ok, lspconfig = pcall(require, "lspconfig")
+if not lspconfig_ok then
+	return
+end
+
 local neodev_status, neodev = pcall(require, "neodev")
 if not neodev_status then
 	return
@@ -79,7 +84,8 @@ end
 local servers = {
 	bashls = {},
 	cssls = {},
-	graphql = {},
+	cssmodules_ls = {},
+	-- graphql = {},
 	html = {},
 	jsonls = {},
 	prismals = {},
@@ -112,7 +118,7 @@ neodev.setup()
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
--- Setup mason so it can manage external tooling.
+-- Setup Mason so it can manage external tooling.
 mason.setup({
 	ui = {
 		border = "rounded",
@@ -138,7 +144,7 @@ mason_null_ls.setup({
 
 mason_lspconfig.setup_handlers({
 	function(server_name)
-		require("lspconfig")[server_name].setup({
+		lspconfig[server_name].setup({
 			capabilities = capabilities,
 			on_attach = on_attach,
 			settings = servers[server_name],
@@ -155,6 +161,7 @@ local lsp = vim.lsp
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
 	border = "rounded",
 })
+
 lsp.handlers["textDocument/signatureHelp"] = lsp.with(vim.lsp.handlers.hover, {
 	border = "rounded",
 })

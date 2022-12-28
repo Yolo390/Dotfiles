@@ -359,6 +359,7 @@ wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neo
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/luasnip.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/null-ls.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-autopairs.lua
+wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-bqf.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-cmp.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-colorizer.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-notify.lua
@@ -367,8 +368,7 @@ wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neo
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua
-# Be careful with undotree, because I hardcode path inside this file !
-wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua
+wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua # Be careful with undotree, because I hardcode path inside this file !
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vimade.lua

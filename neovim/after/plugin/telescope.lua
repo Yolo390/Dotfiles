@@ -8,6 +8,11 @@ if not ts_action_ok then
 	return
 end
 
+local neoclip_ok, neoclip = pcall(require, "neoclip")
+if not neoclip_ok then
+	return
+end
+
 telescope.setup({
 	defaults = {
 		prompt_prefix = "🔍 ",
@@ -45,7 +50,8 @@ pcall(telescope.load_extension, "repo")
 pcall(telescope.load_extension, "packer")
 pcall(telescope.load_extension, "bookmarks")
 pcall(telescope.load_extension, "neoclip")
-require("neoclip").setup()
+
+neoclip.setup()
 
 -- UI
 vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#CCCCCC" })

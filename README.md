@@ -169,7 +169,7 @@ rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/
 sudo apt update && \
 sudo apt upgrade -y && \
 sudo apt install -y git zsh zsh-syntax-highlighting curl i3 rofi compton \
-tree ripgrep fd-find silversearcher-ag unzip bat \
+tree ripgrep fd-find silversearcher-ag unzip bat python3-dev \
 neofetch stow mlocate zoxide python3-pip libsqlite3-dev \
 libssl-dev wget && \
 sudo apt autoremove -y && \
@@ -277,8 +277,9 @@ https://github.com/neovim/neovim/wiki/Building-Neovim
 1. Install dependencies
 ```sh
 cd ~ && \
-sudo apt install -y ninja-build gettext libtool libtool-bin autoconf \
-automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev
+sudo apt install -y ninja-build gettext libtool libtool-bin autoconf python3-dev \
+automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev libssl-dev \
+ripgrep fd-find silversearcher-ag mlocate zoxide python3-pip libsqlite3-dev bat
 ```
 <br />
 

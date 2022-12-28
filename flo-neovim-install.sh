@@ -247,7 +247,7 @@ printf "\n"
 printf "=== install dependencies ===\n"
 printf "\n"
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf automake \
-cmake g++ pkg-config doxygen zoxide python3-pip mlocate libsqlite3-dev \
+cmake g++ pkg-config doxygen zoxide python3-pip mlocate libsqlite3-dev python3-dev \
 libssl-dev ripgrep fd-find silversearcher-ag bat libicu-dev libboost-all-dev
 sudo apt autoremove -y
 printf "\n"

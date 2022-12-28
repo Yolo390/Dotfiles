@@ -23,6 +23,11 @@ if not mas_null_ls_status then
 	return
 end
 
+local ts_builtin_status, ts_builtin = pcall(require, "telescope.builtin")
+if not ts_builtin_status then
+	return
+end
+
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
 local on_attach = function(_, bufnr)
@@ -35,30 +40,36 @@ local on_attach = function(_, bufnr)
 		vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
 	end
 
-	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+	-- Actions
+	nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[N]ame")
 	nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
-	nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-	nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-	nmap("gI", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+	-- Definitions
+	nmap("gdf", vim.lsp.buf.definition, "[G]oto [D]e[F]inition")
+	nmap("gr", ts_builtin.lsp_references, "[G]oto [R]eferences")
+	nmap("gi", vim.lsp.buf.implementation, "[G]oto [I]mplementation")
+	nmap("gdc", vim.lsp.buf.declaration, "[G]oto [D]e[C]laration")
 	nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-	nmap("<leader>ds", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-	nmap("<leader>ws", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+	nmap("<leader>ds", ts_builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
 
-	-- See `:help K` for why this keymap
+	-- Diagnostics
+	nmap("<leader>dop", vim.diagnostic.open_float, "[D]agnostic [OP]en")
+	nmap("<leader>dl", vim.diagnostic.setloclist, "[D]iagnostic [L]ist")
+	nmap("<leader>df", ts_builtin.diagnostics, "[D]iagnostics [F]inder")
+
+	-- Documentation
 	nmap("K", vim.lsp.buf.hover, "Hover Documentation")
-	-- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation") --
-	-- conflict with moving line to top (cf: custom keymaps)
+	-- nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation") -- conflict with moving line to top (cf: custom keymaps)
 
-	-- Lesser used LSP functionality
-	nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+	-- Workspaces
+	nmap("<leader>ws", ts_builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 	nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
 	nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
 	nmap("<leader>wl", function()
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
 
-	-- Create a command `:Format` local to the LSP buffer
+	-- Create a command `:Format` local to the LSP buffer.
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function()
 		vim.lsp.buf.format()
 	end, { desc = "Format current buffer with LSP" })

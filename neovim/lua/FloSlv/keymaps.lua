@@ -115,7 +115,7 @@ key("n", "<leader>/", ":lua FuzzilySearch()<CR>", full_options)
 key("n", "<leader>fb", ":Telescope buffers<CR>", full_options)
 key("n", "<leader>fgf", ":Telescope git_files<CR>", full_options)
 key("n", "<leader>fgc", ":Telescope git_commits<CR>", full_options)
-key("n", "<leader>fgg", ":Telescope live_grep<CR>", full_options)
+key("n", "<leader>flg", ":Telescope live_grep<CR>", full_options)
 key("n", "<leader>fw", builtin.grep_string, { desc = "[F]ind current [W]ord" })
 key("n", "<leader>neo", ":Telescope neoclip<CR>", full_options)
 

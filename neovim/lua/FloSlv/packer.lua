@@ -115,7 +115,6 @@ packer.startup({
 				-- ts_update() -- make sure parsers are automatically updated whenever nvim-treesitter is installed/updated
 			end,
 		})
-		use({ "p00f/nvim-ts-rainbow", after = "nvim-treesitter" })
 
 		-- nvim-lspconfig => integration for LSP (Language Server Protocol)
 		-- mason => installing and managing LSP servers, linters and formatters

@@ -12,7 +12,7 @@ end
 
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
--- Automatically source and re-sync packer whenever you save.
+-- Automatically source and re-sync packer when you save `packer.lua`.
 local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
 	command = "source <afile> | PackerSync",

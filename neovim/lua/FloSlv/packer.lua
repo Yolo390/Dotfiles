@@ -42,10 +42,10 @@ packer.startup({
 
 		-- Display
 		use("glepnir/dashboard-nvim")
-		use("kyazdani42/nvim-web-devicons")
+		use("nvim-tree/nvim-web-devicons")
 		use({
-			"kyazdani42/nvim-tree.lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
+			"nvim-tree/nvim-tree.lua",
+			requires = { "nvim-tree/nvim-web-devicons" },
 			tag = "nightly",
 		})
 		use("TaDaa/vimade")

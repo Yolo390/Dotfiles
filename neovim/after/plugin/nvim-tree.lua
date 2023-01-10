@@ -13,7 +13,7 @@ nvim_tree.setup({
       			list = {
         			{ key = "u", action = "dir_up" },
       			},
-    		},
+		},
 	},
 	renderer = {
 		group_empty = true,

@@ -5,7 +5,7 @@ end
 
 lualine.setup({
 	options = {
-		theme = 'nord', -- nightfly, nord, grubbox_dark, material, tokyionight
+		theme = 'nord', -- nightfly, nord, grubbox_dark, material, tokyonight
 		disabled_filetypes = {
 			statusline = { 'dashboard', 'NvimTree' },
 			winbar = { 'dashboard', 'NvimTree' }

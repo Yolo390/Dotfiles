@@ -29,7 +29,7 @@ local options = {
 	smartindent = true,
 	clipboard = "unnamedplus",
 	laststatus = 2, -- set to 3 for an unique lualine bar.
-	termguicolors = true,
+	termguicolors = true, -- to enable highlight groups
 	updatetime = 1000,
 	-- SAVING
 	backup = false,

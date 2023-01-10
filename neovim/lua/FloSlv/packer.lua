@@ -12,7 +12,7 @@ end
 
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
 
--- Automatically source and re-sync packer whenever you save.
+-- Automatically source and re-sync packer when you save `packer.lua`.
 local packer_group = vim.api.nvim_create_augroup("Packer", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePost", {
 	command = "source <afile> | PackerSync",
@@ -42,10 +42,10 @@ packer.startup({
 
 		-- Display
 		use("glepnir/dashboard-nvim")
-		use("kyazdani42/nvim-web-devicons")
+		use("nvim-tree/nvim-web-devicons")
 		use({
-			"kyazdani42/nvim-tree.lua",
-			requires = { "kyazdani42/nvim-web-devicons" },
+			"nvim-tree/nvim-tree.lua",
+			requires = { "nvim-tree/nvim-web-devicons" },
 			tag = "nightly",
 		})
 		use("TaDaa/vimade")
@@ -196,6 +196,8 @@ packer.startup({
 		-- vim-tmux-navigator => integration for Tmux !
 		use("christoomey/vim-tmux-navigator")
 
+		-- Automatically set up your configuration after cloning packer.nvim
+  		-- Put this at the end after all plugins
 		if packer_bootstrap then
 			require("packer").sync()
 		end

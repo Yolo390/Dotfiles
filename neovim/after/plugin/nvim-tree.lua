@@ -9,6 +9,11 @@ nvim_tree.setup({
 		adaptive_size = true,
 		side = "right",
 		-- width = 30
+		mappings = {
+      			list = {
+        			{ key = "u", action = "dir_up" },
+      			},
+		},
 	},
 	renderer = {
 		group_empty = true,

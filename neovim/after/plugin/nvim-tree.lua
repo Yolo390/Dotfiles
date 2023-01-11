@@ -10,9 +10,9 @@ nvim_tree.setup({
 		side = "right",
 		-- width = 30
 		mappings = {
-      			list = {
-        			{ key = "u", action = "dir_up" },
-      			},
+			list = {
+				{ key = "u", action = "dir_up" },
+			},
 		},
 	},
 	renderer = {
@@ -23,8 +23,18 @@ nvim_tree.setup({
 	},
 })
 
--- Autocmd to quit NvimTree when last windows close.
+-- Autocmd to quit NvimTree when last windows/buffer close.
 vim.api.nvim_create_autocmd("BufEnter", {
-	command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
-	nested = true,
+	group = vim.api.nvim_create_augroup("NvimTreeClose", { clear = true }),
+	pattern = "NvimTree_*",
+	callback = function()
+		local layout = vim.api.nvim_call_function("winlayout", {})
+		if
+			layout[1] == "leaf"
+			and vim.api.nvim_buf_get_option(vim.api.nvim_win_get_buf(layout[2]), "filetype") == "NvimTree"
+			and layout[3] == nil
+		then
+			vim.cmd("confirm quit")
+		end
+	end,
 })

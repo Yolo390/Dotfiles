@@ -155,6 +155,9 @@ packer.startup({
 			},
 		})
 
+		-- color in nvim-cmp for Tailwind CSS.
+		use("roobert/tailwindcss-colorizer-cmp.nvim")
+
 		-- Databases
 		use("tpope/vim-dadbod")
 		use("kristijanhusak/vim-dadbod-ui")

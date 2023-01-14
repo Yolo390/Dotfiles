@@ -18,10 +18,10 @@ if not luasnip_vsc_ok then
 	return
 end
 
--- local tail_col_cmp_ok, tailwindcss_colorizer_cmp = pcall(require, "tailwindcss-colorizer-cmp")
--- if not tail_col_cmp_ok then
--- 	return
--- end
+local tail_col_cmp_ok, tailwindcss_colorizer_cmp = pcall(require, "tailwindcss-colorizer-cmp")
+if not tail_col_cmp_ok then
+	return
+end
 
 luasnip_load_vsc.lazy_load()
 
@@ -83,13 +83,7 @@ cmp.setup({
 				path = "[PATH]",
 				luasnip = "[SNIP]",
 			},
-			-- before = function(entry, vim_item)
-			-- 	local word = entry:get_insert_text()
-			-- 	-- local filetype = entry:
-			-- 	-- DN(entry)
-			-- 	return vim_item
-			-- end,
+			before = tailwindcss_colorizer_cmp.formatter,
 		}),
-		-- format = tailwindcss_colorizer_cmp.formatter,
 	},
 })

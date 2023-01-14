@@ -49,7 +49,7 @@ packer.startup({
 			tag = "nightly",
 		})
 		use("TaDaa/vimade")
-		use("norcalli/nvim-colorizer.lua")
+		use("NvChad/nvim-colorizer.lua")
 		use("lukas-reineke/indent-blankline.nvim")
 
 		-- which-key => easy way to find your <leader> mapping

@@ -51,6 +51,10 @@ packer.startup({
 		use("TaDaa/vimade")
 		use("NvChad/nvim-colorizer.lua")
 		use("lukas-reineke/indent-blankline.nvim")
+		use({
+			"folke/todo-comments.nvim",
+			requires = { "nvim-lua/plenary.nvim" },
+		})
 
 		-- which-key => easy way to find your <leader> mapping
 		use("folke/which-key.nvim")

@@ -273,3 +273,21 @@ key("n", "<leader>y", ":source ~/Flo/Dotfiles/nvim/plugin/luasnip.lua<CR>", nore
 -- ########
 
 key("n", "<leader>gl", ":Glow<CR>", full_options)
+
+-- ###########
+-- # TROUBLE #
+-- ###########
+
+key("n", "<leader>tt", ":TroubleToggle<CR>", full_options)
+key("n", "<leader>tw", ":TroubleToggle workspace_diagnostics<CR>", full_options)
+key("n", "<leader>td", ":TroubleToggle document_diagnostics<CR>", full_options)
+-- key("n", "<leader>tlo", ":TroubleToggle loclist<CR>", full_options)
+key("n", "<leader>tq", ":TroubleToggle quickfix<CR>", full_options)
+key("n", "gR", ":TroubleToggle lsp_references<CR>", full_options)
+
+-- #################
+-- # TODO-COMMENTS #
+-- #################
+
+key("n", "<leader>to", ":TodoTrouble<CR>", full_options)
+key("n", "<leader>tl", ":TodoTelescope<CR>", full_options)

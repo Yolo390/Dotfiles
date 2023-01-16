@@ -74,8 +74,32 @@ for i, fg in ipairs(gradient) do
 	})
 end
 
-local popupmenu_renderer = wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
+-- local popupmenu_renderer = wilder.popupmenu_renderer(wilder.popupmenu_border_theme({
+-- 	border = "rounded",
+-- 	empty_message = wilder.popupmenu_empty_message_with_spinner(),
+-- 	highlights = { gradient = gradient }, -- must be set
+-- 	highlighter = wilder.highlighter_with_gradient({
+-- 		-- wilder.basic_highlighter(),
+-- 		wilder.lua_fzy_highlighter(),
+-- 	}),
+-- 	left = {
+-- 		" ",
+-- 		wilder.popupmenu_devicons(),
+-- 		wilder.popupmenu_buffer_flags({
+-- 			flags = " a + ",
+-- 			icons = { ["+"] = "", a = "", h = "" },
+-- 		}),
+-- 	},
+-- 	right = { " ", wilder.popupmenu_scrollbar() },
+-- }))
+
+local palette_popupmenu_renderer = wilder.popupmenu_renderer(wilder.popupmenu_palette_theme({
 	border = "rounded",
+	max_height = "30%", -- max height of the palette
+	min_height = "30%", -- set to the same as 'max_height' for a fixed height window
+	prompt_position = "top", -- 'top' or 'bottom' to set the location of the prompt
+	reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
+	margin = "65%",
 	empty_message = wilder.popupmenu_empty_message_with_spinner(),
 	highlights = { gradient = gradient }, -- must be set
 	highlighter = wilder.highlighter_with_gradient({
@@ -93,22 +117,39 @@ local popupmenu_renderer = wilder.popupmenu_renderer(wilder.popupmenu_border_the
 	right = { " ", wilder.popupmenu_scrollbar() },
 }))
 
-local wildmenu_renderer = wilder.wildmenu_renderer({
+-- local wildmenu_renderer = wilder.wildmenu_renderer({
+-- 	highlights = { gradient = gradient }, -- must be set
+-- 	highlighter = wilder.highlighter_with_gradient({
+-- 		wilder.lua_fzy_highlighter(), -- wilder.basic_highlighter(),
+-- 	}),
+-- 	separator = " · ",
+-- 	left = { " ", wilder.wildmenu_spinner(), " " },
+-- 	right = { " ", wilder.wildmenu_index() },
+-- })
+
+local palette_search_renderer = wilder.popupmenu_renderer(wilder.popupmenu_palette_theme({
+	-- 'single', 'double', 'rounded' or 'solid'
+	-- can also be a list of 8 characters, see :h wilder#popupmenu_palette_theme() for more details
+	border = "rounded",
+	max_height = "30%", -- max height of the palette
+	min_height = "30%", -- set to the same as 'max_height' for a fixed height window
+	prompt_position = "top", -- 'top' or 'bottom' to set the location of the prompt
+	reverse = 0, -- set to 1 to reverse the order of the list, use in combination with 'prompt_position'
+	margin = "65%",
 	highlights = { gradient = gradient }, -- must be set
 	highlighter = wilder.highlighter_with_gradient({
-		-- wilder.basic_highlighter(),
-		wilder.lua_fzy_highlighter(),
+		wilder.lua_fzy_highlighter(), -- wilder.basic_highlighter(),
 	}),
 	separator = " · ",
 	left = { " ", wilder.wildmenu_spinner(), " " },
 	right = { " ", wilder.wildmenu_index() },
-})
+}))
 
 wilder.set_option(
 	"renderer",
 	wilder.renderer_mux({
-		[":"] = popupmenu_renderer,
-		["/"] = wildmenu_renderer,
-		["?"] = wildmenu_renderer,
+		[":"] = palette_popupmenu_renderer, -- popupmenu_renderer,
+		["/"] = palette_search_renderer, -- wildmenu_renderer
+		["?"] = palette_search_renderer, -- wildmenu_renderer
 	})
 )

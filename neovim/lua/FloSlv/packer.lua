@@ -74,7 +74,7 @@ packer.startup({
 		use("fgheng/winbar.nvim")
 
 		-- colorful-winsep => window color separation
-		-- use 'nvim-zh/colorful-winsep.nvim'
+		-- use("nvim-zh/colorful-winsep.nvim")
 		-- Have an issue with Lualine and performance...
 		-- see https://github.com/nvim-zh/colorful-winsep.nvim/issues/26
 

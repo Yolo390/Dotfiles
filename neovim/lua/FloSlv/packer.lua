@@ -42,15 +42,23 @@ packer.startup({
 
 		-- Display
 		use("glepnir/dashboard-nvim")
+		use("TaDaa/vimade")
+		use("lukas-reineke/indent-blankline.nvim")
+
+		-- nvim-colorizer => color highlighter
+		use("NvChad/nvim-colorizer.lua")
+
+		-- nvim-web-devicons => icons
 		use("nvim-tree/nvim-web-devicons")
+
+		-- nvim-tree => file explorer
 		use({
 			"nvim-tree/nvim-tree.lua",
 			requires = { "nvim-tree/nvim-web-devicons" },
 			tag = "nightly",
 		})
-		use("TaDaa/vimade")
-		use("NvChad/nvim-colorizer.lua")
-		use("lukas-reineke/indent-blankline.nvim")
+
+		-- todo-comments => highlight and search for todo comments like TODO, HACK, BUG in the code base.
 		use({
 			"folke/todo-comments.nvim",
 			requires = { "nvim-lua/plenary.nvim" },
@@ -74,7 +82,13 @@ packer.startup({
 		use({ "gelguy/wilder.nvim", requires = { "romgrk/fzy-lua-native" } })
 
 		-- bqf => better quickfix list
-		use({ "kevinhwang91/nvim-bqf" })
+		-- use({ "kevinhwang91/nvim-bqf" })
+
+		-- trouble => a pretty list for showing diagnostics, references, telescope results, quickfix and location lists.
+		use({
+			"folke/trouble.nvim",
+			requires = { "nvim-tree/nvim-web-devicons" },
+		})
 
 		-- telescope => fuzzy finder
 		use({

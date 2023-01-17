@@ -170,7 +170,8 @@ bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
 # At startup, launch apps.
-exec --no-startup-id kitty
+# exec --no-startup-id kitty
+exec --no-startup-id alacritty
 # exec --no-startup-id firefox
 # exec --no-startup-id notion-app-enhanced
 exec --no-startup-id nautilus
@@ -179,8 +180,11 @@ exec --no-startup-id insomnia
 exec --no-startup-id telegram-desktop
 
 # When opening one of the following app, go directly to the workspace.
-assign [class="kitty"] $ws1
-for_window [class="kitty"] focus
+# assign [class="kitty"] $ws1
+# for_window [class="kitty"] focus
+
+assign [class="alacritty"] $ws1
+for_window [class="alacritty"] focus
 
 assign [class="firefox"] $ws2
 for_window [class="firefox"] focus

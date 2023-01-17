@@ -386,7 +386,10 @@ wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-treesitter.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua && \
+wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/tailwindcss-colorizer-cmp.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua && \
+wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/todo-comments.lua && \
+wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/trouble.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua && \

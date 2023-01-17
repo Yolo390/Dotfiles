@@ -64,7 +64,7 @@ The complete installation take around ~60 min depending power of the computer an
 
 6. [zsh config](#zsh---config)
 
-7. [Kitty](#kitty---install) as terminal
+7. [Alacritty](#alacritty---install) as terminal
 
 8. [Hack Nerd Font](#hack-font---install)
 
@@ -579,7 +579,57 @@ PS: do not copy/paste if you don't understand. You need to adapt with your own a
 
 <br /><br /><br />
 
+## Alacritty - install
+https://github.com/alacritty/alacritty
+
+Install
+```sh
+cd ~ && \
+git clone https://github.com/alacritty/alacritty.git ~/Flo/Apps/Alacritty && \
+rustup override set stable && \
+rustup update stable && \
+sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 && \
+cd ~/Flo/Apps/Alacritty && \
+cargo build --release
+```
+
+To have Desktop icon
+```sh
+cd ~/Flo/Apps/Alacritty && \
+sudo cp target/release/alacritty /usr/local/bin && \
+sudo cp extra/logo/alacritty-term.svg /usr/share/pixmaps/Alacritty.svg && \
+sudo desktop-file-install extra/linux/Alacritty.desktop && \
+sudo update-desktop-database
+```
+
+To have manual page
+```sh
+cd ~/Flo/Apps/Alacritty && \
+sudo mkdir -p /usr/local/share/man/man1 && \
+gzip -c extra/alacritty.man | sudo tee /usr/local/share/man/man1/alacritty.1.gz > /dev/null && \
+gzip -c extra/alacritty-msg.man | sudo tee /usr/local/share/man/man1/alacritty-msg.1.gz > /dev/null
+```
+
+Config
+```sh
+cd ~ && \
+mkdir -p ~/.config/alacritty && \
+mkdir -p ~/Flo/Dotfiles/alacritty && \
+wget -P ~/Flo/Dotfiles/alacritty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/alacritty/alacritty.yml && \
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/alacritty alacritty
+```
+
+<br />
+
+Close terminal and open Alacritty terminal.
+
+<br /><br /><br />
+
 ## KITTY - install
+I was using Kitty but due to some performance issues I switched to Alacritty (dev in Rust).<br />
+You can still use Kitty if you want. Here is how to install/configure it.
+
 https://sw.kovidgoyal.net/kitty/binary/
 ```sh
 cd ~ && \

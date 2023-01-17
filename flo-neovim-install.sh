@@ -367,7 +367,10 @@ wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neo
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-treesitter.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua
+wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/tailwindcss-colorizer-cmp.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua
+wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/todo-comments.lua
+wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/trouble.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua # Be careful with undotree, because I hardcode path inside this file !
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua
 wget -P $AfterPlugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua

@@ -1,6 +1,7 @@
 # How I manage my dotfiles
 
 ### Purpose
+
 The idea is to keep all my dotfiles in the same folder.<br>
 In this way, I can easily manage it with git / github to install it in a new computer.<br><br>
 
@@ -23,11 +24,12 @@ Here is the process if you want the same environment ! 🚀<br><br><br />
 
 # Development Environment
 
-:warning: *December 2022* :warning:<br />
+:warning: _December 2022_ :warning:<br />
 ► only tested and approved on:
+
 - Ubuntu 22.04.1 LTS x86_64
 - Virtual Box VM - Ubuntu 22.04.1 LTS x86_64
-<br /><br />
+  <br /><br />
 
 At first, this repo was for my own usage but I tried to comment every step so you can follow my instructions and take inspiration from my repo :blush:
 
@@ -42,25 +44,29 @@ The complete installation take around ~60 min depending power of the computer an
 ---
 
 1. Dependencies
-     1. [Folder structure](#create-folder-structure)
-     2. [Install packages](#install-dependencies)
+
+   1. [Folder structure](#create-folder-structure)
+   2. [Install packages](#install-dependencies)
 
 2. [Oh-my-zsh](#oh-my-zsh---install)
 
 3. More dependencies
-     1. [Node.js via nvm](#nodejs-via-nvm---install)
-     2. [Rust and Cargo](#rust---install)
+
+   1. [Node.js via nvm](#nodejs-via-nvm---install)
+   2. [Rust and Cargo](#rust---install)
 
 4. Neovim
-     1. First option: install and config Neovim from [flo-neovim-install.sh](#first-option-install-and-config-neovim-from-a-bash-script)
-     2. Second option:
-          1. [Install from sources](#second-option-neovim---install-from-sources) 
-          2. [Packer as plugin management](#packer---install)
-          3. [Neovim config](#neovim---config)
+
+   1. First option: install and config Neovim from [flo-neovim-install.sh](#first-option-install-and-config-neovim-from-a-bash-script)
+   2. Second option:
+      1. [Install from sources](#second-option-neovim---install-from-sources)
+      2. [Packer as plugin management](#packer---install)
+      3. [Neovim config](#neovim---config)
 
 5. Tmux
-     1. [Install from sources](#tmux---install-from-sources)
-     2. [Tmux config](#tmux---config)
+
+   1. [Install from sources](#tmux---install-from-sources)
+   2. [Tmux config](#tmux---config)
 
 6. [zsh config](#zsh---config)
 
@@ -81,9 +87,10 @@ The complete installation take around ~60 min depending power of the computer an
 14. [Btop](#btop---install)
 
 15. Git
-     1. [Git config](#git---config)
-     2. [Git CZ](#git-cz---install-and-config)
-     3. [GitUI](#gitui---install-and-config)
+
+    1. [Git config](#git---config)
+    2. [Git CZ](#git-cz---install-and-config)
+    3. [GitUI](#gitui---install-and-config)
 
 16. [Insomnia](#insomnia---install)
 
@@ -106,21 +113,25 @@ The complete installation take around ~60 min depending power of the computer an
 Here is few more steps if you start a fresh Ubuntu install with VirtualBox.
 
 Log in as root user.
+
 ```sh
 su
 ```
 
 Add your user to 'sudo' group. In my case, my user is called 'flo'.
+
 ```sh
 sudo usermod -a -G sudo flo
 ```
 
 Install `sudo` package
+
 ```sh
 apt install sudo
 ```
 
 If you still have an issue like `you user is not in the sudoers file...`, you need to add manually your user.
+
 ```sh
 su
 ```
@@ -130,6 +141,7 @@ sudo visudo
 ```
 
 Write this line just after `Root ALL=(ALL:ALL) ALL`.
+
 ```sh
 flo ALL=(ALL:ALL) ALL
 ```
@@ -140,6 +152,7 @@ Close your terminal and re open-it.
 
 Update/Upgrade packages, update snap packages and delete pre-install useless games, programs and tools.<br />
 You need to close Firefox first and run those commands.
+
 ```sh
 sudo apt update && \
 sudo apt upgrade -y && \
@@ -157,6 +170,7 @@ To update `snap-store` itself, you need to first kill his process, then run `sud
 <br /><br /><br />
 
 ## Create folder structure
+
 ```sh
 mkdir ~/Flo ~/Flo/Dev ~/Flo/Downloads ~/Flo/Apps ~/Flo/Dotfiles && \
 rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/Documents
@@ -165,6 +179,7 @@ rm -rf ~/Desktop ~/Videos ~/Templates ~/Public ~/Pictures ~/Music ~/Downloads ~/
 <br /><br /><br />
 
 ## Install dependencies
+
 ```sh
 sudo apt update && \
 sudo apt upgrade -y && \
@@ -179,10 +194,13 @@ sudo apt autoclean -y
 <br /><br /><br />
 
 ## OH-MY-ZSH - install
+
 https://ohmyz.sh/#install
+
 ```sh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
 Close terminal.<br />
 Logout then login.<br />
 Open terminal.
@@ -207,7 +225,9 @@ stow -t ~/ oh-my-zsh
 <br /><br /><br />
 
 ## NODE.JS via NVM - install
+
 https://github.com/nvm-sh/nvm#installing-and-updating
+
 ```sh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
@@ -225,31 +245,38 @@ Again, close and re open terminal.
 <br /><br /><br />
 
 ## RUST - install
+
 https://www.rust-lang.org/tools/install
+
 ```sh
 cd ~ && \
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
 <br />
 Close and re open terminal.
 
 <br /><br /><br />
 
 ## First option: install and config Neovim from a bash script
+
 https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
 
 I developed a script who will create the needed folder structure and install/config Neovim.
 
 Warning: this script only run on Linux (sorry for users of Windows and Mac OS) and only if you have Node.js installed.
+
 ```sh
 wget -P ~/ https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/flo-neovim-install.sh && \
 chmod +x ~/flo-neovim-install.sh
 ```
+
 ```sh
 cd ~ && ./flo-neovim-install.sh
 ```
 
 Open `packer.lua`.
+
 ```sh
 nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
 ```
@@ -259,6 +286,7 @@ Then run this command: `:PackerSync`
 Save and close: `:wq`
 
 Re open `packer.lua`
+
 ```sh
 nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
 ```
@@ -272,24 +300,30 @@ You can also run `:TSUpdate` to be sure that every Treesitter parsers is install
 <br /><br /><br />
 
 ## Second option: NEOVIM - install from sources
+
 https://github.com/neovim/neovim/wiki/Building-Neovim
 
 1. Install dependencies
+
 ```sh
 cd ~ && \
 sudo apt install -y ninja-build gettext libtool libtool-bin autoconf python3-dev \
 automake cmake g++ pkg-config doxygen libicu-dev libboost-all-dev libssl-dev \
 ripgrep fd-find silversearcher-ag mlocate zoxide python3-pip libsqlite3-dev bat
 ```
+
 <br />
 
 2. Clone Neovim repository
+
 ```sh
 git clone -b release-0.8 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
 ```
+
 <br />
 
 3. Compile sources
+
 ```sh
 cd ~/Flo/Apps/Neovim && \
 make CMAKE_BUILD_TYPE=RelWithDebInfo && \
@@ -299,7 +333,9 @@ sudo make install
 <br /><br /><br />
 
 ## PACKER - install
+
 https://github.com/wbthomason/packer.nvim
+
 ```sh
 git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
@@ -307,10 +343,12 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvi
 <br /><br /><br />
 
 ## NEOVIM - config
+
 1. PYNVIM - install
 
 https://github.com/neovim/pynvim<br />
 We need it for some Neovim's plugins.
+
 ```sh
 cd ~ && \
 pip3 install pynvim
@@ -320,7 +358,8 @@ pip3 install pynvim
 
 2. Create folders
 
-IMPORTANT: Replace ```FloSlv``` by your user name.
+IMPORTANT: Replace `FloSlv` by your user name.
+
 ```sh
 mkdir ~/.config/nvim && \
 mkdir -p ~/Flo/Dotfiles/neovim/lua && \
@@ -365,6 +404,7 @@ wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-S
 <br />
 
 4. Set up all plugins
+
 ```sh
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/autopairs.lua && \
 wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua && \
@@ -404,11 +444,13 @@ wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo
 5. Node.js required packages
 
 Check if you already have Tree-Sitter and Neovim node.js package installed.
+
 ```sh
 npm list -g
 ```
 
 If not, you can easily install it.
+
 ```sh
 npm i -g tree-sitter-cli && \
 npm i -g neovim
@@ -417,6 +459,7 @@ npm i -g neovim
 <br />
 
 6. Stow
+
 ```sh
 cd ~/Flo/Dotfiles && \
 stow -t ~/.config/nvim neovim
@@ -427,6 +470,7 @@ stow -t ~/.config/nvim neovim
 7. Last step
 
 Open `packer.lua`.
+
 ```sh
 nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
 ```
@@ -436,6 +480,7 @@ Then run this command: `:PackerSync`
 Save and close: `:wq`
 
 Re open `packer.lua`
+
 ```sh
 nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
 ```
@@ -449,7 +494,9 @@ You can also run `:TSUpdate` to be sure that every Treesitter parsers is install
 <br /><br /><br />
 
 ## TMUX - install from sources
+
 1. Update packages and remove existing Tmux package.
+
 ```sh
 cd ~ && \
 sudo apt update && \
@@ -462,18 +509,23 @@ rm -rf .tmux
 <br />
 
 2. Install prerequisite libraries
+
 ```sh
 sudo apt install -y libevent-dev ncurses-dev build-essential bison
 ```
+
 <br />
 
 3. Fetch Tmux from Git repo
+
 ```sh
 git clone https://github.com/tmux/tmux.git ~/Flo/Apps/Tmux
 ```
+
 <br />
 
 4. Compile sources
+
 ```sh
 cd ~/Flo/Apps/Tmux && \
 sh autogen.sh && \
@@ -485,13 +537,17 @@ sudo make install
 <br />
 
 5. Check version of Tmux
+
 ```sh
 tmux -V
 ```
+
 <br /><br />
 
 ## TMUX - config
+
 1. Create `.tmux` and `tmux-powerline-custom-themes` folders.
+
 ```sh
 mkdir -p ~/Flo/Dotfiles/tmux/.tmux && \
 mkdir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
@@ -500,6 +556,7 @@ mkdir -p ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes
 <br />
 
 2. Clone TMUX Plugin Manager and TMUX Powerline.
+
 ```sh
 git clone https://github.com/tmux-plugins/tpm ~/Flo/Dotfiles/tmux/.tmux/plugins/tpm && \
 git clone https://github.com/erikw/tmux-powerline.git ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline
@@ -512,6 +569,7 @@ git clone https://github.com/erikw/tmux-powerline.git ~/Flo/Dotfiles/tmux/.tmux/
 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf<br />
 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc<br />
 https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh
+
 ```sh
 wget -P ~/Flo/Dotfiles/tmux https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.conf && \
 wget -P ~/Flo/Dotfiles/tmux https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/tmux/.tmux.powerlinerc && \
@@ -521,6 +579,7 @@ wget -P ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes https://raw.githu
 <br />
 
 4. Add my custom `flo-theme.sh` as `default.sh` theme for tmux-powerline.
+
 ```sh
 mv ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh.old && \
 ln -s ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/Flo/Dotfiles/tmux/.tmux/plugins/tmux-powerline/themes/default.sh
@@ -529,6 +588,7 @@ ln -s ~/Flo/Dotfiles/tmux/.tmux/tmux-powerline-custom-themes/flo-theme.sh ~/Flo/
 <br />
 
 5. Stow
+
 ```sh
 cd ~/Flo/Dotfiles && \
 stow -t ~/ tmux
@@ -541,17 +601,21 @@ Close and re open terminal.
 <br />
 
 6. Open `.tmux.conf`, install plugins and reload TMUX.
+
 ```sh
 tmux
 ```
+
 ```sh
 nvim ~/Flo/Dotfiles/tmux/.tmux.conf
 ```
+
 ```sh
 # ctrl+z I to install plugins
 # ctrl+z r to re source tmux
 # Save/close
 ```
+
 <br />
 
 Close Tmux then close and re open terminal.
@@ -559,6 +623,7 @@ Close Tmux then close and re open terminal.
 <br /><br /><br />
 
 ## ZSH - config
+
 Create `.zshrc`.<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/zsh/.zshrc<br />
 
@@ -580,17 +645,21 @@ PS: do not copy/paste if you don't understand. You need to adapt with your own a
 <br /><br /><br />
 
 ## KITTY - install
+
 https://sw.kovidgoyal.net/kitty/binary/
+
 ```sh
 cd ~ && \
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 ```
+
 A new terminal has opened, close it for now.
 
 <br />
 
 Create `kitty.conf`<br />
 Download this file as 'kitty.conf': https://github.com/Flo-Slv/Dotfiles/blob/main/kitty/kitty.conf
+
 ```sh
 mkdir -p ~/Flo/Dotfiles/kitty && \
 wget -P ~/Flo/Dotfiles/kitty https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/kitty/kitty.conf && \
@@ -601,6 +670,7 @@ stow -t ~/.config/kitty kitty
 <br />
 
 To have desktop icons etc...
+
 ```sh
 cd ~/.local && mkdir bin && ln -s ~/.local/kitty.app/bin/kitty ~/.local/bin/ && \
 cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/ && \
@@ -616,6 +686,7 @@ Close terminal and open Kitty terminal.
 <br /><br /><br />
 
 ## HACK FONT - install
+
 Go to https://www.nerdfonts.com/font-downloads to check if link is the lastest release version !
 
 ```sh
@@ -634,12 +705,15 @@ Close and re open Kitty terminal.
 <br /><br />
 
 Check if Hack Nerd Font have been installed correctly.
+
 ```sh
 kitty +list-fonts
 ```
+
 <br />
 
 Optional: to have Hack Nerd Font available in Polybar.
+
 ```sh
 sudo mkdir /usr/share/fonts/truetype/hack-nerd-font && \
 sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/fonts/truetype/hack-nerd-font/
@@ -648,11 +722,14 @@ sudo cp ~/.local/share/fonts/Hack\ Regular\ Nerd\ Font\ Complete.ttf /usr/share/
 <br /><br /><br />
 
 ## Starship - install
+
 https://github.com/starship/starship
+
 ```sh
 cd ~/ && \
 curl -sS https://starship.rs/install.sh | sh
 ```
+
 ```sh
 mkdir ~/Flo/Dotfiles/starship && \
 wget -P ~/Flo/Dotfiles/starship https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/starship/starship.toml && \
@@ -665,7 +742,9 @@ Close terminal and re open it.
 <br /><br /><br />
 
 ## fzf - install
+
 https://github.com/junegunn/fzf
+
 ```sh
 git clone https://github.com/junegunn/fzf ~/.fzf && \
 cd ~/.fzf && ./install
@@ -678,6 +757,7 @@ Close terminal and re open it.
 <br /><br /><br />
 
 ## ROFI - config
+
 ```sh
 mkdir ~/.config/rofi && \
 mkdir -p ~/Flo/Dotfiles/rofi && \
@@ -692,7 +772,8 @@ stow -t ~/.config/rofi rofi
 ## POLYBAR - install and config
 
 1. Install from sources
-https://github.com/polybar/polybar/wiki/Compiling
+   https://github.com/polybar/polybar/wiki/Compiling
+
 ```sh
 cd ~/ && \
 sudo apt update && \
@@ -705,6 +786,7 @@ libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm \
 libjsoncpp-dev libmpdclient-dev python3-packaging && \
 sudo apt autoremove -y
 ```
+
 <br />
 
 Go to https://github.com/polybar/polybar/releases to check if link is the last release version.
@@ -715,12 +797,14 @@ cd ~/Flo/Downloads && \
 tar xvzf polybar-3.6.3.tar.gz && \
 rm -rf polybar-3.6.3.tar.gz
 ```
+
 ```sh
 mv polybar-3.6.3 ~/Flo/Apps/Polybar-3.6.3 && \
 cd ~/Flo/Apps/Polybar-3.6.3 && \
 mkdir build && \
 cd build
 ```
+
 ```sh
 cmake .. && \
 make -j$(nproc) && \
@@ -730,6 +814,7 @@ sudo make install
 <br />
 
 Create all necessaries folder and files.
+
 ```sh
 mkdir ~/.config/polybar && \
 mkdir ~/Flo/Dotfiles/polybar && \
@@ -743,6 +828,7 @@ stow -t ~/.config/polybar polybar
 <br />
 
 Install font-awesome
+
 ```sh
 cd ~ && \
 sudo apt install -y fonts-font-awesome
@@ -751,6 +837,7 @@ sudo apt install -y fonts-font-awesome
 <br /><br /><br />
 
 ## I3-WM - config
+
 ```sh
 mkdir ~/.config/i3 && \
 mkdir -p ~/Flo/Dotfiles/i3 && \
@@ -770,11 +857,13 @@ Login.
 <br /><br /><br />
 
 ## BTOP - install
+
 https://github.com/aristocratos/btop#installation
 
 Download latest release (x86_64-linux-musl version in my case) into `~/Flo/Downloads`.
 
 Go to https://github.com/aristocratos/btop/releases to check if link is the lastest release version.
+
 ```sh
 wget -P ~/Flo/Downloads https://github.com/aristocratos/btop/releases/download/v1.2.13/btop-x86_64-linux-musl.tbz && \
 cd ~/Flo/Apps && \
@@ -793,7 +882,9 @@ Close and re open terminal.
 <br /><br /><br />
 
 ## GIT - config
+
 Just copy/paste those lines into your terminal but change your email and name before type Enter !
+
 ```sh
 mkdir -p ~/Flo/Dotfiles/git && \
 touch ~/Flo/Dotfiles/git/.gitconfig && \
@@ -814,7 +905,9 @@ stow -t ~/ git
 <br /><br /><br />
 
 ## GIT-CZ - install and config
+
 https://github.com/streamich/git-cz
+
 ```sh
 cd ~ && \
 npm install -g git-cz
@@ -823,6 +916,7 @@ npm install -g git-cz
 <br />
 
 Create `changelog.config.js`
+
 ```sh
 wget -P ~/Flo/Dotfiles/git https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/git/changelog.config.js && \
 cd ~/Flo/Dotfiles && \
@@ -832,9 +926,11 @@ stow -t ~/ git
 <br /><br /><br />
 
 ## GITUI - install and config
+
 1. Install GitUI
 
 https://github.com/extrawurst/gitui#build
+
 ```sh
 cargo install gitui
 ```
@@ -842,6 +938,7 @@ cargo install gitui
 <br />
 
 2. Configure GitUI
+
 ```sh
 mkdir ~/.config/gitui && \
 mkdir -p ~/Flo/Dotfiles/gitui && \
@@ -854,10 +951,13 @@ stow -t ~/.config/gitui gitui
 <br /><br /><br />
 
 ## INSOMNIA - install
+
 https://docs.insomnia.rest/insomnia/install
+
 ```sh
 echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 ```
+
 ```sh
 sudo apt update && \
 sudo apt install -y insomnia && \
@@ -875,10 +975,13 @@ You can install plugins in Insomnia: tokyonight theme, gist integration and os i
 <br /><br /><br />
 
 ## NOTION - install
+
 https://notion-enhancer.github.io/getting-started/installation/
+
 ```sh
 echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
 ```
+
 ```sh
 sudo apt update && \
 sudo apt install -y notion-app-enhanced && \
@@ -888,66 +991,86 @@ sudo apt autoremove -y
 <br /><br /><br />
 
 ## DISCORD - install
+
 https://discord.com/<br />
 Download tar.gz archive into `~/Flo/Downloads`.
+
 ```sh
 cd ~/Flo/Downloads && \
 sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
 ```
+
 ```sh
 cd ~ && \
 sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
 ```
+
 ```sh
 cd ~ && \
 sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
 ```
+
 ```sh
 cd /usr/share/applications && \
 sudo nvim discord.desktop
 ```
+
 ```sh
 Exec=/usr/bin/Discord
 Icon=/opt/Discord/discord.png
 ```
+
 <br /><br /><br />
 
 ## BETTER DISCORD - install
+
 https://github.com/BetterDiscord/BetterDiscord<br />
 Download Linux AppImage into `~/Flo/Downloads`
+
 ```sh
 cd ~/Flo/Downloads && \
 chmod +x BetterDiscord-Linux.AppImage
 ```
+
 <br />
 
 Install FUSE dependencies<br />
 https://github.com/AppImage/AppImageKit/wiki/FUSE
+
 ```sh
 sudo add-apt-repository universe
 ```
+
 ```sh
 sudo apt install -y libfuse2
 ```
+
 <br />
 
 Install BetterDiscord on classic Ubuntu version
+
 ```sh
 ./BetterDiscord-Linux.AppImage
 ```
+
 <br />
 
 Install BetterDiscord on Ubuntu VM version
+
 ```sh
 ./BetterDiscord-Linux.AppImage --disable-gpu-sandbox
 ```
+
 <br /><br />
 
 ## GLOW - install
+
 https://github.com/charmbracelet/glow
+
 ```sh
 echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
 ```
+
 ```sh
 sudo apt update && \
 sudo apt install -y glow && \
@@ -957,30 +1080,39 @@ sudo apt autoremove -y
 <br /><br /><br />
 
 ## SSH - github keys
+
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
 ```sh
 cd ~/.ssh && \
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
+
 ```sh
 eval "$(ssh-agent -s)"
 ```
+
 ```sh
 ssh-add ~/.ssh/id_ed25519
 ```
+
 <br />
 
 https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+
 ```sh
 cat ~/.ssh/id_ed25519.pub
 ```
+
 Copy/paste to GitHub.
 <br /><br />
 
 Add an alias into `~/.zshrc`<br />
+
 ```sh
 nvim ~/.zshrc
 ```
+
 ```sh
 # Add Github key to SSH agent.
 alias sa="eval `ssh-agent`"
@@ -990,19 +1122,22 @@ alias ss="ssh-add ~/.ssh/id_ed25519"
 <br /><br /><br />
 
 ## ~/Flo/Dotfiles as git repo
+
 https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories
 
 1. Initialize `Dotfiles` folder as a git repo and add `Dotfiles` github remote repo.
+
 ```sh
 cd ~/Flo/Dotfiles && \
 git init && \
 git remote add origin git@github.com:Flo-Slv/Dotfiles.git && \
 git checkout -b main
 ```
- 
+
  <br />
 
 3. Remove and pull from remote
+
 ```sh
 cd ~/Flo/Dotfiles && \
 rm -rf alacritty/ git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
@@ -1012,9 +1147,11 @@ git pull origin main
 <br /><br /><br />
 
 ## STOW
+
 https://linux.die.net/man/8/stow
 
 Here is basics usages
+
 ```sh
 # Specify the target with -t parameter.
 # Example with the i3 directory:
@@ -1025,11 +1162,13 @@ stow -t ~/.config i3
 cd ~/Flo/Dotfiles/i3wm/i3
 stow -t ~/.config -D i3
 ```
+
 If you need more info: `stow --help`
 
 <br /><br /><br />
 
 ### Special aliases for my laptop - in sudo mod
+
 ```sh
 alias ffull='echo 255 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1'
 alias fmedium='echo 150 > /sys/devices/platform/asus-nb-wmi/hwmon/hwmon[[:print:]]*/pwm1'
@@ -1043,9 +1182,11 @@ alias la='ls -A'
 alias ll='ls -alF'
 alias ls='ls --color=auto'
 ```
+
 <br /><br />
 
 ### Some cool commands that can help !
+
 ```sh
 # To know shell we use (2 options)
 # First option

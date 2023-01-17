@@ -1005,7 +1005,7 @@ git checkout -b main
 3. Remove and pull from remote
 ```sh
 cd ~/Flo/Dotfiles && \
-rm -rf git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
+rm -rf alacritty/ git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
 git pull origin main
 ```
 

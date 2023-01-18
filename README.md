@@ -96,13 +96,11 @@ The complete installation take around ~60 min depending power of the computer an
 
 17. [Notion](#notion---install)
 
-18. [Discord](#discord---install)
+18. [Glow](#glow---install)
 
-19. [Glow](#glow---install)
+19. [SSH](#ssh---github-keys)
 
-20. [SSH](#ssh---github-keys)
-
-21. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
+20. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
 
 ---
 
@@ -1067,79 +1065,6 @@ sudo apt autoremove -y
 ```
 
 <br /><br /><br />
-
-## DISCORD - install
-
-https://discord.com/<br />
-Download tar.gz archive into `~/Flo/Downloads`.
-
-```sh
-cd ~/Flo/Downloads && \
-sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
-```
-
-```sh
-cd ~ && \
-sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
-```
-
-```sh
-cd ~ && \
-sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
-```
-
-```sh
-cd /usr/share/applications && \
-sudo nvim discord.desktop
-```
-
-```sh
-Exec=/usr/bin/Discord
-Icon=/opt/Discord/discord.png
-```
-
-<br /><br /><br />
-
-## BETTER DISCORD - install
-
-https://github.com/BetterDiscord/BetterDiscord<br />
-Download Linux AppImage into `~/Flo/Downloads`
-
-```sh
-cd ~/Flo/Downloads && \
-chmod +x BetterDiscord-Linux.AppImage
-```
-
-<br />
-
-Install FUSE dependencies<br />
-https://github.com/AppImage/AppImageKit/wiki/FUSE
-
-```sh
-sudo add-apt-repository universe
-```
-
-```sh
-sudo apt install -y libfuse2
-```
-
-<br />
-
-Install BetterDiscord on classic Ubuntu version
-
-```sh
-./BetterDiscord-Linux.AppImage
-```
-
-<br />
-
-Install BetterDiscord on Ubuntu VM version
-
-```sh
-./BetterDiscord-Linux.AppImage --disable-gpu-sandbox
-```
-
-<br /><br />
 
 ## GLOW - install
 

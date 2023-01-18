@@ -156,6 +156,10 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export PATH="/home/flo/.local/bin:$PATH"
 
 
+# Add ~/.config as XDG_CONFIG_HOME
+export XDG_CONFIG_HOME=$HOME/.config
+
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

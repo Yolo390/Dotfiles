@@ -180,9 +180,6 @@ exec --no-startup-id insomnia
 exec --no-startup-id telegram-desktop
 
 # When opening one of the following app, go directly to the workspace.
-# assign [class="kitty"] $ws1
-# for_window [class="kitty"] focus
-
 assign [class="alacritty"] $ws1
 for_window [class="alacritty"] focus
 

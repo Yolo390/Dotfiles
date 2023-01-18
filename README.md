@@ -1070,6 +1070,7 @@ sudo apt autoremove -y
 
 ## MONGODB COMPASS - install
 https://www.mongodb.com/try/download/compass
+
 Select the last stable version for Ubuntu 16.04+ (.deb file).
 
 1.35.0 as I wrote this line (January 2023).

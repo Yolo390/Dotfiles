@@ -694,11 +694,17 @@ stow -t ~/.config/alacritty alacritty
 
 Close terminal and open Alacritty terminal.
 
+<br />
+
 Get emoji on Alacritty terminal.
 ```sh
+cd ~ && \
 sudo apt install -y fonts-noto-color-emoji && \
+mkdir -p ~/.config/fontconfig && \
 mkdir -p ~/Flo/Dotfiles/fontconfig && \
-wget -P ~/Flo/Dotfiles/fontconfig https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/fontconfig/fonts.conf
+wget -P ~/Flo/Dotfiles/fontconfig https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/fontconfig/fonts.conf && \
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/fontconfig fontconfig
 ```
 
 <br />

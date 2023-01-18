@@ -696,7 +696,7 @@ Close terminal and open Alacritty terminal.
 
 <br />
 
-Get emoji on Alacritty terminal.
+To get emoji on Alacritty terminal.
 ```sh
 cd ~ && \
 sudo apt install -y fonts-noto-color-emoji && \

@@ -694,6 +694,17 @@ stow -t ~/.config/alacritty alacritty
 
 Close terminal and open Alacritty terminal.
 
+Get emoji on Alacritty terminal.
+```sh
+sudo apt install -y fonts-noto-color-emoji && \
+mkdir -p ~/Flo/Dotfiles/fontconfig && \
+wget -P ~/Flo/Dotfiles/fontconfig https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/fontconfig/fonts.conf
+```
+
+<br />
+
+Close and re open Alacritty terminal.
+
 <br /><br /><br />
 
 ## KITTY - install
@@ -756,11 +767,17 @@ rm -rf Hack.zip
 
 <br />
 
-Close and re open Kitty terminal.
+Close and re open Alacritty terminal.
 <br /><br />
 
 Check if Hack Nerd Font have been installed correctly.
 
+On Alacritty
+```sh
+fc-list | grep -i "Hack"
+```
+
+Or on Kitty
 ```sh
 kitty +list-fonts
 ```

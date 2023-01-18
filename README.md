@@ -96,11 +96,13 @@ The complete installation take around ~60 min depending power of the computer an
 
 17. [Notion](#notion---install)
 
-18. [Glow](#glow---install)
+18. [MongoDB Compass](#mongodb-compass---install)
 
-19. [SSH](#ssh---github-keys)
+19. [Glow](#glow---install)
 
-20. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
+20. [SSH](#ssh---github-keys)
+
+21. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
 
 ---
 
@@ -1062,6 +1064,19 @@ echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /et
 sudo apt update && \
 sudo apt install -y notion-app-enhanced && \
 sudo apt autoremove -y
+```
+
+<br /><br /><br />
+
+## MONGODB COMPASS - install
+https://www.mongodb.com/try/download/compass
+Select the last stable version for Ubuntu 16.04+ (.deb file).
+
+1.35.0 as I wrote this line (January 2023).
+
+```sh
+cd ~/Flo/Download && \
+sudo dpkg -i mongodb-compass_1.35.0_amd64.deb
 ```
 
 <br /><br /><br />

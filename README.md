@@ -24,7 +24,7 @@ Here is the process if you want the same environment ! 🚀<br><br><br />
 
 # Development Environment
 
-:warning: _December 2022_ :warning:<br />
+:warning: _January 2023_ :warning:<br />
 ► only tested and approved on:
 
 - Ubuntu 22.04.1 LTS x86_64

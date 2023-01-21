@@ -1080,6 +1080,13 @@ cd ~/Flo/Downloads && \
 sudo dpkg -i mongodb-compass_1.35.0_amd64.deb
 ```
 
+<br />
+
+You maybe will need to run this command to fix issue after installing Mongo DB Compass.
+```sh
+sudo apt --fix-broken install
+```
+
 <br /><br /><br />
 
 ## GLOW - install

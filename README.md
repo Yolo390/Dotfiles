@@ -1076,7 +1076,7 @@ Download the last stable version for Ubuntu 16.04+ (.deb file).
 1.35.0 as I wrote this line (January 2023).
 
 ```sh
-cd ~/Flo/Download && \
+cd ~/Flo/Downloads && \
 sudo dpkg -i mongodb-compass_1.35.0_amd64.deb
 ```
 

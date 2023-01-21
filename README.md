@@ -1057,10 +1057,7 @@ You can install plugins in Insomnia: tokyonight theme, gist integration and os i
 https://notion-enhancer.github.io/getting-started/installation/
 
 ```sh
-echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
-```
-
-```sh
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list && \
 sudo apt update && \
 sudo apt install -y notion-app-enhanced && \
 sudo apt autoremove -y

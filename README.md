@@ -106,7 +106,7 @@ The complete installation take around ~60 min depending power of the computer an
 
 22. [AppImageLauncher](#appimagelauncher---install)
 
-23. [PrismaStudio](#prismastudio---install)
+23. [PrismaStudio](#prisma-studio---install)
 
 ---
 

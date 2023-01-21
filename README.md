@@ -106,6 +106,8 @@ The complete installation take around ~60 min depending power of the computer an
 
 22. [AppImageLauncher](#appimagelauncher---install)
 
+23. [PrismaStudio](#prismastudio---install)
+
 ---
 
 <br />
@@ -1185,6 +1187,19 @@ sudo apt autoremove -y
 <br />
 
 If you run AppImageLauncher, you can define where to save AppImages.
+
+<br /><br /><br />
+
+## Prisma Studio - install
+
+https://github.com/prisma/studio
+
+If you don't want to use Mongo DB Compass, you can instead use Prisma Studio.
+
+You will need to install AppImageLauncher first (see above).<br />
+Then download the latest `Prisma-Studio.AppImage` release.<br />
+https://github.com/prisma/studio/releases<br />
+You can now easily install Prisma Studio thanks to AppImageLauncher.
 
 <br /><br /><br />
 

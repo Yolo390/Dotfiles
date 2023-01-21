@@ -104,6 +104,8 @@ The complete installation take around ~60 min depending power of the computer an
 
 21. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
 
+22. [AppImageLauncher](#appimagelauncher---install)
+
 ---
 
 <br />
@@ -1163,6 +1165,26 @@ cd ~/Flo/Dotfiles && \
 rm -rf alacritty/ git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
 git pull origin main
 ```
+
+<br /><br /><br />
+
+## AppImageLauncher - install
+
+https://github.com/TheAssassin/AppImageLauncher<br />
+If you need to install an AppImage, you can install a launcher for AppImage.<br />
+It will be easier for you to handle install/config of AppImages.
+
+```sh
+sudo apt install software-properties-common && \
+sudo add-apt-repository ppa:appimagelauncher-team/stable && \
+sudo apt update && \
+sudo apt install -y appimagelauncher && \
+sudo apt autoremove -y
+```
+
+<br />
+
+If you run AppImageLauncher, you can define where to save AppImages.
 
 <br /><br /><br />
 

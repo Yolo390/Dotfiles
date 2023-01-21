@@ -262,7 +262,7 @@ Close and re open terminal.
 
 <br /><br /><br />
 
-## First option: install and config Neovim from a bash script
+## First option: install and config NEOVIM from a bash script
 
 https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
 

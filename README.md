@@ -1196,9 +1196,11 @@ https://github.com/prisma/studio
 
 If you don't want to use Mongo DB Compass, you can instead use Prisma Studio.
 
-You will need to install AppImageLauncher first (see above).<br />
+You will need to install AppImageLauncher first (see above).
+
 Then download the latest `Prisma-Studio.AppImage` release.<br />
-https://github.com/prisma/studio/releases<br />
+https://github.com/prisma/studio/releases
+
 You can now easily install Prisma Studio thanks to AppImageLauncher.
 
 <br /><br /><br />

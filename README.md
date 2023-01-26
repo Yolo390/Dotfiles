@@ -24,7 +24,7 @@ Here is the process if you want the same environment ! 🚀<br><br><br />
 
 # Development Environment
 
-:warning: _December 2022_ :warning:<br />
+:warning: _January 2023_ :warning:<br />
 ► only tested and approved on:
 
 - Ubuntu 22.04.1 LTS x86_64
@@ -96,13 +96,17 @@ The complete installation take around ~60 min depending power of the computer an
 
 17. [Notion](#notion---install)
 
-18. [Discord](#discord---install)
+18. [MongoDB Compass](#mongodb-compass---install)
 
 19. [Glow](#glow---install)
 
 20. [SSH](#ssh---github-keys)
 
 21. [~/Flo/Dotfiles as git repo](#flodotfiles-as-git-repo)
+
+22. [AppImageLauncher](#appimagelauncher---install)
+
+23. [PrismaStudio](#prisma-studio---install)
 
 ---
 
@@ -258,7 +262,7 @@ Close and re open terminal.
 
 <br /><br /><br />
 
-## First option: install and config Neovim from a bash script
+## First option: install and config NEOVIM from a bash script
 
 https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
 
@@ -694,6 +698,23 @@ stow -t ~/.config/alacritty alacritty
 
 Close terminal and open Alacritty terminal.
 
+<br />
+
+To get emoji on Alacritty terminal.
+```sh
+cd ~ && \
+sudo apt install -y fonts-noto-color-emoji && \
+mkdir -p ~/.config/fontconfig && \
+mkdir -p ~/Flo/Dotfiles/fontconfig && \
+wget -P ~/Flo/Dotfiles/fontconfig https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/fontconfig/fonts.conf && \
+cd ~/Flo/Dotfiles && \
+stow -t ~/.config/fontconfig fontconfig
+```
+
+<br />
+
+Close and re open Alacritty terminal.
+
 <br /><br /><br />
 
 ## KITTY - install
@@ -756,11 +777,17 @@ rm -rf Hack.zip
 
 <br />
 
-Close and re open Kitty terminal.
+Close and re open Alacritty terminal.
 <br /><br />
 
 Check if Hack Nerd Font have been installed correctly.
 
+On Alacritty
+```sh
+fc-list | grep -i "Hack"
+```
+
+Or on Kitty
 ```sh
 kitty +list-fonts
 ```
@@ -1034,10 +1061,7 @@ You can install plugins in Insomnia: tokyonight theme, gist integration and os i
 https://notion-enhancer.github.io/getting-started/installation/
 
 ```sh
-echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list
-```
-
-```sh
+echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /etc/apt/sources.list.d/notion-repackaged.list && \
 sudo apt update && \
 sudo apt install -y notion-app-enhanced && \
 sudo apt autoremove -y
@@ -1045,91 +1069,36 @@ sudo apt autoremove -y
 
 <br /><br /><br />
 
-## DISCORD - install
+## MONGODB COMPASS - install
+https://www.mongodb.com/try/download/compass
 
-https://discord.com/<br />
-Download tar.gz archive into `~/Flo/Downloads`.
+Download the last stable version for Ubuntu 16.04+ (.deb file).
+
+1.35.0 as I wrote this line (January 2023).
 
 ```sh
 cd ~/Flo/Downloads && \
-sudo tar -xvzf discord-0.0.18.tar.gz -C /opt
+sudo dpkg -i mongodb-compass_1.35.0_amd64.deb
 ```
 
-```sh
-cd ~ && \
-sudo ln -sf /opt/Discord/Discord /usr/bin/Discord
-```
+<br />
 
+You maybe will need to run this command to fix issue after installing Mongo DB Compass.
 ```sh
-cd ~ && \
-sudo cp -r /opt/Discord/discord.desktop /usr/share/applications
-```
-
-```sh
-cd /usr/share/applications && \
-sudo nvim discord.desktop
-```
-
-```sh
-Exec=/usr/bin/Discord
-Icon=/opt/Discord/discord.png
+sudo apt --fix-broken install
 ```
 
 <br /><br /><br />
-
-## BETTER DISCORD - install
-
-https://github.com/BetterDiscord/BetterDiscord<br />
-Download Linux AppImage into `~/Flo/Downloads`
-
-```sh
-cd ~/Flo/Downloads && \
-chmod +x BetterDiscord-Linux.AppImage
-```
-
-<br />
-
-Install FUSE dependencies<br />
-https://github.com/AppImage/AppImageKit/wiki/FUSE
-
-```sh
-sudo add-apt-repository universe
-```
-
-```sh
-sudo apt install -y libfuse2
-```
-
-<br />
-
-Install BetterDiscord on classic Ubuntu version
-
-```sh
-./BetterDiscord-Linux.AppImage
-```
-
-<br />
-
-Install BetterDiscord on Ubuntu VM version
-
-```sh
-./BetterDiscord-Linux.AppImage --disable-gpu-sandbox
-```
-
-<br /><br />
 
 ## GLOW - install
 
 https://github.com/charmbracelet/glow
 
 ```sh
-echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
-```
-
-```sh
-sudo apt update && \
-sudo apt install -y glow && \
-sudo apt autoremove -y
+sudo mkdir -p /etc/apt/keyrings && \
+curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg && \
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list && \
+sudo apt update && sudo apt install -y glow && sudo apt autoremove -y
 ```
 
 <br /><br /><br />
@@ -1198,6 +1167,41 @@ cd ~/Flo/Dotfiles && \
 rm -rf alacritty/ git/ gitui/ kitty/ neovim/ i3/ polybar/ rofi/ starship/ zsh/ tmux/.tmux.conf tmux/.tmux.powerlinerc tmux/.tmux/tmux-powerline-custom-themes/ && \
 git pull origin main
 ```
+
+<br /><br /><br />
+
+## AppImageLauncher - install
+
+https://github.com/TheAssassin/AppImageLauncher<br />
+If you need to install an AppImage, you can install a launcher for AppImage.<br />
+It will be easier for you to handle install/config of AppImages.
+
+```sh
+sudo apt install software-properties-common && \
+sudo add-apt-repository ppa:appimagelauncher-team/stable && \
+sudo apt update && \
+sudo apt install -y appimagelauncher && \
+sudo apt autoremove -y
+```
+
+<br />
+
+If you run AppImageLauncher, you can define where to save AppImages.
+
+<br /><br /><br />
+
+## Prisma Studio - install
+
+https://github.com/prisma/studio
+
+If you don't want to use Mongo DB Compass, you can instead use Prisma Studio.
+
+You will need to install AppImageLauncher first (see above).
+
+Then download the latest `Prisma-Studio.AppImage` release.<br />
+https://github.com/prisma/studio/releases
+
+You can now easily install Prisma Studio thanks to AppImageLauncher.
 
 <br /><br /><br />
 

@@ -40,8 +40,14 @@ packer.startup({
 		use("folke/tokyonight.nvim")
 		-- use { 'catppuccin/nvim', as = 'catppuccin' }
 
+		-- Dashboard
+		use({
+			"glepnir/dashboard-nvim",
+			event = "VimEnter",
+			require = { { "nvim-tree/nvim-web-devicons" } },
+		})
+
 		-- Display
-		use("glepnir/dashboard-nvim")
 		use("TaDaa/vimade")
 		use("lukas-reineke/indent-blankline.nvim")
 

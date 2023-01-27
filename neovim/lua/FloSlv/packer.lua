@@ -44,6 +44,107 @@ packer.startup({
 		use({
 			"glepnir/dashboard-nvim",
 			event = "VimEnter",
+			config = function()
+				local ts_builtin_status, ts_builtin = pcall(require, "telescope.builtin")
+				if not ts_builtin_status then
+					return
+				end
+
+				local ts_themes_status, ts_themes = pcall(require, "telescope.themes")
+				if not ts_themes_status then
+					return
+				end
+
+				-- If you want to display Neovim loaded packages in footer instead of header.
+				-- local plugins_count =
+				-- 	vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+
+				require("dashboard").setup({
+					theme = "hyper",
+					config = {
+						header = {
+							" ",
+							" ",
+							" ",
+							" ____ ____ ____ ____ ____ ____ ",
+							"||N |||E |||O |||V |||I |||M ||",
+							"||__|||__|||__|||__|||__|||__||",
+							"|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|",
+							" ",
+							" ",
+							" ",
+						},
+						week_header = { enable = false },
+						shortcut = {
+							{ desc = "✅ Packer", group = "@property", action = "PackerSync", key = "p" },
+							{ desc = "✅ Mason", group = "@property", action = "Mason", key = "m" },
+							{ desc = "✅ TS", group = "@property", action = "TSUpdate", key = "t" },
+							{
+								desc = "🔍 Files",
+								group = "Label",
+								action = function()
+									ts_builtin.find_files({
+										cwd = vim.fn.substitute(vim.fn.getcwd(), "/home/floslv", "~", ""),
+										prompt_title = "🌞 "
+											.. vim.fn.substitute(vim.fn.getcwd(), "/home/floslv", "~", ""),
+										hidden = true,
+									})
+								end,
+								key = "f",
+							},
+							{
+								desc = "💻 Dev",
+								group = "Label",
+								action = function()
+									ts_builtin.find_files({
+										cwd = "~/Flo/Dev",
+										prompt_title = "💻 Dev",
+										hidden = true,
+									})
+								end,
+								key = "d",
+							},
+							{
+								desc = "🔧 Dot",
+								group = "Label",
+								action = function()
+									if
+										pcall(function()
+											ts_builtin.git_files(ts_themes.get_dropdown({
+												cwd = "~/Flo/Dotfiles",
+												prompt_title = " Dotfiles",
+												hidden = true,
+												previewer = false,
+											}))
+										end)
+									then
+									else
+										ts_builtin.find_files(ts_themes.get_dropdown({
+											prompt_title = " Dotfiles",
+											cwd = "~/Flo/Dotfiles",
+											previewer = false,
+										}))
+									end
+								end,
+								key = "o",
+							},
+						},
+						packages = { enable = true },
+						project = { limit = 0, action = "Telescope find_files cwd=" },
+						mru = { limit = 0 },
+						footer = {
+							" ",
+							" ",
+							" ",
+							"Bienvenue Flo !",
+							" ",
+							os.date("%A %d/%m/%Y %H:%M"),
+							-- " ",
+							-- "Neovim plugins: " .. plugins_count, -- display neovim loaded packages.
+						},
+					},
+				})
+			end,
 			require = { { "nvim-tree/nvim-web-devicons" } },
 		})
 

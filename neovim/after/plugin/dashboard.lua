@@ -22,51 +22,78 @@ local db = dashboard
 
 local plugins_count = vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
 
-db.setup({
-	theme = "doom",
-	config = {
-		packages = { enable = true },
-		header = {
-			" ____ ____ ____ ____ ____ ____ ",
-			"||N |||E |||O |||V |||I |||M ||",
-			"||__|||__|||__|||__|||__|||__||",
-			"|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|",
-			" ",
-			" ",
-			" ",
-		},
-		center = {
-			{
-				icon = " ",
-				icon_hi = "Title",
-				desc = "Find File",
-				desc_hi = "String",
-				key = "b",
-				key_hi = "Number",
-				action = "lua print(2)",
-			},
-			{
-				icon = " ",
-				icon_hi = "Title",
-				desc = "Find Dotfiles",
-				desc_hi = "String",
-				key = "f",
-				key_hi = "Number",
-				action = "lua print(3)",
-			},
-		},
-		footer = {
-			" ",
-			" ",
-			"Bienvenue Flo !",
-			" ",
-			-- os.date("%A %d/%m/%Y %H:%M"),
-			os.date("%A %d/%m/%Y"),
-			" ",
-			"Neovim plugins: " .. plugins_count,
-		},
-	},
-})
+-- db.setup({
+-- 	theme = "hyper",
+-- 	config = {
+-- 		shortcut = {
+-- 			{ desc = " Update", group = "@property", action = "Lazy update", key = "u" },
+-- 			{
+-- 				desc = " Files",
+-- 				group = "Label",
+-- 				action = "Telescope find_files",
+-- 				key = "f",
+-- 			},
+-- 			{
+-- 				desc = " Apps",
+-- 				group = "DiagnosticHint",
+-- 				action = "Telescope app",
+-- 				key = "a",
+-- 			},
+-- 			{
+-- 				desc = " dotfiles",
+-- 				group = "Number",
+-- 				action = "Telescope dotfiles",
+-- 				key = "d",
+-- 			},
+-- 		},
+-- 	},
+-- })
+
+-- db.setup({
+-- 	theme = "doom",
+-- 	config = {
+-- 		-- packages = { enable = true },
+-- header = {
+-- 	" ____ ____ ____ ____ ____ ____ ",
+-- 	"||N |||E |||O |||V |||I |||M ||",
+-- 	"||__|||__|||__|||__|||__|||__||",
+-- 	"|/__\\|/__\\|/__\\|/__\\|/__\\|/__\\|",
+-- 	" ",
+-- 	" ",
+-- 	" ",
+-- },
+-- 		center = {
+-- 			{
+-- 				icon = " ",
+-- 				icon_hi = "Title",
+-- 				desc = "Find File",
+-- 				desc_hi = "String",
+-- 				key = "b",
+-- 				key_hi = "Number",
+-- 				action = "lua print(2)",
+-- 			},
+-- 			{
+-- 				icon = " ",
+-- 				icon_hi = "Title",
+-- 				desc = "Find Dotfiles",
+-- 				desc_hi = "String",
+-- 				key = "f",
+-- 				key_hi = "Number",
+-- 				action = "lua print(7)",
+-- 			},
+-- 		},
+-- footer = {
+-- 	" ",
+-- 	" ",
+-- 	"Bienvenue Flo !",
+-- 	" ",
+-- 	-- os.date("%A %d/%m/%Y %H:%M"),
+-- 	os.date("%A %d/%m/%Y"),
+-- 	" ",
+-- 	"Neovim plugins: " .. plugins_count,
+-- },
+-- 	},
+-- })
 
 -- db.custom_header = {
 -- ' ____ ____ ____ ____ ____ ____ ',
@@ -124,9 +151,9 @@ db.setup({
 -- 					themes.get_dropdown {
 -- 						prompt_title = ' Dotfiles',
 -- 						cwd = '~/Flo/Dotfiles',
--- 						hidden = true,
 -- 						previewer = false
 -- 					}
+-- 						hidden = true,
 -- 				)
 -- 			end
 -- 		end

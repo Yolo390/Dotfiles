@@ -766,7 +766,7 @@ Close terminal and open Kitty terminal.
 Go to https://www.nerdfonts.com/font-downloads to check if link is the lastest release version !
 
 ```sh
-wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \
+wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip && \
 cd ~/.local/share && \
 mkdir fonts && \
 cd fonts && \

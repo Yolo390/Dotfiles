@@ -321,7 +321,7 @@ ripgrep fd-find silversearcher-ag mlocate zoxide python3-pip libsqlite3-dev bat
 2. Clone Neovim repository
 
 ```sh
-git clone -b release-0.8 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
+git clone -b release-0.9 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
 ```
 
 <br />

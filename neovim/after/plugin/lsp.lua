@@ -85,30 +85,19 @@ local servers = {
 	bashls = {},
 	cssls = {},
 	cssmodules_ls = {},
-	-- graphql = {},
+	graphql = {},
 	html = {},
 	jsonls = {},
+	lua_ls = {},
+	phpactor = {},
 	prismals = {},
 	rust_analyzer = {},
-	sumneko_lua = {
-		Lua = {
-			runtime = { version = "LuaJIT" },
-			diagnostics = {
-				-- Get the language server to recognize the `vim` global.
-				globals = { "vim" },
-			},
-			workspace = {
-				checkThirdParty = false,
-				-- Make the server aware of Neovim runtime files
-				library = vim.api.nvim_get_runtime_file("", true),
-			},
-			telemetry = { enable = false },
-		},
-	},
+	sqlls = {},
 	tailwindcss = {},
 	taplo = {},
 	tsserver = {},
 	vimls = {},
+	yamlls = {},
 }
 
 -- Setup neovim lua configuration.

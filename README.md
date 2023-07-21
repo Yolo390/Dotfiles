@@ -321,7 +321,7 @@ ripgrep fd-find silversearcher-ag mlocate zoxide python3-pip libsqlite3-dev bat
 2. Clone Neovim repository
 
 ```sh
-git clone -b release-0.8 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
+git clone -b release-0.9 https://github.com/neovim/neovim ~/Flo/Apps/Neovim
 ```
 
 <br />
@@ -766,7 +766,7 @@ Close terminal and open Kitty terminal.
 Go to https://www.nerdfonts.com/font-downloads to check if link is the lastest release version !
 
 ```sh
-wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v2.2.2/Hack.zip && \
+wget -P ~/Flo/Downloads https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Hack.zip && \
 cd ~/.local/share && \
 mkdir fonts && \
 cd fonts && \
@@ -1074,11 +1074,11 @@ https://www.mongodb.com/try/download/compass
 
 Download the last stable version for Ubuntu 16.04+ (.deb file).
 
-1.35.0 as I wrote this line (January 2023).
+1.39.0 as I wrote this line (July 2023).
 
 ```sh
 cd ~/Flo/Downloads && \
-sudo dpkg -i mongodb-compass_1.35.0_amd64.deb
+sudo dpkg -i mongodb-compass_1.39.0_amd64.deb
 ```
 
 <br />

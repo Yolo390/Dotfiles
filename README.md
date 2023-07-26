@@ -111,6 +111,10 @@ The complete installation take around ~60 min depending power of the computer an
 
 23. [PrismaStudio](#prisma-studio---install)
 
+24. [Stow](#stow)
+
+25. [Troubleshooting](#troubleshooting)
+
 ---
 
 <br />
@@ -1243,6 +1247,13 @@ stow -t ~/.config -D i3
 ```
 
 If you need more info: `stow --help`
+
+<br /><br /><br />
+
+## Troubleshooting
+
+Enable touchpad tap to click on i3wm.<br />
+https://major.io/p/tray-icons-in-i3/
 
 <br /><br /><br />
 

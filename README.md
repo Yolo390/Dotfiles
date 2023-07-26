@@ -96,7 +96,10 @@ The complete installation take around ~60 min depending power of the computer an
 
 17. [Notion](#notion---install)
 
-18. [MongoDB Compass](#mongodb-compass---install)
+18. MongoDB
+
+    1. [MongoDB](#mongodb---install)
+    2. [MongoDB Compass](#mongodb-compass---install)
 
 19. [Glow](#glow---install)
 
@@ -1065,6 +1068,23 @@ echo "deb [trusted=yes] https://apt.fury.io/notion-repackaged/ /" | sudo tee /et
 sudo apt update && \
 sudo apt install -y notion-app-enhanced && \
 sudo apt autoremove -y
+```
+
+<br /><br /><br />
+
+## MONGODB - install
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+
+For Ubuntu 22.04 LTS.
+
+```sh
+sudo apt install -y gnupg curl && \
+curl -fsSL https://pgp.mongodb.com/server-6.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg \
+   --dearmor && \
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list && \
+sudo apt update && \
+sudo apt install -y mongodb-org
 ```
 
 <br /><br /><br />

@@ -1091,6 +1091,12 @@ sudo apt update && \
 sudo apt install -y mongodb-org
 ```
 
+Give permissions to `mongodb` user
+```sh
+sudo chown -R mongodb:mongodb /var/lib/mongodb && \
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+```
+
 <br /><br /><br />
 
 ## MONGODB COMPASS - install

@@ -96,7 +96,10 @@ The complete installation take around ~60 min depending power of the computer an
 
 17. [Notion](#notion---install)
 
-18. [MongoDB Compass](#mongodb-compass---install)
+18. MongoDB
+
+    1. [MongoDB](#mongodb---install)
+    2. [MongoDB Compass](#mongodb-compass---install)
 
 19. [Glow](#glow---install)
 
@@ -107,6 +110,10 @@ The complete installation take around ~60 min depending power of the computer an
 22. [AppImageLauncher](#appimagelauncher---install)
 
 23. [PrismaStudio](#prisma-studio---install)
+
+24. [Stow](#stow)
+
+25. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -1069,6 +1076,29 @@ sudo apt autoremove -y
 
 <br /><br /><br />
 
+## MONGODB - install
+https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
+
+For Ubuntu 22.04 LTS.
+
+```sh
+sudo apt install -y gnupg curl && \
+curl -fsSL https://pgp.mongodb.com/server-6.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-6.0.gpg \
+   --dearmor && \
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-6.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list && \
+sudo apt update && \
+sudo apt install -y mongodb-org
+```
+
+Give permissions to `mongodb` user
+```sh
+sudo chown -R mongodb:mongodb /var/lib/mongodb && \
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+```
+
+<br /><br /><br />
+
 ## MONGODB COMPASS - install
 https://www.mongodb.com/try/download/compass
 
@@ -1223,6 +1253,13 @@ stow -t ~/.config -D i3
 ```
 
 If you need more info: `stow --help`
+
+<br /><br /><br />
+
+## Troubleshooting
+
+Enable touchpad tap to click on i3wm.<br />
+https://major.io/p/tray-icons-in-i3/
 
 <br /><br /><br />
 

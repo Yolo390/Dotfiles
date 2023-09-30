@@ -1,4 +1,7 @@
+neovim/lua/FloSlv/core/undodir/*
 neovim/lua/FloSlv/undodir/*
+neovim.bak/lua/FloSlv/core/undodir/*
+neovim.bak/lua/FloSlv/undodir/*
 neovim/plugin/packer_compiled.lua
 
 oh-my-zsh/.oh-my-zsh

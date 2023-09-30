@@ -196,6 +196,11 @@ export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 
+# Deno
+export DENO_INSTALL="/home/floslv/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
+
 # Zoxide
 eval "$(zoxide init zsh)"
 

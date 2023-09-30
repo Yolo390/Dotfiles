@@ -131,13 +131,13 @@ return {
         layout_config = {
           prompt_position = "top",
           height = 0.50,
-          width = 0.70,
+          width = 0.80,
           preview_cutoff = 0,
-          horizontal = { preview_width = 0.60 },
+          horizontal = { preview_width = 0.50 },
           vertical = { width = 0.55, height = 0.9, preview_cutoff = 0 },
         },
         sorting_strategy = "ascending",
-        prompt_prefix = "  ",
+        prompt_prefix = "   ",
         hidden = true,
         mappings = {
           n = {
@@ -162,9 +162,13 @@ return {
     vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = "#CCCCCC" })
     vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = "#CCCCCC" })
 
-    vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#24283b" })
-    vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "#24283b" })
-    vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "#24283b" })
+    -- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#24283b" })
+    -- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "#24283b" })
+    -- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "#24283b" })
+
+    -- vim.api.nvim_set_hl(0, "TelescopePromptNormal", { bg = "#011423" })
+    -- vim.api.nvim_set_hl(0, "TelescopeResultsNormal", { bg = "#011423" })
+    -- vim.api.nvim_set_hl(0, "TelescopePreviewNormal", { bg = "#011423" })
 
     vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = "#ffffff" })
     vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = "#ffffff" })

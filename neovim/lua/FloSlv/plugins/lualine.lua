@@ -8,7 +8,7 @@ return {
 
     lualine.setup({
       options = {
-        theme = "nord",
+        theme = "nord", -- "dracula-nvim"
         globalstatus = false,
         disabled_filetypes = {
           statusline = { "alpha", "NvimTree" },
@@ -19,7 +19,6 @@ return {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
         lualine_c = {
-          { "diff" },
           { "diagnostics" },
         },
         lualine_x = {

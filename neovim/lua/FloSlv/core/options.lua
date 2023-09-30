@@ -21,7 +21,7 @@ local options = {
   tabstop = 2,
   softtabstop = 2,
   fileencoding = "utf-8",
-  signcolumn = "yes",
+  signcolumn = "yes:2",
   cmdheight = 2,
   showmode = false,
   splitbelow = true,
@@ -30,6 +30,7 @@ local options = {
   clipboard = "unnamedplus",
   laststatus = 2, -- set to 3 for an unique lualine bar.
   termguicolors = true, -- to enable highlight groups
+  background = "dark",
   updatetime = 1000,
   -- SAVING
   backup = false,

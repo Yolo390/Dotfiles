@@ -92,6 +92,10 @@ alias md="sudo systemctl stop mongod"
 alias mr="sudo systemctl restart mongod"
 
 
+# Delete Nvim config
+alias rmnvim="rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.local/state/nvim && rm -rf ~/.cache/nvim && mkdir -p ~/.config/nvim"
+
+
 # Find the name of WM_CLASS to set in i3 config file.
 alias xg="xprop | grep WM_CLASS"
 
@@ -179,12 +183,17 @@ tmux has-session -t Flo || \
 	resize-pane -t 3 -y 20 \; \
 	new-window -c ~/ -n Neovim \; \
 	new-window -c ~/ -n Btop btop \; \
-	new-window -c ~/ -n VPN \; \
 	select-window -t 1 \; \
 	select-pane -t 1 \; \
 	resize-pane -t 1 -x 85 \; \
 	send-keys 'xset r rate 220 50' Enter \; \
 	send-keys 'clear' Enter \; \
+
+
+# Android Studio
+export ANDROID_HOME="$HOME/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/emulator"
+export PATH="$PATH:$ANDROID_HOME/platform-tools"
 
 
 # Zoxide
@@ -193,3 +202,5 @@ eval "$(zoxide init zsh)"
 
 # Starship
 eval "$(starship init zsh)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

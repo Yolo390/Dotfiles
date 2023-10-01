@@ -6,6 +6,7 @@ return {
 
     glow.setup({
       border = "rounded",
+      width = 120,
     })
 
     local utils = require("FloSlv.core.utils")

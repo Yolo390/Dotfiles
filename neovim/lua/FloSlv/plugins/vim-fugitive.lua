@@ -11,5 +11,6 @@ return {
 
     map("<leader>go", ":vertical Git<CR>", { desc = "Fugitive: git open" })
     map("<leader>gs", ":Git status<CR>", { desc = "Fugitive: git status" })
+    map("<leader>gp", ":Git push<CR>", { desc = "Fugitive: git push" })
   end,
 }

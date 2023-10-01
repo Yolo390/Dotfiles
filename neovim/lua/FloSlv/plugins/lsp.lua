@@ -42,6 +42,7 @@ return {
 
     local wk = require("which-key")
     wk.register({ l = { name = "LSP" } }, { prefix = "<leader>" })
+    wk.register({ w = { name = "Workspace" } }, { prefix = "<leader>" })
 
     -- LSP settings.
     --  This function gets run when an LSP connects to a particular buffer.

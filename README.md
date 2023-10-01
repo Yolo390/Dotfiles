@@ -60,8 +60,7 @@ The complete installation take around ~60 min depending power of the computer an
    1. First option: install and config Neovim from [flo-neovim-install.sh](#first-option-install-and-config-neovim-from-a-bash-script)
    2. Second option:
       1. [Install from sources](#second-option-neovim---install-from-sources)
-      2. [Packer as plugin management](#packer---install)
-      3. [Neovim config](#neovim---config)
+      2. [Neovim config](#neovim---config)
 
 5. Tmux
 
@@ -271,6 +270,9 @@ Close and re open terminal.
 
 ## First option: install and config NEOVIM from a bash script
 
+WARNING: this script is not working anymore since I use Lazy.nvim as plugin
+manager ! Do not use it !!
+
 https://github.com/Flo-Slv/Dotfiles/blob/main/flo-neovim-install.sh
 
 I developed a script who will create the needed folder structure and install/config Neovim.
@@ -343,16 +345,6 @@ sudo make install
 
 <br /><br /><br />
 
-## PACKER - install
-
-https://github.com/wbthomason/packer.nvim
-
-```sh
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-<br /><br /><br />
-
 ## NEOVIM - config
 
 1. PYNVIM - install
@@ -374,42 +366,31 @@ IMPORTANT: Replace `FloSlv` by your user name.
 ```sh
 mkdir ~/.config/nvim && \
 mkdir -p ~/Flo/Dotfiles/neovim/lua && \
-mkdir -p ~/Flo/Dotfiles/neovim/after/plugin && \
-mkdir -p ~/Flo/Dotfiles/neovim/after/ftplugin && \
-mkdir -p ~/Flo/Dotfiles/neovim/lua/FloSlv/undodir
+mkdir -p ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins && \
+mkdir -p ~/Flo/Dotfiles/neovim/lua/FloSlv/core/undodir
 ```
 
 <br />
 
 3. Add config<br />
 
-Create `options.lua`, `keymaps.lua`, `utils.lua`, `packer.lua` and `init.lua`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/options.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/keymaps.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/utils.lua<br  />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/packer.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua
+Create `init.lua`, `lua/FloSlv/lazy.lua`, `lua/FloSlv/core/init.lua`, `lua/FloSlv/core/options.lua`, `lua/FloSlv/core/keymaps.lua`, `lua/FloSlv/core/utils.lua`.<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/lazy.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/init.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/options.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/keymaps.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/utils.lua<br  />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/autocmds.lua<br  />
 
 ```sh
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/options.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/keymaps.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/utils.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/packer.lua && \
-wget -P ~/Flo/Dotfiles/neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua
-```
-
-<br />
-
-NB: You don't need the next two files: `autosave.lua` and `autorun.lua`.
-They are related to my personal projects in Rust and they are not stable and relevent for you.
-
-Create `autosave.lua` and `autorun.lua`.<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autosave.lua<br />
-https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/autorun.lua
-
-```sh
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/autosave.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/autorun.lua
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/lazy.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/init.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/options.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/keymaps.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/utils.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/autocmds.lua
 ```
 
 <br />
@@ -417,37 +398,42 @@ wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-S
 4. Set up all plugins
 
 ```sh
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/autopairs.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorscheme.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/colorful-winsep.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/comment.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/dashboard.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/gitsigns.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/glow.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/indent-blankline.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/lsp.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/lualine.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/luasnip.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/null-ls.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-autopairs.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-cmp.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-colorizer.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-notify.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-tree.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-treesitter.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/nvim-web-devicons.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/rust-tools.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/tailwindcss-colorizer-cmp.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/telescope.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/todo-comments.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/trouble.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/undotree.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-dadbod-ui.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vim-illuminate.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/vimade.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/which-key.lua && \
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/wilder.lua &&\
-wget -P ~/Flo/Dotfiles/neovim/after/plugin https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/after/plugin/winbar.lua
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/alpha.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/barbecue.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/colorful-winsep.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/colorscheme.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/comment.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/dressing.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/formatting.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/gitsigns.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/glow.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/indent-blankline.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/linting.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/lsp.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/lualine.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/noice.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nui.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-autopairs.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-cmp.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-colorizer.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-notify.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-surround.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-tmux-navigation.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-tree.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-treesitter.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-ufo.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-web-devicons.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/schemastore.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/tailwindcss-colorizer-cmp.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/telescope.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/tint.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/todo-comments.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/toggleterm.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/trouble.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/vim-fugitive.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/vim-rhubarb.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/which-key.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/winshift.lua && \
 ```
 
 <br />
@@ -480,27 +466,27 @@ stow -t ~/.config/nvim neovim
 
 7. Last step
 
-Open `packer.lua`.
+Open Neovim and wait for installation of all languages parsers from Treesitter and all
+LSP servers from Mason.
 
 ```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+nvim
 ```
 
-Then run this command: `:PackerSync`
+Then, run this command: `:MasonToolsInstall` in order to be sure that all
+linters and formatters are well installed.
 
 Save and close: `:wq`
 
-Re open `packer.lua`
+Re open Neovim.
 
 ```sh
-nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/packer.lua
+nvim
 ```
 
-And wait for LSP servers installation and Treesitter parsers installation.
+You can run `:Mason` to be sure that every LSP server is correctly installed.
 
-You have to run `:Mason` to be sure that every LSP server is correctly installed.
-
-You can also run `:TSUpdate` to be sure that every Treesitter parsers is installed.
+You can also run `:TSUpdate` to be sure that every Treesitter language parsers is installed.
 
 <br /><br /><br />
 
@@ -708,6 +694,7 @@ Close terminal and open Alacritty terminal.
 <br />
 
 To get emoji on Alacritty terminal.
+
 ```sh
 cd ~ && \
 sudo apt install -y fonts-noto-color-emoji && \
@@ -790,11 +777,13 @@ Close and re open Alacritty terminal.
 Check if Hack Nerd Font have been installed correctly.
 
 On Alacritty
+
 ```sh
 fc-list | grep -i "Hack"
 ```
 
 Or on Kitty
+
 ```sh
 kitty +list-fonts
 ```
@@ -1077,6 +1066,7 @@ sudo apt autoremove -y
 <br /><br /><br />
 
 ## MONGODB - install
+
 https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-ubuntu/
 
 For Ubuntu 22.04 LTS.
@@ -1092,6 +1082,7 @@ sudo apt install -y mongodb-org
 ```
 
 Give permissions to `mongodb` user
+
 ```sh
 sudo chown -R mongodb:mongodb /var/lib/mongodb && \
 sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
@@ -1100,6 +1091,7 @@ sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
 <br /><br /><br />
 
 ## MONGODB COMPASS - install
+
 https://www.mongodb.com/try/download/compass
 
 Download the last stable version for Ubuntu 16.04+ (.deb file).
@@ -1114,6 +1106,7 @@ sudo dpkg -i mongodb-compass_1.39.0_amd64.deb
 <br />
 
 You maybe will need to run this command to fix issue after installing Mongo DB Compass.
+
 ```sh
 sudo apt --fix-broken install
 ```

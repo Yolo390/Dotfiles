@@ -11,7 +11,15 @@ return {
       -- Timer refresh rate.
       interval = 10,
       -- This plugin will not be activated for filetype in the following table.
-      no_exec_files = { "packer", "TelescopePrompt", "mason", "NvimTree" },
+      no_exec_files = {
+        "packer",
+        "TelescopePrompt",
+        "mason",
+        "NvimTree",
+        "help",
+        "fugitive",
+        "fugitiveblame",
+      },
       symbols = { "─", "│", "┌", "┐", "└", "┘" },
       -- Executed after closing the window separator.
       close_event = function() end,

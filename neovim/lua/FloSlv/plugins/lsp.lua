@@ -5,7 +5,7 @@ return {
     {
       "williamboman/mason.nvim",
       cmd = "Mason",
-      build = ":MasonUpdate",
+      -- build = ":MasonUpdate",
       dependencies = {
         "williamboman/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
@@ -131,16 +131,6 @@ return {
     -- Ensure the LSP servers above are installed.
     mason_lspconfig.setup({ ensure_installed = vim.tbl_keys(servers) })
 
-    -- Ensure the linters and formatters are installed.
-    mason_tool_installer.setup({
-      ensure_installed = {
-        "prettier", -- JS/TS formatters.
-        "stylua", -- Lua formatter.
-        "shfmt", -- Shell formatter.
-        "eslint_d", -- JS/TS linters.
-      },
-    })
-
     mason_lspconfig.setup_handlers({
       function(server_name)
         lspconfig[server_name].setup({
@@ -149,6 +139,17 @@ return {
           settings = servers[server_name],
         })
       end,
+    })
+
+    -- Ensure the linters and formatters are installed.
+    mason_tool_installer.setup({
+      ensure_installed = {
+        "prettier", -- JS/TS formatters.
+        "stylua", -- Lua formatter.
+        "shfmt", -- Shell formatter.
+        "eslint_d", -- JS/TS linters.
+      },
+      run_on_start = true,
     })
 
     -- -- Configure Graphql language server.

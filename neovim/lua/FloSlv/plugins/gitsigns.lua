@@ -87,7 +87,7 @@ return {
             gs.next_hunk()
           end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "GitSigns: next hunk." })
 
         map("n", "<leader>gN", function()
           if vim.wo.diff then
@@ -97,14 +97,16 @@ return {
             gs.prev_hunk()
           end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "GitSigns: prev hunk." })
 
         -- Actions
-        map("n", "<leader>gh", gs.preview_hunk)
+        map("n", "<leader>gh", gs.preview_hunk, { desc = "GitSigns: preview hunk." })
         map("n", "<leader>gg", function()
           gs.blame_line({ full = true })
-        end)
-        map("n", "<leader>gt", gs.toggle_current_line_blame)
+        end, { desc = "GitSigns: global blame." })
+        map("n", "<leader>gt", gs.toggle_current_line_blame, {
+          desc = "GiSigns: current line blame.",
+        })
       end,
     })
   end,

@@ -6,13 +6,6 @@ return {
   },
   cmd = { "TroubleToggle", "Trouble" },
   keys = function()
-    local wk = require("which-key")
-    wk.register({
-      t = {
-        name = "Trouble/ToDo",
-      },
-    }, { prefix = "<leader>" })
-
     return {
       { "<leader>tt", ":TroubleToggle<CR>", desc = "Trouble: toggle" },
       { "<leader>td", ":TroubleToggle document_diagnostics<CR>", desc = "Trouble: document diagnostics" },

@@ -1,4 +1,4 @@
 return {
   "tpope/vim-rhubarb",
-  config = true,
+  config = function() end,
 }

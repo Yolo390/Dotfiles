@@ -116,6 +116,7 @@ return {
 
     telescope.load_extension("fzf")
     telescope.load_extension("live_grep_args")
+    telescope.load_extension("notify")
 
     -- Clone the default Telescope configuration
     local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }

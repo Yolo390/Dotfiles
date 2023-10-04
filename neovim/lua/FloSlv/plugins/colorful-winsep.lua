@@ -19,6 +19,9 @@ return {
         "help",
         "fugitive",
         "fugitiveblame",
+        "merginal",
+        "noice",
+        "Trouble",
       },
       symbols = { "─", "│", "┌", "┐", "└", "┘" },
       -- Executed after closing the window separator.

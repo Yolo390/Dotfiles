@@ -85,13 +85,6 @@ return {
       }))
     end
 
-    local wk = require("which-key")
-    wk.register({
-      f = {
-        name = " ",
-      },
-    }, { prefix = "<leader>" })
-
     return {
       { "<leader>ff", ":lua CurrentDir()<CR>", desc = "Find files in current directory." },
       {

@@ -3,7 +3,26 @@ return {
   event = "VeryLazy",
   init = function()
     vim.o.timeout = true
-    vim.o.timeoutlen = 500
+    vim.o.timeoutlen = 300
+  end,
+  config = function()
+    local which_key = require("which-key")
+
+    local opts = {
+      mode = "n",
+      prefix = "<leader>",
+    }
+
+    local mappings = {
+      ["f"] = { " " },
+      ["g"] = { "GIT" },
+      ["l"] = { "LSP" },
+      ["t"] = { "TROUBLE/TODO" },
+      ["u"] = { "NOTIFY" },
+      ["w"] = { "WORKSPACE" },
+    }
+
+    which_key.register(mappings, opts)
   end,
   opts = {
     show_help = false,

@@ -40,20 +40,22 @@ return {
       return
     end
 
-    local wk = require("which-key")
-    wk.register({ l = { name = "LSP" } }, { prefix = "<leader>" })
-    wk.register({ w = { name = "Workspace" } }, { prefix = "<leader>" })
-
     -- LSP settings.
     --  This function gets run when an LSP connects to a particular buffer.
     local on_attach = function(_, bufnr)
+      local utils = require("FloSlv.core.utils")
+
       local nmap = function(keys, func, desc)
         -- add description
         if desc then
           desc = "LSP: " .. desc
         end
 
-        vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+        utils.map("n", keys, func, desc, {
+          buffer = bufnr,
+          noremap = true,
+          silent = true,
+        })
       end
 
       -- Actions.

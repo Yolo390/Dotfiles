@@ -12,10 +12,18 @@ return {
       local treesitter = require("nvim-treesitter.configs")
 
       treesitter.setup({
-        highlight = {
-          enable = true,
-        },
+        highlight = { enable = true },
         indent = { enable = true },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "<c-space>",
+            node_incremental = "<c-space>",
+            scope_incremental = "<c-s>",
+            -- node_decremental = "<c-backspace>",
+          },
+        },
+        additional_vim_regex_highlighting = false,
         ensure_installed = {
           "bash",
           "c",

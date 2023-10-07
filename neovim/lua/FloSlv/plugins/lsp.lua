@@ -5,12 +5,11 @@ return {
     {
       "williamboman/mason.nvim",
       cmd = "Mason",
-      -- build = ":MasonUpdate",
+      -- build = ":MasonUpdate", -- WARN: It's not working !
       dependencies = {
         "williamboman/mason-lspconfig.nvim",
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-        -- "jayp0521/mason-null-ls.nvim", -- null-ls is not maintained anymore...
-        -- "nvimtools/none-ls.nvim", -- Fork maintained of null-ls.
+        "WhoIsSethDaniel/mason-tool-installer.nvim", -- NOTE: Instead of none-ls/null-ls.
+        -- "jay-babu/mason-null-ls.nvim", -- NOTE: to use none-ls/null-ls.
       },
     },
     { "folke/neodev.nvim", opts = {} },
@@ -30,6 +29,8 @@ return {
     local mason = require("mason")
     local mason_lspconfig = require("mason-lspconfig")
     local mason_tool_installer = require("mason-tool-installer")
+
+    -- NOTE: Formatting/linting with none-ls/null-ls.
     -- local mason_null_ls = require("mason-null-ls")
 
     local neodev = require("neodev")
@@ -147,7 +148,7 @@ return {
     -- Ensure the linters and formatters are installed.
     mason_tool_installer.setup({
       ensure_installed = {
-        "prettier", -- JS/TS formatters.
+        "prettierd", -- JS/TS formatters.
         "stylua", -- Lua formatter.
         "shfmt", -- Shell formatter.
         "eslint_d", -- JS/TS linters.
@@ -155,13 +156,26 @@ return {
       run_on_start = true,
     })
 
+    -- NOTE: to use none-ls/null-ls.
+    -- mason_null_ls.setup({
+    --   ensure_installed = {
+    --     "prettierd", -- JS/TS formatters.
+    --     "stylua", -- Lua formatter.
+    --     "shfmt", -- Shell formatter.
+    --     "eslint_d", -- JS/TS linters.
+    --   },
+    -- })
+
+    -- Turn on lsp status information.
+    fidget.setup({})
+
     -- -- Configure Graphql language server.
     -- lspconfig["graphql"].setup({
     --   capabilities = capabilities,
     --   on_attach = on_attach,
     --   filetypes = { "graphql", "gql", "typescriptreact", "javascriptreact" },
     -- })
-    --
+
     -- -- Configure Lua server (with special settings).
     -- lspconfig["lua_ls"].setup({
     --   capabilities = capabilities,
@@ -182,9 +196,6 @@ return {
     --     },
     --   },
     -- })
-
-    -- Turn on lsp status information.
-    fidget.setup({})
 
     -- UI
     local lsp = vim.lsp

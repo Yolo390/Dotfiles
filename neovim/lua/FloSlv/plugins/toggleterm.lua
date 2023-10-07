@@ -1,7 +1,7 @@
 return {
   "akinsho/toggleterm.nvim",
   version = "*",
-  -- cmd = { "ToggleTerm", "ToggleTermToggleAll" },
+  -- cmd = { "ToggleTerm", "ToggleTermToggleAll" }, -- WARN: it's not working.
   config = function()
     local toggleterm = require("toggleterm")
 

@@ -5,17 +5,16 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local nvimtree = require("nvim-tree")
+    local utils = require("FloSlv.core.utils")
 
     -- Recommended settings from nvim-tree documentation.
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
     -- Keymaps.
-    local key = vim.keymap.set
     local full_options = { noremap = true, silent = true }
-
-    key("n", "<C-a>", ":NvimTreeToggle<CR>", full_options)
-    key("n", "<C-t>", ":NvimTreeFindFileToggle<CR>", full_options)
+    utils.map("n", "<C-a>", ":NvimTreeToggle<CR>", "NvimTree: toggle", full_options)
+    utils.map("n", "<C-t>", ":NvimTreeFindFileToggle<CR>", "NvimTree: toggle in current file", full_options)
 
     nvimtree.setup({
       sort_by = "case_sensitive",

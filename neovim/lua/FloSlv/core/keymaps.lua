@@ -2,9 +2,6 @@
 -- # KEYMAPS #
 -- ###########
 
--- Set leader key as a space.
-vim.g.mapleader = " "
-
 local keymap = vim.keymap.set
 
 local full_options = { noremap = true, silent = true }
@@ -19,7 +16,12 @@ local nmap = function(key, command, option, desc)
 end
 
 -- SAVE AND RE SOURCE CURRENT FILE.
-nmap("<leader>s", ":w | source %<CR>", "full_options", "Save and re source current file.")
+nmap(
+  "<leader>s",
+  ":w | source %<CR>",
+  "full_options",
+  "Save and re source current file."
+)
 
 -- WINDOWS
 nmap("<leader>v", ":vsplit<CR>", "full_options", "Windows: split vertically.")
@@ -37,7 +39,12 @@ keymap("n", "<C-j>", ":move .+1<CR>==", full_options)
 keymap("n", "<C-k>", ":move .-2<CR>==", full_options)
 
 -- REPLACE WORD UNDER CURSOR ACROSS ENTIRE BUFFER.
-keymap("n", "<C-w>", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], full_options)
+keymap(
+  "n",
+  "<C-w>",
+  [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+  full_options
+)
 
 -- COPY FROM CURSOR TO END OF LINE.
 keymap("n", "Y", "y$", noremap)

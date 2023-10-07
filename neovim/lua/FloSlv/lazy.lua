@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 -- UI
 vim.api.nvim_set_hl(0, "LazyNormal", { fg = "#ffffff" })
 
-require("lazy").setup({{ import = "FloSlv.plugins" }}, {
+require("lazy").setup({ { import = "FloSlv.plugins" } }, {
   install = {
     colorscheme = { "tokyonight" },
   },

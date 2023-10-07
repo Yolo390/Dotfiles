@@ -16,7 +16,10 @@ vim.api.nvim_set_hl(0, "LazyNormal", { fg = "#ffffff" })
 
 require("lazy").setup({ { import = "FloSlv.plugins" } }, {
   install = {
-    colorscheme = { "tokyonight" },
+    -- Install missing plugins on startup. This doesn't increase startup time.
+    missing = false,
+    -- Try to load one of these colorschemes when starting an installation during startup.
+    colorscheme = { "nord" },
   },
   checker = {
     enabled = true, -- Automatically check for plugin updates.

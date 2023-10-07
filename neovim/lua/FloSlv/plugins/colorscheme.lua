@@ -12,10 +12,6 @@ return {
   priority = 1000,
   lazy = false,
   config = function()
-    local nord = require("nord")
-
-    nord.set()
-
     vim.cmd([[colorscheme nord]])
   end,
 }

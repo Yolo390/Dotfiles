@@ -28,8 +28,8 @@ local options = {
   splitright = true,
   smartindent = true,
   clipboard = "unnamedplus",
-  laststatus = 2, -- set to 3 for an unique lualine bar.
-  termguicolors = true, -- to enable highlight groups
+  laststatus = 2, -- Set to 3 for an unique lualine bar.
+  termguicolors = true, -- To enable highlight groups.
   background = "dark",
   updatetime = 1000,
   -- SAVING
@@ -45,7 +45,7 @@ local options = {
   hlsearch = false,
   -- COMPLETION
   wildignore = "*.o,*.r,*.so,*.sl",
-  completeopt = { "menu", "menuone", "noselect" }, -- need it for nvim-cmp
+  completeopt = { "menu", "menuone", "noselect" }, -- Need it for nvim-cmp.
   -- REMOVE BEEP
   visualbell = true,
   errorbells = false,

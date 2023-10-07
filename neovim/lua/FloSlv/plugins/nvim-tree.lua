@@ -13,8 +13,20 @@ return {
 
     -- Keymaps.
     local full_options = { noremap = true, silent = true }
-    utils.map("n", "<C-a>", ":NvimTreeToggle<CR>", "NvimTree: toggle", full_options)
-    utils.map("n", "<C-t>", ":NvimTreeFindFileToggle<CR>", "NvimTree: toggle in current file", full_options)
+    utils.map(
+      "n",
+      "<C-a>",
+      ":NvimTreeToggle<CR>",
+      "NvimTree: toggle",
+      full_options
+    )
+    utils.map(
+      "n",
+      "<C-t>",
+      ":NvimTreeFindFileToggle<CR>",
+      "NvimTree: toggle in current file",
+      full_options
+    )
 
     nvimtree.setup({
       sort_by = "case_sensitive",

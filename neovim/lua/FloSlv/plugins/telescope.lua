@@ -21,7 +21,8 @@ return {
 
     function CurrentDir()
       builtin.find_files({
-        prompt_title = "🌞 " .. vim.fn.substitute(vim.fn.getcwd(), "/home/floslv", "~", ""),
+        prompt_title = "🌞 "
+          .. vim.fn.substitute(vim.fn.getcwd(), "/home/floslv", "~", ""),
         cwd = vim.fn.substitute(vim.fn.getcwd(), "/home/floslv", "~", ""),
         hidden = true,
       })
@@ -86,7 +87,11 @@ return {
     end
 
     return {
-      { "<leader>ff", ":lua CurrentDir()<CR>", desc = "Find files in current directory." },
+      {
+        "<leader>ff",
+        ":lua CurrentDir()<CR>",
+        desc = "Find files in current directory.",
+      },
       {
         "<leader>fg",
         ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
@@ -96,10 +101,18 @@ return {
       { "<leader>fb", ":Telescope buffers<CR>", desc = "Find buffers." },
       { "<leader>fh", ":lua Help()<CR>", desc = "Find in Help directory." },
       { "<leader>fk", ":lua Keymaps()<CR>", desc = "Find keymaps." },
-      { "<leader>/", ":lua FuzzilySearch()<CR>", desc = "Fuzzily search in current buffer." },
+      {
+        "<leader>/",
+        ":lua FuzzilySearch()<CR>",
+        desc = "Fuzzily search in current buffer.",
+      },
       { "<leader>f~", ":lua Flo()<CR>", desc = "Find in Flo directory." },
       { "<leader>fv", ":lua Dev()<CR>", desc = "Find in Dev directory." },
-      { "<leader>fd", ":lua Dotfiles()<CR>", desc = "Find in Dotfiles directory." },
+      {
+        "<leader>fd",
+        ":lua Dotfiles()<CR>",
+        desc = "Find in Dotfiles directory.",
+      },
     }
   end,
   config = function()
@@ -112,7 +125,8 @@ return {
     telescope.load_extension("notify")
 
     -- Clone the default Telescope configuration
-    local vimgrep_arguments = { unpack(telescope_config.values.vimgrep_arguments) }
+    local vimgrep_arguments =
+      { unpack(telescope_config.values.vimgrep_arguments) }
 
     -- I want to search in hidden/dot files.
     table.insert(vimgrep_arguments, "--hidden")

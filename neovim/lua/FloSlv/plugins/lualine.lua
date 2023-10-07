@@ -20,14 +20,15 @@ return {
         lualine_b = { "branch" },
         lualine_c = {
           { "diagnostics" },
-        },
-        lualine_x = {
           {
             lazy_status.updates,
             cond = lazy_status.has_updates,
             color = { fg = "#ff9e64" },
           },
+        },
+        lualine_x = {
           { "selectioncount" },
+          { "location" },
           { "progress" },
           { "encoding" },
         },

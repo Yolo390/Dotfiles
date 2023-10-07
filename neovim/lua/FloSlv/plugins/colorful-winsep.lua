@@ -22,6 +22,7 @@ return {
         "merginal",
         "noice",
         "Trouble",
+        "qf",
       },
       symbols = { "─", "│", "┌", "┐", "└", "┘" },
       -- Executed after closing the window separator.

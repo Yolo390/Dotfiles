@@ -88,6 +88,19 @@ return {
 
     return {
       {
+        "<leader>/",
+        ":lua FuzzilySearch()<CR>",
+        desc = "Fuzzily search in current buffer.",
+      },
+      { "<leader>f~", ":lua Flo()<CR>", desc = "Find in Flo directory." },
+      { "<leader>fb", ":Telescope buffers<CR>", desc = "Find buffers." },
+      { "<leader>fc", ":Telescope commands<CR>", desc = "Find commands." },
+      {
+        "<leader>fd",
+        ":lua Dotfiles()<CR>",
+        desc = "Find in Dotfiles directory.",
+      },
+      {
         "<leader>ff",
         ":lua CurrentDir()<CR>",
         desc = "Find files in current directory.",
@@ -97,22 +110,10 @@ return {
         ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
         desc = "Find live grep.",
       },
-      { "<leader>fw", builtin.grep_string, desc = "Find word under cursor." },
-      { "<leader>fb", ":Telescope buffers<CR>", desc = "Find buffers." },
       { "<leader>fh", ":lua Help()<CR>", desc = "Find in Help directory." },
       { "<leader>fk", ":lua Keymaps()<CR>", desc = "Find keymaps." },
-      {
-        "<leader>/",
-        ":lua FuzzilySearch()<CR>",
-        desc = "Fuzzily search in current buffer.",
-      },
-      { "<leader>f~", ":lua Flo()<CR>", desc = "Find in Flo directory." },
       { "<leader>fv", ":lua Dev()<CR>", desc = "Find in Dev directory." },
-      {
-        "<leader>fd",
-        ":lua Dotfiles()<CR>",
-        desc = "Find in Dotfiles directory.",
-      },
+      { "<leader>fw", builtin.grep_string, desc = "Find word under cursor." },
     }
   end,
   config = function()

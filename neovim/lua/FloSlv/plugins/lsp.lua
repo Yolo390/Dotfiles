@@ -65,24 +65,39 @@ return {
 
       -- Diagnostics
       nmap("<leader>lo", vim.diagnostic.open_float, "diagnostic open.")
-      nmap("<leader>ll", vim.diagnostic.setloclist, "diagnostic list.")
       nmap("<leader>lf", ts_builtin.diagnostics, "diagnostic finder.")
 
       -- Documentation.
       nmap("K", vim.lsp.buf.hover, "documentation.")
 
       -- LSP.
-      nmap("<leader>ld", vim.lsp.buf.definition, "goto definition.")
+      nmap("<leader>ld", ts_builtin.lsp_definitions, "goto definition.")
       nmap("<leader>lr", ts_builtin.lsp_references, "goto references.")
-      nmap("<leader>li", vim.lsp.buf.implementation, "goto implementation.")
+      nmap("<leader>li", ts_builtin.lsp_implementations, "goto implementation.")
       nmap("<leader>lD", vim.lsp.buf.declaration, "goto declaration.")
       nmap("<leader>lt", vim.lsp.buf.type_definition, "goto type definition")
-      nmap("<leader>ls", ts_builtin.lsp_document_symbols, "goto document symbols")
+      nmap(
+        "<leader>ls",
+        ts_builtin.lsp_document_symbols,
+        "goto document symbols"
+      )
 
       -- Workspaces.
-      nmap("<leader>ws", ts_builtin.lsp_dynamic_workspace_symbols, "workspace symbols.")
-      nmap("<leader>wa", vim.lsp.buf.add_workspace_folder, "workspace add folder.")
-      nmap("<leader>wr", vim.lsp.buf.remove_workspace_folder, "workspace remove folder.")
+      nmap(
+        "<leader>ws",
+        ts_builtin.lsp_dynamic_workspace_symbols,
+        "workspace symbols."
+      )
+      nmap(
+        "<leader>wa",
+        vim.lsp.buf.add_workspace_folder,
+        "workspace add folder."
+      )
+      nmap(
+        "<leader>wr",
+        vim.lsp.buf.remove_workspace_folder,
+        "workspace remove folder."
+      )
       nmap("<leader>wl", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
       end, "workspace list folder")
@@ -204,9 +219,10 @@ return {
       border = "rounded",
     })
 
-    lsp.handlers["textDocument/signatureHelp"] = lsp.with(vim.lsp.handlers.hover, {
-      border = "rounded",
-    })
+    lsp.handlers["textDocument/signatureHelp"] =
+      lsp.with(vim.lsp.handlers.hover, {
+        border = "rounded",
+      })
 
     vim.diagnostic.config({
       virtual_text = false,
@@ -223,7 +239,8 @@ return {
     })
 
     -- Change the Diagnostic symbols in the sign column (gutter).
-    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+    local signs =
+      { Error = " ", Warn = " ", Hint = " ", Info = " " }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -239,7 +256,8 @@ return {
         -- A more robust solution would check the "scope" value in `opts` to
         -- determine where to get diagnostics from, but if you're only using
         -- this for your own purposes you can make it as simple as you like.
-        local diagnostics = vim.diagnostic.get(options.bufnr or 0, { lnum = lnum })
+        local diagnostics =
+          vim.diagnostic.get(options.bufnr or 0, { lnum = lnum })
         local max_severity = vim.diagnostic.severity.HINT
 
         for _, d in ipairs(diagnostics) do
@@ -272,7 +290,11 @@ return {
         -- nord #2e3440
         -- tokyonight #24283b
         vim.cmd([[ highlight DiagnosticBGColor guibg=#2e3440]])
-        vim.api.nvim_set_option_value("winhl", "Normal:DiagnosticBGColor", { win = 0 })
+        vim.api.nvim_set_option_value(
+          "winhl",
+          "Normal:DiagnosticBGColor",
+          { win = 0 }
+        )
 
         -- Return new params.
         orig(bufnr, options)

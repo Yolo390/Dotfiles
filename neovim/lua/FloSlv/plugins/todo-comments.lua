@@ -5,8 +5,8 @@ return {
   event = { "BufReadPost", "BufNewFile" },
   keys = function()
     return {
-      { "<leader>to", ":TodoTrouble<CR>", desc = "Todo: open" },
-      { "<leader>tl", ":TodoTelescope<CR>", desc = "Todo: telescope" },
+      { "<leader>ft", ":TodoTelescope<CR>", desc = "Find todo." }, -- NOTE: Better than trouble.
+      -- { "<leader>ft", ":TodoTrouble<CR>", desc = "Fint todo w/ trouble." },
     }
   end,
   config = function()
@@ -26,9 +26,17 @@ return {
         TODO = { icon = " ", color = "info" },
         HACK = { icon = " ", color = "default" },
         WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-        PERF = { icon = "󰠠 ", color = "default", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+        PERF = {
+          icon = "󰠠 ",
+          color = "default",
+          alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" },
+        },
         NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
-        TEST = { icon = "★ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+        TEST = {
+          icon = "★ ",
+          color = "test",
+          alt = { "TESTING", "PASSED", "FAILED" },
+        },
       },
       gui_style = {
         fg = "NONE", -- The gui style to use for the fg highlight group.

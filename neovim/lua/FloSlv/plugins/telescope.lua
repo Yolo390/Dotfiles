@@ -162,6 +162,9 @@ return {
         },
         vimgrep_arguments = vimgrep_arguments,
         path_display = { "truncate" },
+        -- pickers = { -- NOTE: not working so far.
+        --   lsp_references = { fname_width = 100 },
+        -- },
       },
     })
 

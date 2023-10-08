@@ -60,47 +60,50 @@ return {
       end
 
       -- Actions.
-      nmap("<leader>ln", vim.lsp.buf.rename, "re name.")
       nmap("<leader>la", vim.lsp.buf.code_action, "code action.")
+      nmap("<leader>ln", vim.lsp.buf.rename, "re name.")
 
       -- Diagnostics
-      nmap("<leader>lo", vim.diagnostic.open_float, "diagnostic open.")
       nmap("<leader>lf", ts_builtin.diagnostics, "diagnostic finder.")
+      nmap("<leader>lo", vim.diagnostic.open_float, "diagnostic open.")
 
       -- Documentation.
       nmap("K", vim.lsp.buf.hover, "documentation.")
 
       -- LSP.
-      nmap("<leader>ld", ts_builtin.lsp_definitions, "goto definition.")
-      nmap("<leader>lr", ts_builtin.lsp_references, "goto references.")
-      nmap("<leader>li", ts_builtin.lsp_implementations, "goto implementation.")
+      nmap("<leader>ld", ":Glance definitions<CR>", "goto definition.") -- NOTE: Better than telescope to display definitions.
+      -- nmap("<leader>ld", ts_builtin.lsp_definitions, "goto definition.")
       nmap("<leader>lD", vim.lsp.buf.declaration, "goto declaration.")
-      nmap("<leader>lt", vim.lsp.buf.type_definition, "goto type definition")
+      nmap("<leader>li", ":Glance implementations<CR>", "goto implementation.") -- NOTE: Better than telescope to display implementation.
+      -- nmap("<leader>li", ts_builtin.lsp_implementations, "goto implementation.")
+      nmap("<leader>lr", ":Glance references<CR>", "goto references.") -- NOTE: Better than telescope to display references.
+      -- nmap("<leader>lr", ts_builtin.lsp_references, "goto references.")
       nmap(
         "<leader>ls",
         ts_builtin.lsp_document_symbols,
         "goto document symbols"
       )
+      nmap("<leader>lt", vim.lsp.buf.type_definition, "goto type definition")
 
       -- Workspaces.
-      nmap(
-        "<leader>ws",
-        ts_builtin.lsp_dynamic_workspace_symbols,
-        "workspace symbols."
-      )
       nmap(
         "<leader>wa",
         vim.lsp.buf.add_workspace_folder,
         "workspace add folder."
       )
+      nmap("<leader>wl", function()
+        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+      end, "workspace list folder")
       nmap(
         "<leader>wr",
         vim.lsp.buf.remove_workspace_folder,
         "workspace remove folder."
       )
-      nmap("<leader>wl", function()
-        print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-      end, "workspace list folder")
+      nmap(
+        "<leader>ws",
+        ts_builtin.lsp_dynamic_workspace_symbols,
+        "workspace symbols."
+      )
 
       -- Create a command `:Format` local to the LSP buffer.
       vim.api.nvim_buf_create_user_command(bufnr, "Format", function()

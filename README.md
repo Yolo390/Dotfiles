@@ -374,8 +374,10 @@ mkdir -p ~/Flo/Dotfiles/neovim/lua/FloSlv/core/undodir
 
 3. Add config<br />
 
-Create `init.lua`, `lua/FloSlv/lazy.lua`, `lua/FloSlv/core/init.lua`, `lua/FloSlv/core/options.lua`, `lua/FloSlv/core/keymaps.lua`, `lua/FloSlv/core/utils.lua`.<br />
+Create `init.lua`, `stylua.toml`, `.luarc.json`, `lua/FloSlv/lazy.lua`, `lua/FloSlv/core/init.lua`, `lua/FloSlv/core/options.lua`, `lua/FloSlv/core/keymaps.lua`, `lua/FloSlv/core/utils.lua`.<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/init.lua<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/stylua.toml<br />
+https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/.luarc.json<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/lazy.lua<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/init.lua<br />
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/options.lua<br />
@@ -384,8 +386,10 @@ https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/utils.lua<b
 https://github.com/Flo-Slv/Dotfiles/blob/main/neovim/lua/FloSlv/core/autocmds.lua<br  />
 
 ```sh
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/lazy.lua && \
+wget -P ~/Flo/Dotfiles/neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/init.lua && \
+wget -P ~/Flo/Dotfiles/neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/stylua.toml && \
+wget -P ~/Flo/Dotfiles/neovim https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/.luarc.json && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/lazy.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/init.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/options.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/core https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/core/keymaps.lua && \

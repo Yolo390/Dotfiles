@@ -406,12 +406,16 @@ wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.c
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/dressing.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/formatting.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/gitsigns.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/glance.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/glow.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/indent-blankline.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/linting.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/lsp.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/lualine.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/neogen.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/neorg.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/noice.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/none-ls.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nui.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-autopairs.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/nvim-cmp.lua && \

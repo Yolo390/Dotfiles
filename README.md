@@ -437,7 +437,7 @@ wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.c
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/vim-fugitive.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/vim-rhubarb.lua && \
 wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/which-key.lua && \
-wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/winshift.lua && \
+wget -P ~/Flo/Dotfiles/neovim/lua/FloSlv/plugins https://raw.githubusercontent.com/Flo-Slv/Dotfiles/main/neovim/lua/FloSlv/plugins/winshift.lua
 ```
 
 <br />

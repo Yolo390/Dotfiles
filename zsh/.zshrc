@@ -57,6 +57,7 @@ alias tma="tmux attach-session" # The last session.
 alias tman="tmux attach-session -t"
 alias tmls="tmux ls"
 alias tmk="tmux kill-session -t"
+alias tmc="tmux display-message -p '#S'"
 
 
 # Git aliases

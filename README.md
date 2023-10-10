@@ -980,6 +980,8 @@ cat << EOF >> ~/Flo/Dotfiles/git/.gitconfig
     name = {your-name}
 [core]
     editor = nvim
+[init]
+    defaultBranch = main
 EOF
 ```
 

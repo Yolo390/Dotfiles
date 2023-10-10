@@ -8,7 +8,8 @@
 
 
 # Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="/home/flo-slv/.oh-my-zsh" # Working PC.
+# export ZSH="$HOME/.oh-my-zsh" # Home PC.
 
 
 ZSH_THEME="ys-flo"
@@ -178,17 +179,18 @@ export PATH="$PATH:/home/floslv/.local/bin"
 # Every time I open a new terminal.
 tmux has-session -t Flo || \
 	tmux -f ~/.tmux.conf new -s Flo -n Terminal \; \
-	split-window -c ~/ -h \; \
-	split-window -c ~/ -v \; \
-	select-pane -t 3 \; \
-	resize-pane -t 3 -y 20 \; \
-	new-window -c ~/ -n Neovim \; \
-	new-window -c ~/ -n Btop btop \; \
-	select-window -t 1 \; \
-	select-pane -t 1 \; \
-	resize-pane -t 1 -x 85 \; \
 	send-keys 'xset r rate 220 50' Enter \; \
 	send-keys 'clear' Enter \; \
+
+	# split-window -c ~/ -h \; \
+	# split-window -c ~/ -v \; \
+	# select-pane -t 3 \; \
+	# resize-pane -t 3 -y 20 \; \
+	# new-window -c ~/ -n Neovim \; \
+	# new-window -c ~/ -n Btop btop \; \
+	# select-window -t 1 \; \
+	# select-pane -t 1 \; \
+	# resize-pane -t 1 -x 85 \; \
 
 
 # Android Studio

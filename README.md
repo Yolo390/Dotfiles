@@ -478,7 +478,7 @@ Open Neovim and wait for installation of all languages parsers from Treesitter a
 LSP servers from Mason.
 
 ```sh
-nvim
+nvim ~/Flo/Dotfiles/neovim/lua/FloSlv/lazy.lua
 ```
 
 Then, run this command: `:MasonToolsInstall` in order to be sure that all
